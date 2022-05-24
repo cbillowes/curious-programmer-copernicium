@@ -5,12 +5,15 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header"
-import "./layout.css"
+import Header from './header';
+import './layout.css';
+import Helmet from 'react-helmet';
+
+import EasterEggImage from '../images/all-the-things.webp';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,10 +24,37 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
+      <Helmet
+        script={[
+          {
+            type: 'text/javascript',
+            innerHTML: `
+              (function() {
+                // https://stackoverflow.com/questions/36885562/google-chrome-console-print-image
+                console.image = function(url, size = 100) {
+                  var image = new Image();
+                  image.onload = function() {
+                    var style = [
+                      'font-size: 1px;',
+                      'padding: ' + this.height/100*size + 'px ' + this.width/100*size + 'px;',
+                      'background: url('+ url +') no-repeat;',
+                      'background-size: contain;',
+                    ].join(' ');
+                    console.log('%c ', style);
+                    console.log('Be curious, always.');
+                  };
+                  image.src = url;
+                };
+                console.image("https://curiousprogrammer.dev${EasterEggImage}", 25);
+              })()
+            `,
+          },
+        ]}
+      />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -46,11 +76,11 @@ const Layout = ({ children }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
