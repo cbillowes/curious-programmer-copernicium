@@ -14,10 +14,8 @@ module.exports = {
     brand: '#f0ff7b',
     author: {
       name: 'Clarice Bouwer',
-      url: 'https://clarice.bouwer.dev',
-    },
-    social: {
       twitter: 'cbillowes',
+      url: 'https://clarice.bouwer.dev',
     },
   },
   plugins: [
@@ -45,6 +43,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `./articles`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
