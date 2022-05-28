@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
-    .text-welcome {
-      color: var(--welcome-headings);
-      text-shadow: 1px 1px 1px var(--welcome-headings-shadow);
-    }
+@layer components {
+  .text-welcome {
+    color: var(--welcome-headings);
+    text-shadow: 1px 1px 1px var(--welcome-headings-shadow);
   }
 }
 
@@ -28,7 +26,8 @@ html {
   display: none;
 }
 
-html.dark, html.light {
+html.dark,
+html.light {
   display: block;
 }
 
