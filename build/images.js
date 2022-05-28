@@ -1,6 +1,7 @@
-const path = require("path")
-const fs = require("fs")
-const sharp = require("sharp")
+const path = require('path');
+const fs = require('fs');
+const sharp = require('sharp');
+const { dir } = require('console');
 
 /**
  * Any source file residing in the resources directory which is used to
@@ -9,47 +10,47 @@ const sharp = require("sharp")
  * @returns a boolean value
  */
 const isResource = ({ internal, absolutePath }) => {
-  const { type } = internal
-  return type === "File" && absolutePath.indexOf("/resources/source/") >= 0
-}
+  const { type } = internal;
+  return type === 'File' && absolutePath.indexOf('/resources/source/') >= 0;
+};
 
 const toDestinationPath = (destinationPath, sourcePath) => {
-  return path.join(destinationPath, path.basename(sourcePath))
-}
+  return path.join(destinationPath, path.basename(sourcePath));
+};
 
 const kebabToTitleCase = (text) => {
-  if (!text) return ""
+  if (!text) return '';
 
   return text
-    .replace(/-/g, " ")
+    .replace(/-/g, ' ')
     .replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     })
-    .replace(/ /g, "")
-}
+    .replace(/ /g, '');
+};
 
 const toComponentName = (text) => {
-  return kebabToTitleCase(text).replace(/\.|jpg|png|gif|svg/g, "")
-}
+  return kebabToTitleCase(text).replace(/\.|jpg|png|gif|svg/g, '');
+};
 
 exports.getComponentName = (text) => {
-  return toComponentName(text)
-}
+  return toComponentName(text);
+};
 
 exports.getRandomDefaultComponent = () => {
-  const sourcePath = path.join(__dirname, "../src/components/images/")
-  const files = fs.readdirSync(sourcePath)
+  const sourcePath = path.join(__dirname, '../src/components/Images/');
+  const files = fs.readdirSync(sourcePath);
 
   const defaults = files.filter((file) => {
-    return file.startsWith("default-")
-  })
+    return file.startsWith('default-');
+  });
 
-  const outerBounds = defaults.length
-  const index = parseInt(Math.random() * (outerBounds + 1))
+  const outerBounds = defaults.length;
+  const index = parseInt(Math.random() * (outerBounds + 1));
   // eslint-disable-next-line prettier/prettier
-  const number = index < 10 ? (index === 0 ? `01` : `0${index}`) : index
-  return `Default${number}`
-}
+  const number = index < 10 ? (index === 0 ? `01` : `0${index}`) : index;
+  return `Default${number}`;
+};
 
 /**
  * Uses sharp to create an image of specific dimensions, fit, position and kernel
@@ -85,24 +86,24 @@ const processImage = (
       kernel: sharp.kernel.nearest,
     })
     .toFile(destinationPath, (err) => {
-      const message = `image [optimize]: ${absolutePath} -> ${destinationPath}`
+      const message = `image [optimize]: ${absolutePath} -> ${destinationPath}`;
       if (err) {
-        reporter.error(`${message}\n${err}`)
+        reporter.error(`${message}\n${err}`);
       } else {
-        reporter.verbose(message)
+        reporter.verbose(message);
       }
-    })
-}
+    });
+};
 
 const processHighRes = (sourcePath, reporter) => {
-  const quality = 100
-  const destinationPath = toDestinationPath(`src/images/articles`, sourcePath)
-  const width = 1920
-  const height = 1080
-  const fit = sharp.fit.cover
-  const position = sharp.strategy.attention
+  const quality = 100;
+  const destinationPath = toDestinationPath(`src/images/articles`, sourcePath);
+  const width = 1920;
+  const height = 1080;
+  const fit = sharp.fit.cover;
+  const position = sharp.strategy.attention;
 
-  reporter.verbose(`image [high res]: ${path.basename(sourcePath)}`)
+  reporter.verbose(`image [high res]: ${path.basename(sourcePath)}`);
   processImage(
     sourcePath,
     destinationPath,
@@ -112,21 +113,21 @@ const processHighRes = (sourcePath, reporter) => {
     fit,
     position,
     reporter,
-  )
-}
+  );
+};
 
 const processLowRes = (sourcePath, reporter) => {
-  const quality = 80
+  const quality = 80;
   const destinationPath = toDestinationPath(
     `src/images/social-media`,
     sourcePath,
-  )
-  const width = 1200
-  const height = 600
-  const fit = sharp.fit.cover
-  const position = sharp.strategy.attention
+  );
+  const width = 1200;
+  const height = 600;
+  const fit = sharp.fit.cover;
+  const position = sharp.strategy.attention;
 
-  reporter.verbose(`image [low res]: ${path.basename(sourcePath)}`)
+  reporter.verbose(`image [low res]: ${path.basename(sourcePath)}`);
   processImage(
     sourcePath,
     destinationPath,
@@ -136,76 +137,96 @@ const processLowRes = (sourcePath, reporter) => {
     fit,
     position,
     reporter,
-  )
-}
+  );
+};
 
 const generateComponent = (sourcePath, reporter) => {
-  const template = path.join(__dirname, "image.jsx.template")
+  const template = path.join(__dirname, 'image.jsx.template');
   fs.readFile(template, (err, data) => {
     if (err) {
-      reporter.error(`Could not generate component: ${sourcePath}\n${err}`)
+      reporter.error(`Could not generate component: ${sourcePath}\n${err}`);
     } else {
-      const componentsDest = path.join(__dirname, `../src/components/images/`)
-      const filename = path.basename(sourcePath)
-      const destFilename = filename.replace(path.extname(filename), `.js`)
-      const destinationPath = path.join(componentsDest, destFilename)
+      const componentsDest = path.join(__dirname, `../src/components/images/`);
+      const filename = path.basename(sourcePath);
+      const destFilename = filename.replace(path.extname(filename), `.js`);
+      const destinationPath = path.join(componentsDest, destFilename);
 
       const component = data
         .toString()
         .replace(/%COMPONENT_NAME%/g, toComponentName(filename))
         .replace(/%IMAGE_FILENAME%/g, path.basename(sourcePath))
-        .replace(/%IMAGE_WIDTH%/, 1920)
+        .replace(/%IMAGE_WIDTH%/, 1920);
 
       fs.writeFile(destinationPath, component, () => {
-        reporter.verbose(`image [component]: ${filename}`)
-      })
+        reporter.verbose(`image [component]: ${filename}`);
+      });
     }
-  })
-}
+  });
+};
 
 const getComponentsToBeIndexed = (sourcePath) => {
-  const files = fs.readdirSync(sourcePath)
+  const files = fs.readdirSync(sourcePath);
 
-  let content = ""
+  let content = '';
   files.forEach((file) => {
-    if (file.indexOf(`.keep`) > -1) return
+    if (file.indexOf(`.keep`) > -1) return;
 
-    const filename = path.basename(file).replace(path.extname(file), "")
-    const componentName = kebabToTitleCase(filename)
-    content += `\nComponent["${componentName}"] = (props) => (\n  require("./${filename}").default(props)\n)\n`
-  })
-  return content
-}
+    const filename = path.basename(file).replace(path.extname(file), '');
+    const componentName = kebabToTitleCase(filename);
+    content += `\nComponent["${componentName}"] = (props) => (\n  require("./${filename}").default(props)\n)\n`;
+  });
+  return content;
+};
 
 exports.generateComponentIndex = (reporter) => {
-  const sourcePath = path.join(__dirname, "../src/images/articles")
-  const filename = "image-component-index.js"
-  const destinationRelativePath = "../src/components/images"
+  const sourcePath = path.join(__dirname, '../src/images/articles');
+  const filename = 'image-component-index.js';
+  const destinationRelativePath = '../src/components/images';
   const destinationPath = path.join(
     __dirname,
     destinationRelativePath,
     filename,
-  )
-  const indexDb = getComponentsToBeIndexed(sourcePath)
-  const template = path.join(__dirname, "image.index.template")
+  );
+  const indexDb = getComponentsToBeIndexed(sourcePath);
+  const template = path.join(__dirname, 'image.index.template');
   fs.readFile(template, (err, data) => {
     if (err) {
-      reporter.error(`could not generate component index: ${err}`)
+      reporter.error(`could not generate component index: ${err}`);
     } else {
-      const component = data.toString().replace(/%INDEX%/, indexDb)
+      const component = data.toString().replace(/%INDEX%/, indexDb);
       fs.writeFile(destinationPath, component, () => {
-        reporter.verbose(`image [index db]: ${path.basename(destinationPath)}`)
-      })
+        reporter.verbose(`image [index db]: ${path.basename(destinationPath)}`);
+      });
     }
-  })
-}
+  });
+};
 
 exports.process = (node, reporter) => {
-  const { absolutePath } = node
+  const { absolutePath } = node;
   if (isResource(node)) {
-    processHighRes(absolutePath, reporter)
-    processLowRes(absolutePath, reporter)
-    generateComponent(absolutePath, reporter)
-    reporter.success(`image [processed]: ${absolutePath}`)
+    processHighRes(absolutePath, reporter);
+    processLowRes(absolutePath, reporter);
+    generateComponent(absolutePath, reporter);
+    reporter.success(`image [processed]: ${absolutePath}`);
   }
-}
+};
+
+exports.bulk = () => {
+  const sourcePath = path.join(__dirname, '../resources/source');
+  const filenames = fs.readdirSync(sourcePath);
+  filenames.map((filename) =>
+    this.process(
+      {
+        absolutePath: path.join(__dirname, '../resources/source', filename),
+        internal: {
+          type: 'File',
+        },
+      },
+      {
+        error: (message) => console.error(message),
+        verbose: (message) => console.log(message),
+        success: (message) => console.log(message),
+      },
+    ),
+  );
+};
