@@ -7,18 +7,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticImage } from "gatsby-plugin-image"
 
-export const %COMPONENT_NAME% = ({ alt }) => {
+export const %COMPONENT_NAME% = ({ alt, ...rest }) => {
   return (
     <StaticImage
       src="../../images/articles/%IMAGE_FILENAME%"
       alt={alt}
-      width={1980}
-      height={1080}
       objectPosition="50% 50%"
       objectFit="cover"
       transformOptions={{
         cropFocus: "attention",
       }}
+      {...rest}
     />
   )
 }
