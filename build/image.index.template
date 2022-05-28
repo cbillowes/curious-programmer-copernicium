@@ -8,8 +8,6 @@
  * https://stackoverflow.com/questions/48268507/react-dynamically-import-components
  **/
 
-let Component = {}
-
+let Component = {};
 %INDEX%
-
-export default Component
+export default Component;

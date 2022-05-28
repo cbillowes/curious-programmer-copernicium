@@ -173,14 +173,14 @@ const getComponentsToBeIndexed = (sourcePath) => {
 
     const filename = path.basename(file).replace(path.extname(file), '');
     const componentName = kebabToTitleCase(filename);
-    content += `\nComponent["${componentName}"] = (props) => (\n  require("./${filename}").default(props)\n)\n`;
+    content += `\nComponent['${componentName}'] = (props) => (\n  require('./${filename}').default(props)\n);\n`;
   });
   return content;
 };
 
 exports.generateComponentIndex = (reporter) => {
   const sourcePath = path.join(__dirname, '../src/images/articles');
-  const filename = 'image-component-index.js';
+  const filename = 'index.js';
   const destinationRelativePath = '../src/components/images';
   const destinationPath = path.join(
     __dirname,
@@ -212,6 +212,11 @@ exports.process = (node, reporter) => {
 };
 
 exports.bulk = () => {
+  const reporter = {
+    error: (message) => console.error(message),
+    verbose: (message) => console.log(message),
+    success: (message) => console.log(message),
+  };
   const sourcePath = path.join(__dirname, '../resources/source');
   const filenames = fs.readdirSync(sourcePath);
   filenames.map((filename) =>
@@ -222,11 +227,9 @@ exports.bulk = () => {
           type: 'File',
         },
       },
-      {
-        error: (message) => console.error(message),
-        verbose: (message) => console.log(message),
-        success: (message) => console.log(message),
-      },
+      reporter,
     ),
   );
+
+  this.generateComponentIndex(reporter);
 };

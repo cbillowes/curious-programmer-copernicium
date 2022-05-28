@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Anchor from './Anchor';
 import DownloadLogo from '../images/svgs/download.svg';
 import UnsplashLogo from '../images/svgs/unsplash.svg';
-import ComponentIndex from '../components/Images/image-component-index';
+import ComponentIndex from '../components/Images';
 
 const getCreditTitle = (source, attribute) => {
   if (!attribute) return <span></span>;
