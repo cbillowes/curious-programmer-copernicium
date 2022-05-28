@@ -1,86 +1,97 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import React, { useContext, useState } from "react"
+import PropTypes from "prop-types"
+import { ThemeContext, toggleColorMode } from "../context/Theme"
+import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
+import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
+import { FiRss } from "@react-icons/all-files/fi/FiRss"
+import Head from "../components/Head"
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
+import { SearchIcon } from "./Search/icon"
+import Search from "./Search"
+import BuyMeCoffee from "./Coffee"
+import Anchor from "./Anchor"
+const searchIndices = [{ name: "Pages", title: "Pages" }]
 
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-
-import Header from './header';
-import './layout.css';
-import Helmet from 'react-helmet';
-
-import EasterEggImage from '../images/all-the-things.webp';
-
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+const Toggler = ({ colorMode, setColorMode }) => {
+  const handleThemeToggle = () => {
+    const toggled = toggleColorMode(colorMode)
+    setColorMode(toggled)
+  }
 
   return (
-    <>
-      <Helmet
-        script={[
-          {
-            type: 'text/javascript',
-            innerHTML: `
-              (function() {
-                // https://stackoverflow.com/questions/36885562/google-chrome-console-print-image
-                console.image = function(url, size = 100) {
-                  var image = new Image();
-                  image.onload = function() {
-                    var style = [
-                      'font-size: 1px;',
-                      'padding: ' + this.height/100*size + 'px ' + this.width/100*size + 'px;',
-                      'background: url('+ url +') no-repeat;',
-                      'background-size: contain;',
-                    ].join(' ');
-                    console.log('%c ', style);
-                    console.log('Be curious, always.');
-                  };
-                  image.src = url;
-                };
-                console.image("https://curiousprogrammer.dev${EasterEggImage}", 25);
-              })()
-            `,
-          },
-        ]}
-      />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+    <button
+      onClick={handleThemeToggle}
+      className="hover:text-color-2 hover:animate-wiggle animate"
+    >
+      <span className="dark-button" title="Dark mode" aria-label="Dark mode">
+        <MdBrightness2 />
+      </span>
+      <span className="light-button" title="Light mode" aria-label="Light mode">
+        <MdWbSunny />
+      </span>
+    </button>
+  )
+}
+
+Toggler.propTypes = {
+  colorMode: PropTypes.string.isRequired,
+  setColorMode: PropTypes.func.isRequired,
+}
+
+export const Layout = ({ meta, children }) => {
+  const { colorMode, setColorMode } = useContext(ThemeContext)
+  const [showSearch, toggleSearchMode] = useState(false)
+
+  return (
+    <div
+      className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 ${
+        showSearch ? "overflow-hidden max-h-screen" : "min-h-screen"
+      }`}
+      onKeyUp={(e) => {
+        if (e.key === "Escape") {
+          toggleSearchMode(!showSearch)
+        }
+      }}
+    >
+      <Head {...meta} />
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <BuyMeCoffee component="top-bar" />
+        <div className="text-right text-lg bg-color-1 text-color-1-script">
+          <div className="mr-3 pt-1 inline-block">
+            <SearchIcon
+              show={showSearch}
+              toggle={() => toggleSearchMode(!showSearch)}
+            />
+          </div>
+          <div className="mr-4 pt-1 inline-block">
+            <Toggler colorMode={colorMode} setColorMode={setColorMode} />
+          </div>
+          <div className="mr-4 pt-1 inline-block">
+            <Anchor to="/rss.xml" forceNewTab={true} title="RSS Feed">
+              <FiRss />
+            </Anchor>
+          </div>
+        </div>
+        <Navigation layout="fluid" />
       </div>
-    </>
-  );
-};
+
+      {showSearch && (
+        <Search
+          indices={searchIndices}
+          toggle={() => toggleSearchMode(!showSearch)}
+        />
+      )}
+
+      <main className="pt-16 bg-default text-default-script">{children}</main>
+      <Footer
+        toggler={<Toggler colorMode={colorMode} setColorMode={setColorMode} />}
+      />
+    </div>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-export default Layout;
+  meta: PropTypes.object.isRequired,
+}

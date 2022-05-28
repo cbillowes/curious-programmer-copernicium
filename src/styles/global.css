@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .text-welcome {
+      color: var(--welcome-headings);
+      text-shadow: 1px 1px 1px var(--welcome-headings-shadow);
+    }
+  }
+}
+
+@import url(./tailwind.css);
+
+html {
+  /* https://caniuse.com/?search=scroll-padding
+     https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
+  */
+  scroll-padding-top: 5.5rem;
+}
+
+.gatsby-image-wrapper-constrained {
+  width: 100%;
+}
+
+html {
+  display: none;
+}
+
+html.dark, html.light {
+  display: block;
+}
+
+.dark .dark-button {
+  display: inline-block;
+}
+
+.light .light-button {
+  display: inline-block;
+}
+
+.dark .light-button {
+  display: none;
+}
+
+.light .dark-button {
+  display: none;
+}
+
+.ais-PoweredBy-text {
+  display: none;
+}
+
+.light .ais-PoweredBy path:last-child {
+  fill: white;
+}
+
+.ais-Highlight-highlighted,
+.ais-Snippet-highlighted {
+  background-color: var(--color-1);
+  color: var(--color-1-script);
+}
+
+.icon-in-a-card path {
+  stroke: var(--inverse);
+  stroke-width: 1;
+}
+
+.expansion-button-expanded:hover {
+  border-bottom-color: var(--color-1-alternative) !important;
+}
+.expansion-button-hidden:hover {
+  border-top-color: var(--color-1-alternative) !important;
+}

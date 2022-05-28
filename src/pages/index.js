@@ -1,122 +1,221 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import { Layout } from '../components/Layout';
+import { FaTwitter, FaLinkedinIn } from 'react-icons/fa/index';
+import { ImStackoverflow } from 'react-icons/im/index';
+import { VscGithub } from 'react-icons/vsc/index';
+import Emoji from '../components/Emoji';
+import SocialMediaIcon from '../components/SocialMediaIcon';
+import List from '../components/Articles/List';
+import Anchor from '../components/Anchor';
+import BuyMeCoffee from '../components/Coffee';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+const Articles = ({ edges }) => {
+  return <List edges={edges} />;
+};
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+const IndexPage = ({ data }) => {
+  const { allMarkdownRemark, site } = data;
+  const edges = allMarkdownRemark.edges;
+  const { title } = site.siteMetadata;
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
+  return (
+    <Layout
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: 'A place for a curious mind',
+        siteTitle: title,
+        route: '/',
+      }}
+    >
+      <div className="relative font-alt-sans">
+        <div>
+          <StaticImage
+            src="../images/profile.jpg"
+            alt="I am standing in a star fish pose on top of Mauritius rocks by the sea"
+            layout="constrained"
+          />
+        </div>
+        <div className="hidden opacity-70 bg-default text-welcome absolute right-0 top-0 bottom-0 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-6/12 xl:w-5/12">
+          <div className="mb-5">
+            <StaticImage
+              src="../images/emoji-waving-hand.png"
+              alt="Waving hand emoji"
+              height={70}
+              width={70}
+            />
+          </div>
+          <div className="p-2 lg:px-5 lg:py-3">
+            <h1 className="text-md lg:text-5xl xl:text-8xl text-center">
+              Hello <span className="font-semibold">Clarice</span>
+            </h1>
+          </div>
+          <div className="py-1 lg:px-5 lg:py-3 mt-1">
+            <p className="text-sm lg:text-xl xl:text-2xl text-center mb-2">
+              I&apos;m a Senior Software Engineer
+            </p>
+            <p className="text-sm lg:text-xl xl:text-2xl text-center">
+              and I work at Cloudsure in Mauritius.
+            </p>
+          </div>
+          <div className="hidden lg:inline-block mt-2 xl:mt-10 text-center lg:text-xl xl:text-2xl">
+            <p className="mb-2">I write code. I share code. I love code.</p>
+            <p>I am a curious programmer.</p>
+          </div>
+          <div className="hidden lg:flex mt-12 items-center">
+            <Emoji
+              className="text-5xl inline mr-4"
+              label="South African flag emoji"
+            >
+              🇿🇦
+            </Emoji>
+            <Emoji
+              className="text-5xl inline mr-4"
+              label="Mauritian flag emoji"
+            >
+              🇲🇺
+            </Emoji>
+            <Emoji className="text-5xl inline mr-4" label="Island emoji">
+              🏝️
+            </Emoji>
+            <span className="mr-4">
+              <StaticImage
+                src="../images/clojure.png"
+                alt="Clojure(Script)"
+                width={48}
+              />
+            </span>
+            <span>
+              <StaticImage
+                src="../images/cloudsure.png"
+                alt="Cloudsure"
+                width={48}
+              />
+            </span>
+          </div>
+        </div>
+        <div>
+          <BuyMeCoffee component="header" />
+        </div>
+      </div>
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+      <div className="lg:hidden p-4 font-alt-sans">
+        <div className="leading-relaxed text-center">
+          <p className="text-lg md:text-2xl text-center">
+            I&apos;m <span className="font-semibold">Clarice</span> Bouwer, a
+            Senior <span className="font-semibold">Software Engineer</span> at
+            Cloudsure, Mauritius
+          </p>
+          <p className="mt-3 text-sm md:text-lg">
+            I write code. I share code. I love code.
+          </p>
+          <p className="mt-1 text-sm md:text-lg">I am a curious programmer.</p>
+        </div>
+      </div>
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+      <div className="flex justify-center">
+        <SocialMediaIcon
+          to="https://www.linkedin.com/in/cbouwer/"
+          title="LinkedIn"
+        >
+          <FaLinkedinIn className="text-linkedin" />
+        </SocialMediaIcon>
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
+        <SocialMediaIcon to="https://github.com/cbillowes" title="GitHub">
+          <VscGithub className="text-github" />
+        </SocialMediaIcon>
+
+        <SocialMediaIcon
+          to="https://stackoverflow.com/users/849986/clarice-bouwer"
+          title="Stack Overflow"
+        >
+          <ImStackoverflow className="text-stackoverflow" />
+        </SocialMediaIcon>
+
+        <SocialMediaIcon to="https://twitter.com/cbillowes" title="Twitter">
+          <FaTwitter className="text-twitter" />
+        </SocialMediaIcon>
+      </div>
+
+      <div className="bg-default text-default-script">
+        <div className="mx-auto pb-16 text-center">
+          <Articles edges={edges} />
+          <Anchor
+            to="/blog"
+            title="All articles"
+            className="bg-color-1-alternative text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1"
           >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+            Discover more
+          </Anchor>
+        </div>
+      </div>
+    </Layout>
+  );
+};
 
-export default IndexPage
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+    }).isRequired,
+
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.object.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+Articles.propTypes = {
+  edges: PropTypes.array.isRequired,
+  wordCount: PropTypes.number,
+};
+
+export const query = graphql`
+  query IndexPageQuery {
+    allMarkdownRemark(
+      limit: 10
+      filter: { fields: { slug: { nin: "/blog/example/" } } }
+      sort: { order: DESC, fields: fields___number }
+    ) {
+      edges {
+        node {
+          timeToRead
+          excerpt(truncate: true, pruneLength: 200, format: PLAIN)
+          fields {
+            slug
+            date(formatString: "LL")
+            number
+            component
+            photo
+            credit
+            source
+            link
+          }
+          frontmatter {
+            title
+            tags
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
+      }
+    }
+  }
+`;
+
+export default IndexPage;
