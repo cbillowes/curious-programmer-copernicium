@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Kebab from '../Kebab';
-import Typewriter from '../Typewriter';
 
 const Attribute = ({
   text,
@@ -17,7 +16,7 @@ const Attribute = ({
 
   useEffect(() => {
     toggleExpansion(title === active);
-  }, [active]);
+  }, [title, active]);
 
   return (
     <div className="m-4">
@@ -28,6 +27,12 @@ const Attribute = ({
         onClick={() => {
           toggleExpansion(!expanded);
           onActivate(title);
+        }}
+        onKeyUp={(e) => {
+          if (e.keyCode === 13 || e.keyCode === 32) {
+            toggleExpansion(!expanded);
+            onActivate(title);
+          }
         }}
       >
         {title}
