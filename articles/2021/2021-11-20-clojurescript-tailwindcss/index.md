@@ -67,9 +67,9 @@ To follow along you can either:
 
 1. Use the [guide][cljs-app-from-scratch-guide].
 
-    ```bash
-    mkdir clj-app-with-tailwind && cd clj-app-with-tailwind
-    ```
+   ```bash
+   mkdir clj-app-with-tailwind && cd clj-app-with-tailwind
+   ```
 
 1. Or use the [template][cljs-app-from-scratch-template] on GitHub.
    Click on the green **Use this template** button.
@@ -151,8 +151,8 @@ module.exports = {
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
-  ]
-}
+  ],
+};
 ```
 
 ### Creating your configuration file
@@ -212,7 +212,7 @@ which will now look like this:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Example Application</title>
     <!--
@@ -290,26 +290,22 @@ Open `src/example_app/core.cljs` and change the `app` function as follows:
 - http://localhost:9500/cljs-out/dev/style.css will be generated.
 - You should see a **Hello Tailwind!** ✌️ banner with some text on the page.
 
-
 [nodejs.org]: https://nodejs.org/
 [npmjs.com]: https://www.npmjs.com/
 [clojurescript.org]: https://clojurescript.org/
 [cli-guide]: https://clojure.org/guides/deps_and_cli
 [webpack.js.org]: https://webpack.js.org/
 [tailwindcss.com]: https://tailwindcss.com/
-
 [tailwind.com-install]: https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin
 [tailwind.com-preprocessing]: https://tailwindcss.com/docs/using-with-preprocessors
 [tailwindcss.com-css]: https://tailwindcss.com/docs/installation#include-tailwind-in-your-css
 [tailwindcss.com-purge]: https://tailwindcss.com/docs/installation#building-your-css
-
 [npm-run-all]: https://www.npmjs.com/package/npm-run-all
 [cross-env]: https://www.npmjs.com/package/cross-env
 [postcss]: https://postcss.org/
 [postcss-cli]: https://www.npmjs.com/package/postcss-cli
 [postcss-import]: https://github.com/postcss/postcss-import
 [autoprefixer]: https://github.com/postcss/autoprefixer
-
 [shadow-cljs-tailwindcss]: https://github.com/jacekschae/shadow-cljs-tailwindcss
 [cljs-app-from-scratch-guide]: /blog/how-can-i-create-a-clojure-script-web-app-from-scratch-with-reagent-and-npm/
 [cljs-app-from-scratch-template]: https://github.com/cbillowes/cljs-app-from-scratch

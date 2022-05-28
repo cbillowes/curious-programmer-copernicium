@@ -1,7 +1,7 @@
 ---
-title: "Building a Monitoring Display with a Rock64"
-cover: "../../images/backgrounds/rock64-cover.jpg"
-blur: "../../images/backgrounds/rock64-cover-blur.jpg"
+title: 'Building a Monitoring Display with a Rock64'
+cover: '../../images/backgrounds/rock64-cover.jpg'
+blur: '../../images/backgrounds/rock64-cover-blur.jpg'
 custom: Image from https://rock64iota.com
 date: 2018-07-12 22:12:00 +0200
 tags:
@@ -30,7 +30,6 @@ It started in December 2015 as a [Kickstarter project](https://www.mickmake.com/
 ![ROCK64 4K60P HDR Media Board Computer](https://wiki.pine64.org/images/7/77/ROCK64_sideimg.jpg)
 
 [Source](https://wiki.pine64.org/wiki/ROCK64)
-
 
 It has a 4K60P HDR Media Board Computer powered by Rockchip RK3328 Quad-Core ARM Cortex A53 64-Bit Processor and support up to 4GB 1600MHz LPDDR3 memory.
 

@@ -3,9 +3,9 @@
  * Do not modify this file directly.
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export const Curious = ({ alt, ...rest }) => {
   return (
@@ -15,15 +15,15 @@ export const Curious = ({ alt, ...rest }) => {
       objectPosition="50% 50%"
       objectFit="cover"
       transformOptions={{
-        cropFocus: "attention",
+        cropFocus: 'attention',
       }}
       {...rest}
     />
-  )
-}
+  );
+};
 
 Curious.propTypes = {
   alt: PropTypes.string,
-}
+};
 
-export default Curious
+export default Curious;

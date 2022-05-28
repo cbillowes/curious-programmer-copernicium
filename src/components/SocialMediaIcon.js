@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Anchor from "./Anchor"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Anchor from './Anchor';
 
 const SocialMediaIcon = ({ children, to, title }) => {
   return (
@@ -11,14 +11,14 @@ const SocialMediaIcon = ({ children, to, title }) => {
     >
       {children}
     </Anchor>
-  )
-}
+  );
+};
 
 SocialMediaIcon.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   classes: PropTypes.string,
-}
+};
 
-export default SocialMediaIcon
+export default SocialMediaIcon;

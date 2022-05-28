@@ -16,12 +16,12 @@ tags:
 <h5>Heading</h5>
 <h6>Heading</h6>
 
-
 **YML notes:**
-* `photo`: filename of image under /posts
-* `credit`: name of photographer, website etc
-* `creditLink`: link to the image or author page
-* `creditSource`: personal | unsplash | internet
+
+- `photo`: filename of image under /posts
+- `credit`: name of photographer, website etc
+- `creditLink`: link to the image or author page
+- `creditSource`: personal | unsplash | internet
 
 ### Code blocks
 
@@ -35,7 +35,6 @@ sudo npm install -g gatsby-cli # Update the `npm` CLI client
   (let [somethings '("do" "not" "panic!")]
     (println (apply str (interpose " " somethings)))))
 ```
-
 
 ```nginx:title=nginx.conf
 # This is our Solr instance
@@ -82,7 +81,7 @@ class BlogItem(Item):
 
 All gifs in the project **outside** of the `/images/gifs` directory are copied to `/static/gifs/` on build.
 
-![Interpretation](/static/gifs/endianness.gif "Example of a 32-bit integer committed to memory differently for big-endian and little-endian")
+![Interpretation](/static/gifs/endianness.gif 'Example of a 32-bit integer committed to memory differently for big-endian and little-endian')
 
 ## :art: Typography
 
@@ -102,12 +101,13 @@ All gifs in the project **outside** of the `/images/gifs` directory are copied t
 > > To understand recursion you must understand recursion.
 
 ### Paragraphs, styling and emojis
+
 I love deadlines. :innocent: I like the whooshing sound they make as they fly by. In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move. '**This must be Thursday**,' :smile: said Arthur to himself, sinking low over his beer. 'I never could get the hang of Thursdays. I may not have gone where I intended to go, but I think I have ended up where I needed to be. Time is an illusion. Lunchtime doubly so.
 
 Flying is learning how to throw yourself at the ground and miss. A common mistake :green_heart: that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools. Isn't it enough to see that a garden is beautiful without having to believe that there are fairies at the bottom of it too?
 
 Anyone who is capable of getting themselves made President should on no account be allowed to do the job. The ships hung in the sky in much the same way that bricks don't. :skull:
-*posted on Monday, 1 April 2019 by Douglas Adams (Est. 42 minute read)*
+_posted on Monday, 1 April 2019 by Douglas Adams (Est. 42 minute read)_
 
 ### Lists
 
@@ -122,13 +122,12 @@ Anyone who is capable of getting themselves made President should on no account 
 
 #### Unordered
 
-* I love deadlines. :innocent: I like the whooshing sound they make as they fly by. In the beginning the Universe was created.
+- I love deadlines. :innocent: I like the whooshing sound they make as they fly by. In the beginning the Universe was created.
   This has made a lot of people very angry and been widely regarded as a bad move.
 
-* I needed to be. Time is an illusion. Lunchtime doubly so.
+- I needed to be. Time is an illusion. Lunchtime doubly so.
 
-* Anyone who is capable of getting themselves made President should on no account be allowed to do the job.
-
+- Anyone who is capable of getting themselves made President should on no account be allowed to do the job.
 
 ## :tada: Remark plugins
 

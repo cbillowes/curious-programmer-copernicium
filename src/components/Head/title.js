@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { getTitle } from "../../common/seo"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { getTitle } from '../../common/seo';
 
 const Title = ({ siteTitle, pageTitle }) => {
-  const title = getTitle(pageTitle, siteTitle)
+  const title = getTitle(pageTitle, siteTitle);
   return (
     <Helmet>
       <title>{title}</title>
@@ -18,12 +18,12 @@ const Title = ({ siteTitle, pageTitle }) => {
       <meta content={title} name="twitter:title" />
       <meta content={title} name="twitter:text:title" />
     </Helmet>
-  )
-}
+  );
+};
 
 Title.propTypes = {
   pageTitle: PropTypes.string,
   siteTitle: PropTypes.string,
-}
+};
 
-export default Title
+export default Title;

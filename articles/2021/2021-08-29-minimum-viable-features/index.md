@@ -67,12 +67,14 @@ chunks and releasing iteratively and regularly.
 Here are a few questions I have with my own interpretations of the answers that all ring the same sentiment of "it depends":
 
 ### How small should the feature be?
+
 This depends on the things like what the feature is, the project you are working on, the urgency of it to be release, the technical
 capacity available for getting the job done.
 
 Size is relative and it all depends on what is humanly and technically possible within your team to yield great results.
 
 ### How long is a reasonable time-frame to work on it?
+
 The time-frame should be estimated based on the feature. I don't think there is a one size fits all but
 I would boldly say that I believe a week max is ideal.
 
@@ -81,10 +83,12 @@ system and the new feature then the requirements are either too big or too compl
 or fleshed out.
 
 ### What if it is already in its smallest form?
+
 If you are absolutely sure then you have most likely reached the last step of the process for that given
 feature.
 
 ## Feature Development Lifecycle
+
 Introducing the **Feature Development Lifecycle** where you:
 
 1. **Learn**: Know what the user needs

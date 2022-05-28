@@ -31,53 +31,53 @@ set up the GitHub Action to deploy to Firebase Hosting.
 1. Install (or upgrade) the firebase-tools.
    I am running `9.23.0`.
 
-    ```bash
-    npm install -g firebase-tools
-    ```
+   ```bash
+   npm install -g firebase-tools
+   ```
 
 1. Install [firebase][npm/firebase] in your project.
 
-    ```bash
-    npm install firebase@9.5.0 --save
-    ```
+   ```bash
+   npm install firebase@9.5.0 --save
+   ```
 
 1. **Option 1**: Initialize your Firebase project and select **Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys**
    go through the prompts and voila.
 
-    ```bash
-    firebase init
-    ```
+   ```bash
+   firebase init
+   ```
 
 1. **Option 2**: Set up using the Hosting command.
 
-    ```bash
-    # If you have NOT set up Hosting yet, do so now.
-    firebase init hosting
+   ```bash
+   # If you have NOT set up Hosting yet, do so now.
+   firebase init hosting
 
-    # If you have ALREADY set up Hosting, configure
-    # GitHub Actions directly.
-    firebase init hosting:github
-    ````
+   # If you have ALREADY set up Hosting, configure
+   # GitHub Actions directly.
+   firebase init hosting:github
+   ```
 
 1. Follow the prompts
 
-    1. Create a new or use an existing Firebase project.
+   1. Create a new or use an existing Firebase project.
 
-    1. Creates a service account in your Firebase project with
-       permission to deploy to Firebase Hosting.
+   1. Creates a service account in your Firebase project with
+      permission to deploy to Firebase Hosting.
 
-    1. Encrypts that service account's JSON key and uploads it to
-       the specified GitHub repository as a GitHub secret.
+   1. Encrypts that service account's JSON key and uploads it to
+      the specified GitHub repository as a GitHub secret.
 
-    1. Writes GitHub workflow `yaml` configuration files that
-       reference the newly created secret.
+   1. Writes GitHub workflow `yaml` configuration files that
+      reference the newly created secret.
 
-       These files configure the GitHub Action to deploy to
-       Firebase Hosting.
+      These files configure the GitHub Action to deploy to
+      Firebase Hosting.
 
-    1. Check the console output for links to your project and GitHub.
+   1. Check the console output for links to your project and GitHub.
 
-    1. If you experience any errors, read the `firebase-debug.log`.
+   1. If you experience any errors, read the `firebase-debug.log`.
 
 1. Create a new branch and commit the workflow yaml files created
    by the CLI.
@@ -85,11 +85,6 @@ set up the GitHub Action to deploy to Firebase Hosting.
 1. Publish the branch to your GitHub repository.
 
 1. We will merge the branch later.
-
-
-
-
-
 
 [clojurescript.org]: https://clojurescript.org/
 [firebase.google.com]: https://firebase.google.com/docs/web/setup

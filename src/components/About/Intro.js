@@ -1,58 +1,54 @@
-import React, { useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import { greetings } from "../../common/greetings"
-import Emoji from "../Emoji"
-import Anchor from "../Anchor"
+import React, { useState } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import { greetings } from '../../common/greetings';
+import Emoji from '../Emoji';
 
 const getRandomGreeting = () => {
-  const index = Math.floor(Math.random() * greetings.length)
-  const greeting = greetings[index]
-  return greeting
-}
+  const index = Math.floor(Math.random() * greetings.length);
+  const greeting = greetings[index];
+  return greeting;
+};
 
 const Intro = () => {
-  const [greeting, setGreeting] = useState(getRandomGreeting())
-  const [isWaving, setWave] = useState(true)
+  const [greeting, setGreeting] = useState(getRandomGreeting());
+  const [isWaving, setWave] = useState(true);
 
   const greet = () => {
-    const greeting = getRandomGreeting()
-    setGreeting(greeting)
-  }
+    const greeting = getRandomGreeting();
+    setGreeting(greeting);
+  };
   return (
     <>
       <div className="text-center relative">
         <div className="relative inline-block">
           <StaticImage
             src="../../images/avatar.png"
-            alt="My avatar"
-            quality={50}
+            alt="A photo of Clarice Bouwer on a windy day at the beach"
             width={260}
             height={260}
             style={{
-              borderRadius: "50%",
+              borderRadius: '50%',
             }}
           />
           <div
             className={`absolute right-0 top-0 cursor-pointer ${
-              isWaving ? "animate-wave" : ""
+              isWaving ? 'animate-wave' : ''
             }`}
             onAnimationEnd={() => setWave(false)}
             onClick={() => {
-              setWave(true)
-              greet()
+              setWave(true);
+              greet();
             }}
             style={{
-              transformOrigin: "70% 70%",
+              transformOrigin: '70% 70%',
             }}
           >
             <StaticImage
               src="../../images/emoji-waving-hand.png"
               alt="Waving hand emoji"
-              quality={50}
+              width={80}
               style={{
-                width: "80px",
-                height: "80px",
-                borderRadius: "30%",
+                borderRadius: '30%',
               }}
             />
           </div>
@@ -67,24 +63,13 @@ const Intro = () => {
             Mauritius <Emoji className="inline-block">🏝️</Emoji>
           </p>
           <p>
-            I obsess over Clojure(Script), Gatsby and Git{" "}
+            I obsess over Clojure(Script), Gatsby and Git{' '}
             <Emoji className="inline-block">🤤</Emoji>
-          </p>
-          <p>
-            It all Sounds fancy{" "}
-            <Anchor
-              to="/blog/the-imposter-within/"
-              title="The Imposter Within"
-              useMarkdownStyles={true}
-            >
-              doesn’t
-            </Anchor>{" "}
-            it?
           </p>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

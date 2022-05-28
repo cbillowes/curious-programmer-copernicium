@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react"
-import PropTypes from "prop-types"
-import Typewriter from "./Typewriter"
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import Typewriter from './Typewriter';
 
 const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
-    setCount(1)
-  }, [count])
+    setCount(1);
+  }, [count]);
 
   return (
     <>
@@ -28,12 +28,12 @@ const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
             <div
               className="expansion-button-expanded absolute -top-3 left-1/2 transform -translate-x-1/2"
               style={{
-                width: "0",
-                height: "0",
-                borderTop: "none",
-                borderRight: "18px solid transparent",
-                borderLeft: "18px solid transparent",
-                borderBottom: "18px solid var(--color-2)",
+                width: '0',
+                height: '0',
+                borderTop: 'none',
+                borderRight: '18px solid transparent',
+                borderLeft: '18px solid transparent',
+                borderBottom: '18px solid var(--color-2)',
               }}
             >
               &nbsp;
@@ -43,12 +43,12 @@ const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
             <div
               className="expansion-button-hidden absolute -bottom-5 left-1/2 transform -translate-x-1/2"
               style={{
-                width: "0",
-                height: "0",
-                borderBottom: "none",
-                borderRight: "18px solid transparent",
-                borderLeft: "18px solid transparent",
-                borderTop: "18px solid var(--color-2)",
+                width: '0',
+                height: '0',
+                borderBottom: 'none',
+                borderRight: '18px solid transparent',
+                borderLeft: '18px solid transparent',
+                borderTop: '18px solid var(--color-2)',
               }}
             >
               &nbsp;
@@ -60,8 +60,8 @@ const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 Kebab.propTypes = {
   prefix: PropTypes.string,
@@ -70,6 +70,6 @@ Kebab.propTypes = {
   onClick: PropTypes.func,
   expanded: PropTypes.bool,
   phrases: PropTypes.array,
-}
+};
 
-export default Kebab
+export default Kebab;

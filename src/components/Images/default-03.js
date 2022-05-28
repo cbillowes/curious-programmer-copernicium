@@ -3,9 +3,9 @@
  * Do not modify this file directly.
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export const Default03 = ({ alt, ...rest }) => {
   return (
@@ -15,15 +15,15 @@ export const Default03 = ({ alt, ...rest }) => {
       objectPosition="50% 50%"
       objectFit="cover"
       transformOptions={{
-        cropFocus: "attention",
+        cropFocus: 'attention',
       }}
       {...rest}
     />
-  )
-}
+  );
+};
 
 Default03.propTypes = {
   alt: PropTypes.string,
-}
+};
 
-export default Default03
+export default Default03;

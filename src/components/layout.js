@@ -1,23 +1,23 @@
-import React, { useContext, useState } from "react"
-import PropTypes from "prop-types"
-import { ThemeContext, toggleColorMode } from "../context/Theme"
-import { MdWbSunny } from "@react-icons/all-files/md/MdWbSunny"
-import { MdBrightness2 } from "@react-icons/all-files/md/MdBrightness2"
-import { FiRss } from "@react-icons/all-files/fi/FiRss"
-import Head from "../components/Head"
-import Footer from "../components/Footer"
-import Navigation from "../components/Navigation"
-import { SearchIcon } from "./Search/icon"
-import Search from "./Search"
-import BuyMeCoffee from "./Coffee"
-import Anchor from "./Anchor"
-const searchIndices = [{ name: "Pages", title: "Pages" }]
+import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
+import { ThemeContext, toggleColorMode } from '../context/Theme';
+import { MdWbSunny } from '@react-icons/all-files/md/MdWbSunny';
+import { MdBrightness2 } from '@react-icons/all-files/md/MdBrightness2';
+import { FiRss } from '@react-icons/all-files/fi/FiRss';
+import Head from '../components/Head';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
+import { SearchIcon } from './Search/icon';
+import Search from './Search';
+import BuyMeCoffee from './Coffee';
+import Anchor from './Anchor';
+const searchIndices = [{ name: 'Pages', title: 'Pages' }];
 
 const Toggler = ({ colorMode, setColorMode }) => {
   const handleThemeToggle = () => {
-    const toggled = toggleColorMode(colorMode)
-    setColorMode(toggled)
-  }
+    const toggled = toggleColorMode(colorMode);
+    setColorMode(toggled);
+  };
 
   return (
     <button
@@ -31,26 +31,26 @@ const Toggler = ({ colorMode, setColorMode }) => {
         <MdWbSunny />
       </span>
     </button>
-  )
-}
+  );
+};
 
 Toggler.propTypes = {
   colorMode: PropTypes.string.isRequired,
   setColorMode: PropTypes.func.isRequired,
-}
+};
 
 export const Layout = ({ meta, children }) => {
-  const { colorMode, setColorMode } = useContext(ThemeContext)
-  const [showSearch, toggleSearchMode] = useState(false)
+  const { colorMode, setColorMode } = useContext(ThemeContext);
+  const [showSearch, toggleSearchMode] = useState(false);
 
   return (
     <div
       className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 ${
-        showSearch ? "overflow-hidden max-h-screen" : "min-h-screen"
+        showSearch ? 'overflow-hidden max-h-screen' : 'min-h-screen'
       }`}
       onKeyUp={(e) => {
-        if (e.key === "Escape") {
-          toggleSearchMode(!showSearch)
+        if (e.key === 'Escape') {
+          toggleSearchMode(!showSearch);
         }
       }}
     >
@@ -88,10 +88,10 @@ export const Layout = ({ meta, children }) => {
         toggler={<Toggler colorMode={colorMode} setColorMode={setColorMode} />}
       />
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   meta: PropTypes.object.isRequired,
-}
+};

@@ -1,41 +1,41 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Anchor from "./Anchor"
-import DownloadLogo from "../images/svgs/download.svg"
-import UnsplashLogo from "../images/svgs/unsplash.svg"
-import ComponentIndex from "../components/images/image-component-index"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Anchor from './Anchor';
+import DownloadLogo from '../images/svgs/download.svg';
+import UnsplashLogo from '../images/svgs/unsplash.svg';
+import ComponentIndex from '../components/Images/image-component-index';
 
 const getCreditTitle = (source, attribute) => {
-  if (!attribute) return <span></span>
+  if (!attribute) return <span></span>;
 
-  if (source && source.toLowerCase() === "unsplash") {
-    return `Download free do whatever you want high-resolution photos from ${attribute}`
+  if (source && source.toLowerCase() === 'unsplash') {
+    return `Download free do whatever you want high-resolution photos from ${attribute}`;
   }
 
   if (source) {
-    return `Image by ${attribute} @ ${source}`
+    return `Image by ${attribute} @ ${source}`;
   }
 
-  return `Image by ${attribute}`
-}
+  return `Image by ${attribute}`;
+};
 
 const getCredit = (componentName, source, link, credit) => {
   const defaultThumbnail = thumbnails.filter((thumbnail) => {
-    return thumbnail.componentName === componentName
-  })
+    return thumbnail.componentName === componentName;
+  });
   return defaultThumbnail.length > 0
     ? defaultThumbnail[0]
-    : { source, link, credit }
-}
+    : { source, link, credit };
+};
 
 const Credit = ({ componentName, source, link, text }) => {
   const {
     source: creditSource,
     link: creditLink,
     credit: creditText,
-  } = getCredit(componentName, source, link, text)
+  } = getCredit(componentName, source, link, text);
 
-  if (!source) return <span></span>
+  if (!source) return <span></span>;
   return (
     <Anchor
       to={creditLink}
@@ -45,26 +45,26 @@ const Credit = ({ componentName, source, link, text }) => {
       <img
         alt={creditSource}
         className="filter invert w-3 absolute left-2 top-2"
-        src={creditSource === "unsplash" ? UnsplashLogo : DownloadLogo}
+        src={creditSource === 'unsplash' ? UnsplashLogo : DownloadLogo}
       />
       {creditSource}
     </Anchor>
-  )
-}
+  );
+};
 
 Credit.propTypes = {
   componentName: PropTypes.string,
   source: PropTypes.string,
   link: PropTypes.string,
   text: PropTypes.string,
-}
+};
 
 const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
-  const Image = ComponentIndex[componentName]
+  const Image = ComponentIndex[componentName];
   return (
     <div title={alt} className="relative shadow-md transform">
       <Anchor to={to} title={alt}>
-        <Image alt={alt} />
+        <Image alt={alt} width={450} />
       </Anchor>
       <Credit
         componentName={componentName}
@@ -73,8 +73,8 @@ const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
         text={credit}
       />
     </div>
-  )
-}
+  );
+};
 
 Thumbnail.propTypes = {
   alt: PropTypes.string,
@@ -85,9 +85,9 @@ Thumbnail.propTypes = {
   source: PropTypes.string,
   link: PropTypes.string,
   componentName: PropTypes.string,
-}
+};
 
-export default Thumbnail
+export default Thumbnail;
 
 const thumbnails = [
   {
@@ -150,4 +150,4 @@ const thumbnails = [
     credit: `Markus Spiske`,
     link: `https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexts`,
   },
-]
+];

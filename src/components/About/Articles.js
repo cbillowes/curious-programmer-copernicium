@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import Kebab from "../Kebab"
-import Anchor from "../Anchor"
-import List from "../Articles/List"
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Kebab from '../Kebab';
+import Anchor from '../Anchor';
+import List from '../Articles/List';
 
 const Articles = ({ edges }) => {
-  const [visible, toggleVisibility] = useState(false)
+  const [visible, toggleVisibility] = useState(false);
   return (
     <>
       <Kebab
@@ -15,7 +15,7 @@ const Articles = ({ edges }) => {
       >
         Featured articles
       </Kebab>
-      <div className={`mx-auto text-center ${visible ? "block" : "hidden"}`}>
+      <div className={`mx-auto text-center ${visible ? 'block' : 'hidden'}`}>
         <List edges={edges} />
         <Anchor
           to="/blog"
@@ -26,11 +26,11 @@ const Articles = ({ edges }) => {
         </Anchor>
       </div>
     </>
-  )
-}
+  );
+};
 
 Articles.propTypes = {
   edges: PropTypes.array.isRequired,
-}
+};
 
-export default Articles
+export default Articles;

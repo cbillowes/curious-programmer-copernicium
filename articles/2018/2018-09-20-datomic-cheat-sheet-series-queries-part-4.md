@@ -1,5 +1,5 @@
 ---
-title: "Datomic Cheat Sheet Series - Queries (Part 4) - Pull"
+title: 'Datomic Cheat Sheet Series - Queries (Part 4) - Pull'
 ogImage: images/og/2018-09-06-datomic.png
 date: 2018-09-20 07:00:00 +0200
 tags:

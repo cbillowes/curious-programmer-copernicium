@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Anchor from "./Anchor"
-import _ from "lodash"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Anchor from './Anchor';
+import _ from 'lodash';
 
 export const Tag = ({ tag, prefix, className }) => {
-  if (!tag) return <span></span>
+  if (!tag) return <span></span>;
 
   return (
     <Anchor
@@ -15,36 +15,38 @@ export const Tag = ({ tag, prefix, className }) => {
       {prefix}
       {tag.toLowerCase()}
     </Anchor>
-  )
-}
+  );
+};
 
 Tag.propTypes = {
   tag: PropTypes.string.isRequired,
   prefix: PropTypes.string,
   className: PropTypes.string,
-}
+};
 
 const Tags = ({ tags, isButton, additionalClasses }) => {
-  if (tags && tags.length === 0) return <span></span>
+  if (tags && tags.length === 0) return <span></span>;
 
   const className = isButton
     ? `bg-color-1 text-color-1-script py-1 px-4 rounded mx-1 mt-4 inline-block hover:bg-color-1-alternative ${additionalClasses}`
-    : `ml-2 text-neutral leading-loose hover:text-color-3 ${additionalClasses}`
+    : `ml-2 text-neutral leading-loose hover:text-color-3 ${additionalClasses}`;
 
-  const prefix = isButton ? "" : "#"
+  const prefix = isButton ? '' : '#';
 
   return (
     tags &&
     tags.map((tag, index) => {
-      return <Tag key={index} tag={tag} className={className} prefix={prefix} />
+      return (
+        <Tag key={index} tag={tag} className={className} prefix={prefix} />
+      );
     })
-  )
-}
+  );
+};
 
 Tags.propTypes = {
   tags: PropTypes.array.isRequired,
   isButton: PropTypes.bool,
   additionalClasses: PropTypes.string,
-}
+};
 
-export default Tags
+export default Tags;

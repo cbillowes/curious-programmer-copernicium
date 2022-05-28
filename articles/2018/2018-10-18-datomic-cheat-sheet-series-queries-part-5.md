@@ -1,5 +1,5 @@
 ---
-title: "Datomic Cheat Sheet Series - Queries (Part 5) - Transactions"
+title: 'Datomic Cheat Sheet Series - Queries (Part 5) - Transactions'
 ogImage: images/og/2018-09-06-datomic.png
 date: 2018-10-18 04:54:00 +0200
 tags:

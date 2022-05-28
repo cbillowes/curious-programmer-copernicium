@@ -95,7 +95,7 @@ A more complex example with a graph and a nonsensical history:
 * | 9645fc7 |  Work like a captain, play like a pirate (1 year, 10 months ago) [Dexter Morgan]
 |/
 * d32cdee |  Ahoy! lets trouble the water! (1 year, 10 months ago) [Hiro Nakamura]
-````
+```
 
 ## References
 

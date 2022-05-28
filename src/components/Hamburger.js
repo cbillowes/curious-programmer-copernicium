@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const BURGER_WIDTH = 25
-const BURGER_HEIGHT = 24
-const BAR_HEIGHT = 3
+const BURGER_WIDTH = 25;
+const BURGER_HEIGHT = 24;
+const BAR_HEIGHT = 3;
 
 /*!
  * Hamburgers: hamburger--spin
@@ -71,7 +71,7 @@ const Container = styled.button`
   }
   .hamburger-inner::before,
   .hamburger-inner::after {
-    content: "";
+    content: '';
     display: block;
   }
   .hamburger-inner::before {
@@ -141,21 +141,21 @@ const Container = styled.button`
     transition: bottom 0.1s ease-out,
       transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-`
+`;
 
 const Hamburger = ({ isOpen, toggle }) => (
   <Container aria-label="Menu" onClick={() => toggle(!isOpen)}>
-    <div className={`hamburger hamburger--spin ${isOpen ? "is-active" : ""}`}>
+    <div className={`hamburger hamburger--spin ${isOpen ? 'is-active' : ''}`}>
       <div className="hamburger-box">
         <div className="hamburger-inner"></div>
       </div>
     </div>
   </Container>
-)
+);
 
-export default Hamburger
+export default Hamburger;
 
 Hamburger.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
-}
+};

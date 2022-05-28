@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Anchor from "./Anchor"
-import BuyMeCoffee from "./Coffee"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Anchor from './Anchor';
+import BuyMeCoffee from './Coffee';
 
 const Blocks = () => {
   return (
@@ -19,8 +19,8 @@ const Blocks = () => {
         />
       </svg>
     </div>
-  )
-}
+  );
+};
 
 const TopAnchor = (props) => (
   <Anchor
@@ -28,7 +28,7 @@ const TopAnchor = (props) => (
     newTabIndicator={true}
     className="text-footer-link-1 font-semibold hover:text-footer-link-2"
   />
-)
+);
 
 const BottomAnchor = (props) => (
   <Anchor
@@ -36,7 +36,7 @@ const BottomAnchor = (props) => (
     newTabIndicator={true}
     className="inline-block mt-3 mr-3 py-2 px-4 md:py-1 md:px-3 text-sm rounded text-inverse bg-inverse-script hover:bg-color-3 hover:text-color-3-script"
   />
-)
+);
 
 const Footer = ({ toggler }) => (
   <footer className="relative">
@@ -49,10 +49,10 @@ const Footer = ({ toggler }) => (
           curious place for a curious mind.
         </p>
         <div>
-          Built with{" "}
+          Built with{' '}
           <TopAnchor to="https://www.gatsbyjs.org/" title="Gatsby">
             Gatsby
-          </TopAnchor>{" "}
+          </TopAnchor>{' '}
           and other cool stuff.
           {/* <TopAnchor to="/credits" title="Credits">
             cool stuff
@@ -90,10 +90,10 @@ const Footer = ({ toggler }) => (
 
     <BuyMeCoffee component="footer" />
   </footer>
-)
+);
 
 Footer.propTypes = {
   toggler: PropTypes.node,
-}
+};
 
-export default Footer
+export default Footer;

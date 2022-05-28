@@ -1,6 +1,6 @@
 ---
-title: "HTML5 structural semantics"
-cover: "https://picsum.photos/1600/800/?image=36"
+title: 'HTML5 structural semantics'
+cover: 'https://picsum.photos/1600/800/?image=36'
 date: 2016-06-17 12:02:38 +0200
 tags:
   - Technical
@@ -170,9 +170,7 @@ but relates to its surrounding content such as:
 ```html
 <article>
   <h1>Lore</h1>
-  <p>
-    Blizzard's background story to the Warcraft series of games.
-  </p>
+  <p>Blizzard's background story to the Warcraft series of games.</p>
 </article>
 <aside>
   <h1>Warcraft: The Beginning</h1>
@@ -233,7 +231,7 @@ flowchart to help save time when making these decisions. They provide an
 "easy-to-understand HTML5 sectioning element flowchart to
 help you get to grips with some of the new elements in HTML5."
 
-![Analogy](./html5-doctor-flowchart.jpg "HTML5 Sectioning Flowchart")
+![Analogy](./html5-doctor-flowchart.jpg 'HTML5 Sectioning Flowchart')
 _Source of image: [HTML5 Doctor](http://html5doctor.com/downloads/h5d-sectioning-flowchart.pdf)_
 
 ---

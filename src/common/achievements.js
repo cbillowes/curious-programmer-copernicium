@@ -1,12 +1,12 @@
-import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import Anchor from "../components/Anchor"
-import Ribbon from "../components/Articles/Ribbon"
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import Anchor from '../components/Anchor';
+import Ribbon from '../components/Articles/Ribbon';
 
 const offerZenChromeDevTools2018 = {
-  type: "article",
-  link: "https://www.offerzen.com/blog/debugging-with-chrome-devtools-quick-front-end-fixes",
-  buttonText: "Put on your reading glasses",
+  type: 'article',
+  link: 'https://www.offerzen.com/blog/debugging-with-chrome-devtools-quick-front-end-fixes',
+  buttonText: 'Put on your reading glasses',
   title: (
     <Anchor
       to="https://www.offerzen.com/blog/debugging-with-chrome-devtools-quick-front-end-fixes"
@@ -18,7 +18,7 @@ const offerZenChromeDevTools2018 = {
   blurb: (
     <div>
       <p>
-        Written in 2018 on the{" "}
+        Written in 2018 on the{' '}
         <Anchor
           to="https://offerzen.com"
           title="OfferZen"
@@ -45,10 +45,10 @@ const offerZenChromeDevTools2018 = {
     </p>
   ),
   ribbon: <Ribbon>2018</Ribbon>,
-}
+};
 
 const girlCodeImpostorSyndrome2017 = {
-  type: "podcast",
+  type: 'podcast',
   title: <>GirlCode: Imposter Syndrome</>,
   blurb: (
     <div>
@@ -60,8 +60,8 @@ const girlCodeImpostorSyndrome2017 = {
           newTabIndicator={true}
         >
           Viva Republic
-        </Anchor>{" "}
-        and I got together with the{" "}
+        </Anchor>{' '}
+        and I got together with the{' '}
         <Anchor
           to="https://girlcode.co.za/"
           title="GirlCode"
@@ -71,7 +71,7 @@ const girlCodeImpostorSyndrome2017 = {
           GirlCode
         </Anchor>
         team to talk about our experiences of Imposter Syndrome. Although the
-        podcast was never released, we sure had a{" "}
+        podcast was never released, we sure had a{' '}
         <Anchor
           to="https://twitter.com/VivaRepublic/status/870937603662598145/photo/1"
           title="Twitter moment"
@@ -79,7 +79,7 @@ const girlCodeImpostorSyndrome2017 = {
           newTabIndicator={true}
         >
           lot of fun
-        </Anchor>{" "}
+        </Anchor>{' '}
         making it.
       </p>
     </div>
@@ -91,12 +91,12 @@ const girlCodeImpostorSyndrome2017 = {
   ),
   caption: <p>Being interviewed on the GirlCode podcast</p>,
   ribbon: <Ribbon>2017</Ribbon>,
-}
+};
 
 const zaChatImpostor2017 = {
-  type: "podcast",
-  link: "https://zadevchat.io/67/",
-  buttonText: "Grab your headphones",
+  type: 'podcast',
+  link: 'https://zadevchat.io/67/',
+  buttonText: 'Grab your headphones',
   title: (
     <Anchor
       to="https://zadevchat.io/67/"
@@ -108,10 +108,10 @@ const zaChatImpostor2017 = {
   blurb: (
     <div>
       <p>
-        Produced in 2017, I was interviewed by Chantal and Kenneth on the{" "}
+        Produced in 2017, I was interviewed by Chantal and Kenneth on the{' '}
         <Anchor to="https://zadevchat.io/" title="ZADevChat">
           ZADevChat
-        </Anchor>{" "}
+        </Anchor>{' '}
         podcast. We discussed imposter syndrome, what it is and how to overcome
         it. <br />
         Learn about this and other issues around the often overlooked topics of
@@ -129,12 +129,12 @@ const zaChatImpostor2017 = {
   ),
   caption: <p>Aired on Episode 67 of the ZADevChat Podcast</p>,
   ribbon: <Ribbon>2017</Ribbon>,
-}
+};
 
 const developerOnFire2017 = {
-  type: "podcast",
-  link: "https://developeronfire.com/podcast/episode-202-clarice-bouwer-leaving-comfort-behind",
-  buttonText: "Have a listen",
+  type: 'podcast',
+  link: 'https://developeronfire.com/podcast/episode-202-clarice-bouwer-leaving-comfort-behind',
+  buttonText: 'Have a listen',
   title: (
     <Anchor
       to="https://developeronfire.com/podcast/episode-202-clarice-bouwer-leaving-comfort-behind"
@@ -146,7 +146,7 @@ const developerOnFire2017 = {
   blurb: (
     <div>
       <p>
-        Produced in 2017 on the{" "}
+        Produced in 2017 on the{' '}
         <Anchor
           to="https://developeronfire.com"
           title="Developer on Fire logo"
@@ -170,12 +170,12 @@ const developerOnFire2017 = {
   ),
   caption: <p>Aired on Episode 67 of the ZADevChat Podcast</p>,
   ribbon: <Ribbon>2017</Ribbon>,
-}
+};
 
 const rubyFuza2017 = {
-  type: "talk",
-  link: "https://www.youtube.com/watch?v=fkgAc0DY4s8",
-  buttonText: "Grab some popcorn",
+  type: 'talk',
+  link: 'https://www.youtube.com/watch?v=fkgAc0DY4s8',
+  buttonText: 'Grab some popcorn',
   title: (
     <Anchor
       to="https://www.youtube.com/watch?v=fkgAc0DY4s8"
@@ -205,12 +205,12 @@ const rubyFuza2017 = {
   ),
   caption: <p>A presentation slide of my talk at Rubyfuza</p>,
   ribbon: <Ribbon>2017</Ribbon>,
-}
+};
 
 const curiousprogrammerImpostor2016 = {
-  type: "article",
-  link: "/blog/the-imposter-within",
-  buttonText: "Grab some coffee",
+  type: 'article',
+  link: '/blog/the-imposter-within',
+  buttonText: 'Grab some coffee',
   title: (
     <Anchor to="/blog/the-imposter-within" title="The Imposter Within">
       The Imposter Within
@@ -219,7 +219,7 @@ const curiousprogrammerImpostor2016 = {
   blurb: (
     <div>
       <p>
-        Written in 2016 on my blog{" "}
+        Written in 2016 on my blog{' '}
         <Anchor to="/" title="My blog">
           curious programmer
         </Anchor>
@@ -240,12 +240,12 @@ const curiousprogrammerImpostor2016 = {
   ),
   caption: <p>Pensive woman looking out a window at the rain</p>,
   ribbon: <Ribbon>2016</Ribbon>,
-}
+};
 
 const aListApartOpportunities2016 = {
-  type: "article",
-  link: "https://alistapart.com/article/finding-opportunities-in-the-mistakes-we-make/",
-  buttonText: "Put on your reading glasses",
+  type: 'article',
+  link: 'https://alistapart.com/article/finding-opportunities-in-the-mistakes-we-make/',
+  buttonText: 'Put on your reading glasses',
   title: (
     <Anchor
       to="https://alistapart.com/article/finding-opportunities-in-the-mistakes-we-make/"
@@ -257,7 +257,7 @@ const aListApartOpportunities2016 = {
   blurb: (
     <div>
       <p>
-        In 2016 I was published on the{" "}
+        In 2016 I was published on the{' '}
         <Anchor
           to="https://alistapart.com/"
           title="A List Apart"
@@ -265,7 +265,7 @@ const aListApartOpportunities2016 = {
           newTabIndicator={true}
         >
           A List Apart
-        </Anchor>{" "}
+        </Anchor>{' '}
         website where I share my career experience six years in and discuss the
         changes I would have made to improve my experience as a software
         developer.
@@ -282,10 +282,10 @@ const aListApartOpportunities2016 = {
   ),
   caption: <p>A hero image from a featured article</p>,
   ribbon: <Ribbon>2016</Ribbon>,
-}
+};
 
 const microsoftProjects2007 = {
-  type: "project",
+  type: 'project',
   title: (
     <>
       Lead software developer on online web registration projects for multiple
@@ -314,7 +314,7 @@ const microsoftProjects2007 = {
   ),
   caption: <p>A Tech-Ed Africa 2009 logo</p>,
   ribbon: <Ribbon>2007 - 2012</Ribbon>,
-}
+};
 
 export const achievements = [
   offerZenChromeDevTools2018,
@@ -325,4 +325,4 @@ export const achievements = [
   curiousprogrammerImpostor2016,
   aListApartOpportunities2016,
   microsoftProjects2007,
-]
+];

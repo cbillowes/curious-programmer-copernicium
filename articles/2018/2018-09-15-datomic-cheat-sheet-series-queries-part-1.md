@@ -1,5 +1,5 @@
 ---
-title: "Datomic Cheat Sheet Series - Queries (Part 1)"
+title: 'Datomic Cheat Sheet Series - Queries (Part 1)'
 ogImage: images/og/2018-09-06-datomic.png
 date: 2018-09-15 06:00:00 +0200
 tags:

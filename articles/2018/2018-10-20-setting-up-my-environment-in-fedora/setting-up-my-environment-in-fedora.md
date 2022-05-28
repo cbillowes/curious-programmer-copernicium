@@ -1,5 +1,5 @@
 ---
-title: "Setting up my environment in Fedora"
+title: 'Setting up my environment in Fedora'
 ogImage: images/og/2018-10-20-fedora.png
 date: 2018-10-20 18:30:00 +0200
 tags:

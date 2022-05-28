@@ -1,10 +1,10 @@
 ---
-title: "Learning Linux"
-cover: "../../images/backgrounds/bionic-cover.png"
-blur: "../../images/backgrounds/bionic-cover-blur.png"
+title: 'Learning Linux'
+cover: '../../images/backgrounds/bionic-cover.png'
+blur: '../../images/backgrounds/bionic-cover-blur.png'
 custom: Image from Ubuntu 18.04 LTS
 ogImage: images/og/2018-07-26-ubuntu-linux.png
-date: "2018-07-27 07:00"
+date: '2018-07-27 07:00'
 tags:
   - Technical
   - Linux

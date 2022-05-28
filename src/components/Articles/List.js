@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Preview from "./Preview"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Preview from './Preview';
 
 const List = ({ edges }) => {
   if (edges && edges.length > 0) {
@@ -14,10 +14,10 @@ const List = ({ edges }) => {
           timeToRead={node.timeToRead}
           excerpt={node.excerpt}
         />
-      )
-    })
+      );
+    });
   }
-}
+};
 
 Preview.propTypes = {
   edges: PropTypes.shape({
@@ -38,6 +38,6 @@ Preview.propTypes = {
       source: PropTypes.string.isRequired,
     }),
   }),
-}
+};
 
-export default List
+export default List;

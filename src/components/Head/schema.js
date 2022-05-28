@@ -1,23 +1,23 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 const Schema = ({ type, url, name, description, author, image }) => (
   <Helmet>
     <script type="application/ld+json">
       {JSON.stringify({
-        "@context": "https://schema.org/",
-        "@type": type || "WebSite",
+        '@context': 'https://schema.org/',
+        '@type': type || 'WebSite',
         url,
         name,
         description,
         author: {
-          "@type": "Person",
+          '@type': 'Person',
           name: author.name,
           sameAs: author.url,
         },
         image: {
-          "@type": "ImageObject",
+          '@type': 'ImageObject',
           url: image,
         },
         thumbnailUrl: image,
@@ -25,7 +25,7 @@ const Schema = ({ type, url, name, description, author, image }) => (
       })}
     </script>
   </Helmet>
-)
+);
 
 Schema.propTypes = {
   author: PropTypes.shape({
@@ -37,6 +37,6 @@ Schema.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-}
+};
 
-export default Schema
+export default Schema;

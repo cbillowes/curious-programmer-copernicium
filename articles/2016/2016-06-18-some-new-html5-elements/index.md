@@ -1,6 +1,6 @@
 ---
-title: "Some new HTML5 elements"
-cover: "https://picsum.photos/1600/800/?image=526"
+title: 'Some new HTML5 elements'
+cover: 'https://picsum.photos/1600/800/?image=526'
 date: 2016-06-18 13:26:44 +0200
 tags:
   - Technical
@@ -112,9 +112,7 @@ can provide additional functionality such as:
 ```html
 <p>
   I'll be watching "Warcraft: The Beginning" on
-  <time datetime="2016-06-17T20:00">
-    17 June at 8h00 pm </time
-  >.
+  <time datetime="2016-06-17T20:00"> 17 June at 8h00 pm </time>.
 </p>
 ```
 

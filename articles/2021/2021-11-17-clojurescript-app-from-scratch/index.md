@@ -48,23 +48,23 @@ OpenJDK 64-Bit Server VM Temurin-11.0.13+8 (build 11.0.13+8, mixed mode)
 
 ### ClojureScript
 
-| Dependency    |  Version    |
-|---------------|-------------|
+| Dependency    | Version     |
+| ------------- | ----------- |
 | Clojure CLI   | 1.10.3.1020 |
-| ClojureScript |    1.10.879 |
-| Figwheel-Main |      0.2.15 |
-| Reagent       |       1.1.0 |
+| ClojureScript | 1.10.879    |
+| Figwheel-Main | 0.2.15      |
+| Reagent       | 1.1.0       |
 
 ### Node.js
 
-| Dependency     | Version  |
-|----------------|----------|
-| Node           |  16.13.0 |
-| npm            |    8.1.3 |
-| Webpack        |   5.64.1 |
-| Webpack-cli    |    4.9.1 |
-| React          |   17.0.2 |
-| React-DOM      |   17.0.2 |
+| Dependency  | Version |
+| ----------- | ------- |
+| Node        | 16.13.0 |
+| npm         | 8.1.3   |
+| Webpack     | 5.64.1  |
+| Webpack-cli | 4.9.1   |
+| React       | 17.0.2  |
+| React-DOM   | 17.0.2  |
 
 ## Start a new project
 
@@ -78,9 +78,9 @@ OpenJDK 64-Bit Server VM Temurin-11.0.13+8 (build 11.0.13+8, mixed mode)
 1. Create the file structure.
 
    - **resources/public/index.html** <- the main HTML file
-   - **src/example_app/core.cljs**   <- the main ClojureScript file
-   - **dev.cljs.edn**                <- Figwheel's configuration file
-   - **deps.edn**                    <- ClojureScript's configuration and dependencies file
+   - **src/example_app/core.cljs** <- the main ClojureScript file
+   - **dev.cljs.edn** <- Figwheel's configuration file
+   - **deps.edn** <- ClojureScript's configuration and dependencies file
 
    ```bash
    mkdir -p src/example_app/ && touch src/example_app/core.cljs
@@ -169,11 +169,11 @@ OpenJDK 64-Bit Server VM Temurin-11.0.13+8 (build 11.0.13+8, mixed mode)
 
 ## Install Reagent
 
-   Install React.
+Install React.
 
-   ```bash
-   npm install react@17.0.2 react-dom@17.0.2
-   ```
+```bash
+npm install react@17.0.2 react-dom@17.0.2
+```
 
 ## Update your files
 
@@ -187,7 +187,7 @@ below.
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Example Application</title>
     <!--
@@ -208,7 +208,6 @@ below.
     <script type="text/javascript" src="cljs-out/dev/main_bundle.js"></script>
   </body>
 </html>
-
 ```
 
 ### resources/public/style.css
@@ -343,6 +342,7 @@ Now that everything is set up, you can run the web app.
 Enter `clj -M:dev` in the terminal to open the app on http://localhost:9500
 
 ## Final project layout
+
 Read more about Figwheel [classpaths][classpaths].
 
 ```

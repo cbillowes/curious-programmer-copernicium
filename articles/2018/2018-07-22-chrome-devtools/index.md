@@ -1,7 +1,7 @@
 ---
-title: "A Trilogy About the Chrome DevTools in Many Parts"
+title: 'A Trilogy About the Chrome DevTools in Many Parts'
 ogImage: images/og/2018-07-22-chrome-devtools.png
-date: "2018-07-22"
+date: '2018-07-22'
 tags:
   - Technical
   - Chrome DevTools
@@ -61,22 +61,22 @@ If you need to run a repetitive script as a utility or debugging mechanism, you 
 I pasted the following code into my snippet.
 
 ```javascript
-;(function() {
-  var greetings = ["Galaxy", "World", "Moon", "Exception"]
-  greetings.map(function(greeting) {
-    greet(greeting)
-  })
-})()
+(function () {
+  var greetings = ['Galaxy', 'World', 'Moon', 'Exception'];
+  greetings.map(function (greeting) {
+    greet(greeting);
+  });
+})();
 
 function greet(greet) {
   switch (greet) {
-    case "World":
-      console.log("Hello World!")
-      break
-    case "Exception":
-      throw "Simulating that something went horribly wrong."
+    case 'World':
+      console.log('Hello World!');
+      break;
+    case 'Exception':
+      throw 'Simulating that something went horribly wrong.';
     default:
-      console.warn(`I want Hello World not Hello ${greet}.`)
+      console.warn(`I want Hello World not Hello ${greet}.`);
   }
 }
 ```

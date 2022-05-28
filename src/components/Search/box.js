@@ -1,5 +1,5 @@
-import React from "react"
-import { connectSearchBox } from "react-instantsearch-dom"
+import React from 'react';
+import { connectSearchBox } from 'react-instantsearch-dom';
 
 export default connectSearchBox(
   ({ refine, currentRefinement, className, onFocus, toggle }) => (
@@ -14,11 +14,11 @@ export default connectSearchBox(
         autoFocus={true}
         onFocus={onFocus}
         onKeyUp={(e) => {
-          if (e.key === "Escape") {
-            toggle()
+          if (e.key === 'Escape') {
+            toggle();
           }
         }}
       />
     </form>
   ),
-)
+);

@@ -1,20 +1,20 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Title from "./title"
-import Description from "./description"
-import Icons from "./icons"
-import Social from "./social"
-import Schema from "./schema"
-import Font from "./font"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Title from './title';
+import Description from './description';
+import Icons from './icons';
+import Social from './social';
+import Schema from './schema';
+import Font from './font';
+import { Helmet } from 'react-helmet';
 
 const removeWhitespace = (text) => {
   return text
     ?.trim()
-    ?.split(" ")
+    ?.split(' ')
     ?.filter((word) => word)
-    ?.join(" ")
-}
+    ?.join(' ');
+};
 
 const Head = ({
   author,
@@ -88,21 +88,21 @@ const Head = ({
       image={image || (social && social.image)}
     />
   </React.Fragment>
-)
+);
 
 const author = PropTypes.shape({
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-})
+});
 
 const social = PropTypes.shape({
   image: PropTypes.string,
   twitter: PropTypes.string.isRequired,
-})
+});
 
 Head.defaultProps = {
-  type: "WebSite",
-}
+  type: 'WebSite',
+};
 
 Head.propTypes = {
   author: author.isRequired,
@@ -119,6 +119,6 @@ Head.propTypes = {
   url: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired,
   crawl: PropTypes.bool,
-}
+};
 
-export default Head
+export default Head;

@@ -1,5 +1,5 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Font = () => (
   <Helmet>
@@ -15,6 +15,6 @@ const Font = () => (
       async="async"
     />
   </Helmet>
-)
+);
 
-export default Font
+export default Font;

@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import "../../styles/ribbon.scss"
+import React from 'react';
+import PropTypes from 'prop-types';
+import '../../styles/ribbon.scss';
 
 const Ribbon = ({ children }) => {
-  if (!children) return <></>
+  if (!children) return <></>;
 
   // TODO: Put the bg-color, text-color and border-color into ribbon.scss
   return (
@@ -16,11 +16,11 @@ const Ribbon = ({ children }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Ribbon.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Ribbon
+export default Ribbon;

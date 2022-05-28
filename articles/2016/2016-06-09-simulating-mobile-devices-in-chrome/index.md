@@ -47,6 +47,7 @@ used to achieve this but is beyond the scope of this topic.
 
     - You could use shortcuts, but make sure the focus is on the Developer Tools
       window and not the browser window for it to work.
+
       - Windows: `Ctrl` + `Shift` + `M`
       - Mac: `Cmd` + `Shift` + `M`
 
@@ -61,7 +62,7 @@ These controls give you the ability to test your web page across a variety of
 devices or directly interact with the responsive nature of it. You can change
 the device, width, height, zoom and orientation _(if height is present)_.
 
-![Screenshot](./viewport-controls.jpg "iPad device selected through the Viewport controls")
+![Screenshot](./viewport-controls.jpg 'iPad device selected through the Viewport controls')
 _Source of image: Screenshot of viewport controls in Chrome Developer Tools_
 
 ### Configure devices
@@ -80,7 +81,7 @@ You can get a comprehensive list from
 > it takes to draw a single pixel used by CSS. The more screen pixels used, the
 > sharper the image. You should be able to distinguish the difference between standard, HiDPI and Retina displays.
 
-![Screenshot](./emulated-devices.jpg "Selected Galaxy Note 3 and Galaxy Note II in emulated devices to add them to the list of devices")
+![Screenshot](./emulated-devices.jpg 'Selected Galaxy Note 3 and Galaxy Note II in emulated devices to add them to the list of devices')
 _Source of image: Screenshot of emulated devices in Chrome_
 
 ## Media queries
@@ -88,7 +89,7 @@ _Source of image: Screenshot of emulated devices in Chrome_
 You can use the media query inspector by clicking on **Show media queries** in
 the vertical three dot menu at the top-right corner of the Viewport controls.
 
-![Screenshot](./show-media-queries.jpg "Media queries inspector on iPad display")
+![Screenshot](./show-media-queries.jpg 'Media queries inspector on iPad display')
 _Source of image: Screenshot of media queries in the Chrome Developer Tools_
 
 The media queries for the web page are detected and displayed as colored bars.
@@ -124,14 +125,14 @@ The width and height can be explicitly set at the top to the right of the device
 YThere are features that you can leverage in the **Network tab**
 to emulate different networking conditions.
 
-* **Cache:** this feature only works while the DevTools are open.
+- **Cache:** this feature only works while the DevTools are open.
   Cached resources will explicitly be fetched from the server when this
   option is disabled.
-* **Throttling:** lets you hop onto a different type of network that is
+- **Throttling:** lets you hop onto a different type of network that is
   emulated by the DevTools. Options like fast and slow 3G exist. You can
   choose to go offline and you can add your own presets which require
   latency, download and upload speed.
-* **Network conditions:**: opens up a new slit tab. Additional options include
+- **Network conditions:**: opens up a new slit tab. Additional options include
   custom user agents and the ability to change accepted
   [content-encodings](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)
   like **deflate**, **gzip** and **br**.
@@ -146,12 +147,12 @@ For out more about
 
 Click on the kebab menu item to the top right of the bar and get more options which include:
 
-* **Device frame:** toggles the frame of a cellphone around your viewport.
-* **Media queries:** toggles the display of the media query breakpoints bar above the viewport.
-* **Rules:** toggles pixel rulers displayed on the viewport.
-* **DPR:** toggles the display of the DPR options on the top bar.
-* **Device type:** toggles the display of the device type option on the top bar.
-* **Screenshots:** takes a screenshot of the page or a full screenshot.
+- **Device frame:** toggles the frame of a cellphone around your viewport.
+- **Media queries:** toggles the display of the media query breakpoints bar above the viewport.
+- **Rules:** toggles pixel rulers displayed on the viewport.
+- **DPR:** toggles the display of the DPR options on the top bar.
+- **Device type:** toggles the display of the device type option on the top bar.
+- **Screenshots:** takes a screenshot of the page or a full screenshot.
 
 ## Sensors
 
@@ -164,7 +165,7 @@ override geolocation coordinates and device orientation accelerometer data.
 Click on the vertical three dot menu at the top-right corner of the Developer Tools
 window > **More tools > Sensors**.
 
-![Screenshot](./sensors.jpg "Enabled emulate geolocation coordinates and device orientation selected in sensors tab with default data")
+![Screenshot](./sensors.jpg 'Enabled emulate geolocation coordinates and device orientation selected in sensors tab with default data')
 _Source of image: Screenshot of emulating selected sensors in the Chrome Developer Tools_
 
 Find out more about [emulating sensors](https://developer.chrome.com/docs/devtools/device-mode/).

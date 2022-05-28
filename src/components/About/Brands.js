@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import Kebab from "../Kebab"
+import React, { useState } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import Kebab from '../Kebab';
 
 const Brands = () => {
-  const [visible, toggleVisibility] = useState(true)
+  const [visible, toggleVisibility] = useState(true);
   return (
     <>
       <Kebab
@@ -15,7 +15,7 @@ const Brands = () => {
       </Kebab>
       <div
         className={`mt-2 items-center justify-center flex-wrap ${
-          visible ? "flex" : "hidden"
+          visible ? 'flex' : 'hidden'
         }`}
       >
         <StaticImage
@@ -91,7 +91,7 @@ const Brands = () => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Brands
+export default Brands;

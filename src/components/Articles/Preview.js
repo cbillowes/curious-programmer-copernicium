@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Anchor from "../Anchor"
-import Tags from "../Tags"
-import Thumbnail from "../Thumbnail"
-import Ribbon from "./Ribbon"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Anchor from '../Anchor';
+import Tags from '../Tags';
+import Thumbnail from '../Thumbnail';
+import Ribbon from './Ribbon';
 
 const Preview = ({
   index,
@@ -20,19 +20,19 @@ const Preview = ({
   link,
   component,
 }) => {
-  const isEven = index % 2 === 0
+  const isEven = index % 2 === 0;
   return (
     <section
       key={number}
       className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-        isEven ? "xl:flex-row-reverse" : "xl:flex-row"
+        isEven ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}
     >
       <div
         className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 ${
           isEven
-            ? "xl:text-left xl:border-l xl:pl-8"
-            : "xl:text-right xl:border-r xl:pr-8"
+            ? 'xl:text-left xl:border-l xl:pl-8'
+            : 'xl:text-right xl:border-r xl:pr-8'
         }`}
       >
         <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
@@ -46,7 +46,7 @@ const Preview = ({
           </p>
           <p
             className={`mt-2 text-left ${
-              isEven ? "xl:text-left" : "xl:text-right"
+              isEven ? 'xl:text-left' : 'xl:text-right'
             }`}
           >
             {excerpt}
@@ -54,12 +54,12 @@ const Preview = ({
         </div>
         <div
           className={`flex items-center flex-wrap ${
-            isEven ? "xl:flex-row" : "xl:flex-row-reverse"
+            isEven ? 'xl:flex-row' : 'xl:flex-row-reverse'
           }`}
         >
           <Anchor
             className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative ${
-              isEven ? "xl:mr-2" : "xl:ml-4"
+              isEven ? 'xl:mr-2' : 'xl:ml-4'
             }`}
             to={slug}
             title={slug}
@@ -83,8 +83,8 @@ const Preview = ({
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
 Preview.propTypes = {
   index: PropTypes.number.isRequired,
@@ -100,6 +100,6 @@ Preview.propTypes = {
   source: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   component: PropTypes.string.isRequired,
-}
+};
 
-export default Preview
+export default Preview;

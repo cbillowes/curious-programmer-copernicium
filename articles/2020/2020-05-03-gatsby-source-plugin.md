@@ -20,6 +20,7 @@ this
 ```markdown
 `gif:nyancat.gif:caption=Nyanyanyanyanyanyanya`
 ```
+
 becomes :point_down:
 `gif:nyancat.gif:caption=Nyanyanyanyanyanyanya`
 
@@ -41,7 +42,7 @@ gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
 
 2. Create a `plugins` directory in the root of your project with a directory of the plugin you want to create.
    eg. `plugins/gatsby-remark-interactive-gifs`
-   *There is a specific [naming convention][7] for plugins that you should take note of.*
+   _There is a specific [naming convention][7] for plugins that you should take note of._
 
 3. Initialize the directory with git before getting started: `git init`
 
@@ -70,29 +71,27 @@ gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
 
 2. To publish your plugin, login to npm through the CLI and then publish it. Be sure to bump your version on each release.
 
-  ```bash
-  npm run release #if you have the relevant release script
-  git push -u origin --tags
-  npm publish
-  ```
+```bash
+npm run release #if you have the relevant release script
+git push -u origin --tags
+npm publish
+```
 
 3. Your plugin may not be available right away. Gatsby uses [Algolia][15] to index plugins and Gatsby rebuilds their website
    periodically to include plugins.
 
-
-[1]:https://www.gatsbyjs.com/docs/creating-a-source-plugin/
-[2]:https://www.gatsbyjs.org/tutorial/remark-plugin-tutorial/
-[3]:https://gifs.curiousprogrammer.dev
-[4]:https://github.com/cbillowes/gatsby-remark-interactive-gifs
-[5]:https://www.gatsbyjs.org/docs/
-[6]:https://www.gatsbyjs.org/docs/quick-start/
-[7]:https://www.gatsbyjs.org/docs/naming-a-plugin
-[8]:https://docs.npmjs.com/creating-a-package-json-file
-[9]:https://github.com/gatsbyjs/gatsby-starter-default
-[10]:https://www.gatsbyjs.org/docs/what-is-a-plugin/
-[11]:https://stackoverflow.com/questions/44552348/should-i-commit-yarn-lock-and-package-lock-json-files
-[12]:https://www.gatsbyjs.org/contributing/submit-to-plugin-library/
-[13]:https://www.gatsbyjs.org/docs/files-gatsby-looks-for-in-a-plugin/
-[14]:https://github.com/conventional-changelog/standard-version
-[15]:https://www.algolia.com/
-
+[1]: https://www.gatsbyjs.com/docs/creating-a-source-plugin/
+[2]: https://www.gatsbyjs.org/tutorial/remark-plugin-tutorial/
+[3]: https://gifs.curiousprogrammer.dev
+[4]: https://github.com/cbillowes/gatsby-remark-interactive-gifs
+[5]: https://www.gatsbyjs.org/docs/
+[6]: https://www.gatsbyjs.org/docs/quick-start/
+[7]: https://www.gatsbyjs.org/docs/naming-a-plugin
+[8]: https://docs.npmjs.com/creating-a-package-json-file
+[9]: https://github.com/gatsbyjs/gatsby-starter-default
+[10]: https://www.gatsbyjs.org/docs/what-is-a-plugin/
+[11]: https://stackoverflow.com/questions/44552348/should-i-commit-yarn-lock-and-package-lock-json-files
+[12]: https://www.gatsbyjs.org/contributing/submit-to-plugin-library/
+[13]: https://www.gatsbyjs.org/docs/files-gatsby-looks-for-in-a-plugin/
+[14]: https://github.com/conventional-changelog/standard-version
+[15]: https://www.algolia.com/

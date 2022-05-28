@@ -1,23 +1,23 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { IoOpenOutline } from "@react-icons/all-files/io5/IoOpenOutline"
-import { Link } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-gtag"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { IoOpenOutline } from '@react-icons/all-files/io5/IoOpenOutline';
+import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 const trackClickEvent = (data) => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", "click", data)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'click', data);
   }
-}
+};
 
 const getClassNames = (className, useMarkdownStyles) => {
   const markdownClasses =
-    "font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline"
+    'font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline';
 
   return `w-auto inline-block ${className} ${
-    useMarkdownStyles ? markdownClasses : ""
-  }`
-}
+    useMarkdownStyles ? markdownClasses : ''
+  }`;
+};
 
 const Anchor = ({
   className,
@@ -28,17 +28,17 @@ const Anchor = ({
   newTabIndicator,
   forceNewTab,
 }) => {
-  const trackingData = { to, title }
-  const classNames = getClassNames(className, useMarkdownStyles)
+  const trackingData = { to, title };
+  const classNames = getClassNames(className, useMarkdownStyles);
 
   if (!to)
     return (
       <span className={classNames} title={title || children}>
         {children}
       </span>
-    )
+    );
 
-  if (to && to.startsWith("/") && !forceNewTab) {
+  if (to && to.startsWith('/') && !forceNewTab) {
     return (
       <Link
         className={classNames}
@@ -48,7 +48,7 @@ const Anchor = ({
       >
         {children}
       </Link>
-    )
+    );
   }
 
   return (
@@ -68,8 +68,8 @@ const Anchor = ({
         )}
       </OutboundLink>
     </span>
-  )
-}
+  );
+};
 
 Anchor.propTypes = {
   children: PropTypes.node.isRequired,
@@ -79,6 +79,6 @@ Anchor.propTypes = {
   useMarkdownStyles: PropTypes.bool,
   newTabIndicator: PropTypes.bool,
   forceNewTab: PropTypes.bool,
-}
+};
 
-export default Anchor
+export default Anchor;

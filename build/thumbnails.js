@@ -59,41 +59,41 @@ const thumbnails = [
     credit: `Markus Spiske`,
     creditLink: `https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexts`,
   },
-]
+];
 
 const getRandomThumbnail = () => {
-  const index = parseInt(Math.random() * thumbnails.length)
-  return thumbnails[index]
-}
+  const index = parseInt(Math.random() * thumbnails.length);
+  return thumbnails[index];
+};
 
 exports.createFields = (node, createNodeField, reporter) => {
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === 'MarkdownRemark') {
     const { photo, creditSource, credit, creditLink } =
-      node.frontmatter || getRandomThumbnail()
+      node.frontmatter || getRandomThumbnail();
     createNodeField({
       node,
       name: `photo`,
       value: photo,
-    })
+    });
 
     createNodeField({
       node,
       name: `source`,
       value: creditSource,
-    })
+    });
 
     createNodeField({
       node,
       name: `credit`,
       value: credit,
-    })
+    });
 
     createNodeField({
       node,
       name: `link`,
       value: creditLink,
-    })
+    });
 
-    reporter.verbose(`thumbnail [field]: ${photo}`)
+    reporter.verbose(`thumbnail [field]: ${photo}`);
   }
-}
+};
