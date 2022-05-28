@@ -21,7 +21,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-image`,
@@ -48,7 +47,6 @@ module.exports = {
         sassOptions: {
           precision: 6,
         },
-        sourceMap: true,
       },
     },
     {
