@@ -12,6 +12,7 @@ import List from '../components/Articles/List';
 import Anchor from '../components/Anchor';
 import BuyMeCoffee from '../components/Coffee';
 import WavingHand from '../components/WavingHand';
+import Typewriter from '../components/Typewriter';
 
 const Articles = ({ edges }) => {
   return <List edges={edges} />;
@@ -45,8 +46,16 @@ const IndexPage = ({ data }) => {
             <WavingHand />
           </div>
           <div className="p-2 lg:px-5 lg:py-3">
-            <h1 className="text-md lg:text-5xl xl:text-8xl text-center">
-              Hello <span className="font-semibold">Clarice</span>
+            <h1 className="text-md lg:text-5xl xl:text-7xl text-center">
+              <Typewriter
+                phrases={[
+                  'Hello World!',
+                  'How are you?',
+                  'Comment ça va ?',
+                  'Tu korek ?',
+                  'Hoe gaan dit?',
+                ]}
+              />
             </h1>
           </div>
           <div className="text-2xl py-2 px-14 text-center leading-loose">
