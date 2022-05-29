@@ -7,12 +7,21 @@ const isUrl = (imagePath) => {
   return imagePath && imagePath.startsWith('http');
 };
 
+const isRelativePath = (imagePath) => {
+  return imagePath && imagePath.startsWith('../');
+};
+
+const getStaticPath = (imagePath) => {
+  console.log(imagePath);
+  return isRelativePath(imagePath)
+    ? imagePath
+    : require(`../Images/${imagePath}`).default;
+};
+
 const Social = ({ pageType, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route);
   const image = `${url}${
-    isUrl(imagePath)
-      ? imagePath
-      : require(`${imagePath || 'share.jpg'}`).default
+    isUrl(imagePath) ? imagePath : getStaticPath(imagePath)
   }`;
 
   return (

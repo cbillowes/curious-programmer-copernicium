@@ -1,6 +1,6 @@
 ---
 title: 'Learning Linux'
-cover: 'bionic-cover.png'
+cover: 'bionic-beaver.png'
 credit: Ubuntu 18.04 LTS
 date: '2018-07-27 07:00'
 tags:
