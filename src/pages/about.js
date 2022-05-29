@@ -65,7 +65,6 @@ export const query = graphql`
             date(formatString: "LL")
             number
             component
-            cover
             credit
             source
             link
@@ -73,6 +72,7 @@ export const query = graphql`
           frontmatter {
             title
             tags
+            cover
           }
         }
       }
