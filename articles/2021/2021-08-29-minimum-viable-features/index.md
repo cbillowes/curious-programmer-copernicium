@@ -1,7 +1,7 @@
 ---
 title: Feature Development Lifecycle with minimum viable features
 date: 2021-08-30 21:00:00 +0400
-photo: pink-mac.jpg
+cover: pink-mac.jpg
 credit: DESIGNECOLOGIST
 creditLink: https://unsplash.com/photos/Pmh0UoG1vlE
 creditSource: unsplash

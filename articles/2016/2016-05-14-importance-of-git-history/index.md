@@ -2,7 +2,7 @@
 featured: true
 title: The importance of Git history
 date: 2016-05-14 21:04:29 +0200
-photo: git.png
+cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 creditSource: dribbble.com

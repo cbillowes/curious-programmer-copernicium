@@ -1,7 +1,7 @@
 ---
 title: Emulating rendering options in Chrome DevTools
 date: 2021-08-27 18:00:00 +0400
-photo: chrome-devtools-emulation.png
+cover: chrome-devtools-emulation.png
 credit: screenshot
 tags:
   - Technical

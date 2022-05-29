@@ -1,7 +1,7 @@
 ---
 title: What I did to build a high performing and SEO happy Gatsby blog
 date: 2021-08-29 13:30:00 +0400
-photo: pagespeed-score.png
+cover: pagespeed-score.png
 tags:
   - Technical
   - Gatsby

@@ -1,7 +1,7 @@
 ---
 title: How can I create a ClojureScript web app from scratch with Reagent and npm?
 date: 2021-11-17 06:00 +0400
-photo: clojure.jpg
+cover: clojure.jpg
 credit: Tom & Rich Hickey
 creditLink: https://en.wikipedia.org/wiki/Clojure
 creditSource: wikipedia

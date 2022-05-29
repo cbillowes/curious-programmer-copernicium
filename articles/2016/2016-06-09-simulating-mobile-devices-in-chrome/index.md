@@ -1,7 +1,7 @@
 ---
 title: Simulating mobile devices in Chrome
 date: 2016-06-09 00:17:28 +0200
-photo: device-emulation-preview.jpg
+cover: device-emulation-preview.jpg
 tags:
   - Technical
   - Chrome DevTools

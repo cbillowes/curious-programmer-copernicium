@@ -1,7 +1,7 @@
 ---
 title: Adjusting the corporate mindset
 date: 2016-05-11 23:16:23 +0200
-photo: highrise-buildings.jpg
+cover: highrise-buildings.jpg
 credit: picsum
 creditLink: https://picsum.photos/1600/800/?image=983
 creditSource: picsum.photos

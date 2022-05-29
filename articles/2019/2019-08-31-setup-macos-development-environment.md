@@ -1,7 +1,7 @@
 ---
 title: Setup macOS development environment
 date: 2019-08-31 03:00:00 +0200
-photo: mac.jpg
+cover: mac.jpg
 credit: Jessy Smith
 creditLink: https://unsplash.com/photos/zFOm6KzA-7g
 creditSource: unsplash

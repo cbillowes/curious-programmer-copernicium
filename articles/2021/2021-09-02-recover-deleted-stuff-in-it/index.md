@@ -1,7 +1,7 @@
 ---
 title: How can I find deleted stuff in Git?
 date: 2021-09-02 19:30:00 +0400
-photo: dev-rant.png
+cover: dev-rant.png
 credit: devrant.io
 creditLink: https://github.com/cozyplanes/wallpaper#devrant-unofficial-wallpaper
 creditSource: cozyplanes

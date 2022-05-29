@@ -1,7 +1,7 @@
 ---
 title: 'Greet users with the message of the day'
 date: 2019-02-15 05:00:00 +0200
-photo: curious.jpg
+cover: curious.jpg
 credit: Clarice Bouwer
 tags:
   - Technical

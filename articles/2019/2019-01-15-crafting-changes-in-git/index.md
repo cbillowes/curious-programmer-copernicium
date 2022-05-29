@@ -2,7 +2,7 @@
 featured: true
 title: How To Craft Your Changes Into Small Atomic Commits Using Git
 date: 2019-01-15 22:30:00 +0200
-photo: git.png
+cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 creditSource: dribbble.com

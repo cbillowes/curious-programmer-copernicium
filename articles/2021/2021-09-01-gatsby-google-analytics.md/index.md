@@ -1,7 +1,7 @@
 ---
 title: Debugging gatsby-plugin-google-gtag for Google Analytics 4 with Gatsby
 date: 2021-09-01 02:30:00 +0400
-photo: gatsby.png
+cover: gatsby.png
 tags:
   - Technical
   - Gatsby

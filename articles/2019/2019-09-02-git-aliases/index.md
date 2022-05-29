@@ -2,7 +2,7 @@
 featured: true
 title: Git aliases
 date: 2019-09-02 03:00:00 +0200
-photo: git.png
+cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 creditSource: dribbble.com

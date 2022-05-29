@@ -61,7 +61,7 @@ export const query = graphql`
             date(formatString: "LL")
             number
             component
-            photo
+            cover
             credit
             source
             link

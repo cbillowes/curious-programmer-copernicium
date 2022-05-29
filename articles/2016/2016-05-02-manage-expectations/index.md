@@ -1,7 +1,7 @@
 ---
 title: Manage expectations
 date: 2016-05-02 19:20:00 +0200
-photo: dog-in-blanket.jpg
+cover: dog-in-blanket.jpg
 credit: picsum
 creditLink: https://picsum.photos/1600/800/?image=1062
 creditSource: picsum.photos

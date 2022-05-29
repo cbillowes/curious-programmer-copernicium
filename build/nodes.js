@@ -7,8 +7,8 @@ const getSlug = ({ slug, title }) => {
   return slug || path.join(`/blog`, _.kebabCase(title), `/`);
 };
 
-const getComponent = (photo) => {
-  return images.getComponentName(photo) || images.getRandomDefaultComponent();
+const getComponent = (cover) => {
+  return images.getComponentName(cover) || images.getRandomDefaultComponent();
 };
 
 const toTimestamp = (date) => {
@@ -33,9 +33,9 @@ exports.applyNumbers = (nodes, createNodeField) => {
 
 exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === `MarkdownRemark`) {
-    const { date, photo } = node.frontmatter;
+    const { date, cover } = node.frontmatter;
     const slug = getSlug(node.frontmatter);
-    const component = getComponent(photo);
+    const component = getComponent(cover);
 
     createNodeField({
       node,

@@ -1,7 +1,7 @@
 ---
 title: 'Cisco ASA cheat sheet'
 date: 2019-02-10 15:30:00 +0200
-photo: cisco.png
+cover: cisco.png
 credit: WallpaperCaves
 creditLink: https://wallpapercave.com/w/wp4434765
 creditSource: WallpaperCave

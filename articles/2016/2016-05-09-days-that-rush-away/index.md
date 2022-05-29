@@ -1,7 +1,7 @@
 ---
 title: Days that rush away
 date: 2016-05-09 23:30:10 +0200
-photo: busy-station.jpg
+cover: busy-station.jpg
 credit: picsum
 creditLink: https://picsum.photos/1600/800/?image=396
 creditSource: picsum.photos

@@ -28,7 +28,7 @@ export const query = graphql`
         date(formatString: "LL")
         number
         component
-        photo
+        cover
         credit
         source
         link
@@ -60,7 +60,7 @@ const ArticleTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { component, photo, credit, link, source } = fields;
+  const { component, cover, credit, link, source } = fields;
   const keywords = getKeywords(html);
 
   return (
@@ -71,7 +71,7 @@ const ArticleTemplate = ({ data }) => {
         pageTitle: frontmatter.title,
         siteTitle: title,
         description: excerpt || description,
-        image: frontmatter.photo,
+        image: frontmatter.cover,
         pageType: 'article',
         route: fields.slug,
       }}
@@ -80,7 +80,7 @@ const ArticleTemplate = ({ data }) => {
         <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto overflow-hidden rounded-2xl">
           <Thumbnail
             alt={title}
-            photo={photo}
+            photo={cover}
             credit={credit}
             source={source}
             link={link}

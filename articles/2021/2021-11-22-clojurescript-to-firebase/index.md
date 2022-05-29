@@ -1,7 +1,7 @@
 ---
 title: How can I deploy a ClojureScript web app to Google Firebase with GitHub Actions?
 date: 2021-11-22 05:00 +0400
-photo: clojure-firebase.jpg
+cover: clojure-firebase.jpg
 tags:
   - Technical
   - ClojureScript

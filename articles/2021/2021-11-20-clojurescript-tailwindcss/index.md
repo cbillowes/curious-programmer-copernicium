@@ -1,7 +1,7 @@
 ---
 title: How can I use Tailwind in my ClojureScript web app?
 date: 2021-11-20 05:00 +0400
-photo: clojure-tailwindcss.jpg
+cover: clojure-tailwindcss.jpg
 tags:
   - Technical
   - ClojureScript
