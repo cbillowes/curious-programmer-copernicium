@@ -11,6 +11,7 @@ import SocialMediaIcon from '../components/SocialMediaIcon';
 import List from '../components/Articles/List';
 import Anchor from '../components/Anchor';
 import BuyMeCoffee from '../components/Coffee';
+import WavingHand from '../components/WavingHand';
 
 const Articles = ({ edges }) => {
   return <List edges={edges} />;
@@ -41,12 +42,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="hidden opacity-70 bg-default text-welcome absolute right-0 top-0 bottom-0 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-6/12 xl:w-5/12">
           <div className="mb-5">
-            <StaticImage
-              src="../images/emoji-waving-hand.png"
-              alt="Waving hand emoji"
-              height={70}
-              width={70}
-            />
+            <WavingHand />
           </div>
           <div className="p-2 lg:px-5 lg:py-3">
             <h1 className="text-md lg:text-5xl xl:text-8xl text-center">
