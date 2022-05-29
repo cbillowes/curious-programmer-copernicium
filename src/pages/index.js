@@ -36,6 +36,7 @@ const IndexPage = ({ data }) => {
             src="../images/profile.jpg"
             alt="I am standing in a star fish pose on top of Mauritius rocks by the sea"
             layout="constrained"
+            width={1440}
           />
         </div>
         <div className="hidden opacity-70 bg-default text-welcome absolute right-0 top-0 bottom-0 lg:flex flex-col flex-wrap justify-center items-center w-5/12 lg:w-6/12 xl:w-5/12">
