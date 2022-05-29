@@ -14,7 +14,7 @@ const Preview = ({
   timeToRead,
   excerpt,
   tags,
-  photo,
+  cover,
   credit,
   source,
   link,
@@ -75,7 +75,7 @@ const Preview = ({
           number={number}
           to={slug}
           alt={title}
-          photo={photo}
+          cover={cover}
           credit={credit}
           source={source}
           link={link}

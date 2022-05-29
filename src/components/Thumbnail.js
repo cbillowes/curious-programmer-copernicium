@@ -59,7 +59,19 @@ Credit.propTypes = {
   text: PropTypes.string,
 };
 
-const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
+const ExternalThumbnail = ({ to, alt, src }) => {
+  console.log(src);
+  return (
+    <Anchor to={to} title={alt}>
+      <img alt={alt} src={src} width={450} />
+    </Anchor>
+  );
+};
+
+const Thumbnail = ({ alt, to, cover, credit, source, link, componentName }) => {
+  if (componentName === 'url')
+    return <ExternalThumbnail to={link} alt={alt} src={cover} />;
+
   const Image = ComponentIndex[componentName];
   return (
     <div title={alt} className="relative shadow-md transform">
@@ -80,7 +92,7 @@ Thumbnail.propTypes = {
   alt: PropTypes.string,
   number: PropTypes.number,
   to: PropTypes.string,
-  photo: PropTypes.string,
+  cover: PropTypes.string,
   credit: PropTypes.string,
   source: PropTypes.string,
   link: PropTypes.string,

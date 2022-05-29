@@ -33,7 +33,8 @@ exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === `MarkdownRemark`) {
     const { date, cover } = node.frontmatter;
     const slug = getSlug(node.frontmatter);
-    const component = getComponent(cover);
+    const component =
+      cover && cover.startsWith('http') ? 'url' : getComponent(cover);
 
     createNodeField({
       node,
@@ -59,6 +60,14 @@ exports.createFields = (node, createNodeField, reporter) => {
       value: component,
     });
 
-    reporter.verbose(`node [field]: ${slug}`);
+    createNodeField({
+      node,
+      name: `cover`,
+      value: cover,
+    });
+
+    reporter.success(
+      `node [field]: ${slug}: { date: ${date}, component: ${component}, cover: ${cover} }`,
+    );
   }
 };

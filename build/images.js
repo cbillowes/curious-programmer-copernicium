@@ -30,6 +30,7 @@ const kebabToTitleCase = (text) => {
 };
 
 const toComponentName = (text) => {
+  if (text && text.startsWith('http')) return 'url';
   return kebabToTitleCase(text).replace(/\.|jpg|png|gif|svg/g, '');
 };
 

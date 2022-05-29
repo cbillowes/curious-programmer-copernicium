@@ -32,7 +32,7 @@ Preview.propTypes = {
       date: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       component: PropTypes.string.isRequired,
-      photo: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
       credit: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
       source: PropTypes.string.isRequired,

@@ -84,16 +84,20 @@ exports.createFields = (node, createNodeField, reporter) => {
 
     createNodeField({
       node,
-      name: `credit`,
-      value: credit,
-    });
-
-    createNodeField({
-      node,
       name: `link`,
       value: creditLink,
     });
 
-    reporter.verbose(`thumbnail [field]: ${cover}`);
+    createNodeField({
+      node,
+      name: `credit`,
+      value: credit,
+    });
+
+    reporter.success(`thumbnail [field]: ${cover}`, {
+      source: creditSource,
+      link: creditLink,
+      credit,
+    });
   }
 };
