@@ -100,8 +100,6 @@ module.exports.create = async (actions, graphql, reporter) => {
 
     const { createPage } = actions;
     createArticlePages(createPage, result, reporter);
-    createDemoPage(createPage, result, reporter);
     createLandingPage(createPage, reporter);
-    createEverythingPage(createPage, reporter);
   });
 };
