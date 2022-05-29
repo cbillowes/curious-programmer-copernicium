@@ -1,29 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Typewriter from './Typewriter';
 
 const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
-  const [count, setCount] = useState(1);
-
-  useEffect(() => {
-    setCount(1);
-  }, [count]);
-
   return (
     <>
       <div
-        className={`max-w-2xl justify-center mx-auto mt-10 flex flex-wrap relative ${className}`}
+        className={`max-w-2xl justify-center mx-auto mt-10 flex flex-wrap relative ${
+          className || ''
+        }`}
         onClick={onClick}
       >
         <div className="block bg-default z-10 p-2 text-neutral">
-          <Typewriter
-            prefix={prefix}
-            phrases={phrases}
-            count={count}
-            setCount={setCount}
-          >
-            {children}
-          </Typewriter>
+          {phrases && phrases.length > 0 && <Typewriter phrases={phrases} />}
+          {children}
           {expanded && (
             <div
               className="expansion-button-expanded absolute -top-3 left-1/2 transform -translate-x-1/2"
