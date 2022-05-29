@@ -176,7 +176,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 10
       filter: { fields: { slug: { nin: "/blog/example/" } } }
-      sort: { order: DESC, fields: fields___number }
+      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {
