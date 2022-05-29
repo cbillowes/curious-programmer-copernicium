@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 const getResource = (url, route) => `${url}${route || '/'}`;
 
+const isUrl = (imagePath) => {
+  return imagePath && imagePath.startsWith('http');
+};
+
 const Social = ({ pageType, imagePath, url, route, twitter }) => {
   const canonical = getResource(url, route);
   const image = `${url}${
-    require(`../../images/social-media/${imagePath || 'share.jpg'}`).default
+    isUrl(imagePath)
+      ? imagePath
+      : require(`${imagePath || 'share.jpg'}`).default
   }`;
 
   return (
