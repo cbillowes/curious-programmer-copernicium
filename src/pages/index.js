@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Layout } from '../components/Layout';
-import { FaTwitter, FaLinkedinIn } from 'react-icons/fa/index';
+import { FaLinkedinIn } from 'react-icons/fa/index';
 import { ImStackoverflow } from 'react-icons/im/index';
 import { VscGithub } from 'react-icons/vsc/index';
 import Emoji from '../components/Emoji';
@@ -132,10 +132,6 @@ const IndexPage = ({ data }) => {
           title="Stack Overflow"
         >
           <ImStackoverflow className="text-stackoverflow" />
-        </SocialMediaIcon>
-
-        <SocialMediaIcon to="https://twitter.com/cbillowes" title="Twitter">
-          <FaTwitter className="text-twitter" />
         </SocialMediaIcon>
       </div>
 
