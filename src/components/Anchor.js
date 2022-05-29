@@ -14,7 +14,7 @@ const getClassNames = (className, useMarkdownStyles) => {
   const markdownClasses =
     'font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline';
 
-  return `w-auto inline-block ${className} ${
+  return `w-auto inline-block ${className || ''} ${
     useMarkdownStyles ? markdownClasses : ''
   }`;
 };
