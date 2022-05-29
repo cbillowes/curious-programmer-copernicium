@@ -23,7 +23,7 @@ const Brands = () => {
           title="Simply Financial Services"
           src="../../images/logos/simply.png"
           className="inline-block mr-8 mt-4"
-          height={30}
+          height={40}
           layout="fixed"
         />
 
@@ -32,7 +32,7 @@ const Brands = () => {
           title="Microsoft"
           src="../../images/logos/microsoft.png"
           className="inline-block mr-8 mt-4"
-          height={30}
+          height={40}
           layout="fixed"
         />
 
@@ -41,7 +41,7 @@ const Brands = () => {
           title="Absa"
           src="../../images/logos/absa.png"
           className="inline-block mr-8 mt-4"
-          height={40}
+          height={50}
           layout="fixed"
         />
 
@@ -50,7 +50,7 @@ const Brands = () => {
           title="Old Mutual"
           src="../../images/logos/old-mutual.png"
           className="inline-block mr-8 mt-4"
-          height={50}
+          height={60}
           layout="fixed"
         />
 
@@ -59,7 +59,7 @@ const Brands = () => {
           title="Vodacom"
           src="../../images/logos/vodacom.png"
           className="inline-block mr-8 mt-4"
-          height={40}
+          height={50}
           layout="fixed"
         />
 
@@ -68,7 +68,7 @@ const Brands = () => {
           title="MultiChoice"
           src="../../images/logos/multichoice.png"
           className="inline-block mr-8 mt-4"
-          height={50}
+          height={60}
           layout="fixed"
         />
 
@@ -77,7 +77,7 @@ const Brands = () => {
           title="DStv"
           src="../../images/logos/dstv.png"
           className="inline-block mr-8 mt-4"
-          height={20}
+          height={30}
           layout="fixed"
         />
 
@@ -86,7 +86,7 @@ const Brands = () => {
           title="Idols South Africa"
           src="../../images/logos/idols.png"
           className="inline-block mr-8 mt-4"
-          height={40}
+          height={50}
           layout="fixed"
         />
       </div>
