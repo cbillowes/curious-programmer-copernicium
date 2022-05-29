@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const sharp = require('sharp');
-const { dir } = require('console');
+const { copyGifs, copySvgs, copyWebps } = require('./copy');
 
 /**
  * Any source file residing in the resources directory which is used to
@@ -235,4 +235,7 @@ exports.bulk = () => {
   );
 
   this.generateComponentIndex(reporter);
+  copyGifs();
+  copySvgs();
+  copyWebps();
 };

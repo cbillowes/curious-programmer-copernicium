@@ -1,9 +1,7 @@
 const nodes = require('./build/nodes');
-const images = require('./build/images');
 const thumbnails = require('./build/thumbnails');
 const articles = require('./build/pages-articles');
 const tags = require('./build/pages-tags');
-const { copyGifs, copySvgs, copyWebps } = require('./build/copy');
 
 // The order of which nodes are processed is not guaranteed.
 // To add numbers to each post, nodes need to be captured
@@ -30,7 +28,6 @@ exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
 exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions;
-  images.process(node, reporter);
   thumbnails.createFields(node, createNodeField, reporter);
   nodes.createFields(node, createNodeField, reporter);
   if (node.internal.type === `MarkdownRemark`) {
@@ -43,13 +40,6 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await articles.create(actions, graphql, reporter);
   await tags.create(actions, graphql, reporter);
-};
-
-exports.onPostBootstrap = ({ reporter }) => {
-  images.generateComponentIndex(reporter);
-  copyGifs();
-  copySvgs();
-  copyWebps();
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
