@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const path = require('path');
-const config = require('./const');
 const template = `./src/templates/tag.js`;
 const createPages = true;
 
