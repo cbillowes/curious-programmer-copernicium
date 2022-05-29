@@ -6,7 +6,7 @@ credit: PNGWAVE
 creditLink: https://www.pngwave.com/png-clip-art-oafhz
 creditSource: PNGWAVE
 tags:
-  - Personal Brands
+  - Personal Brand
 ---
 
 My name is Clarice Bouwer. I have been a professional software developer
