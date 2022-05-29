@@ -48,9 +48,7 @@ module.exports.create = async (actions, graphql, reporter) => {
     }
 
     const { createPage } = actions;
-    const edges = result.data.allMarkdownRemark.edges.filter(
-      (edge) => edge.node.slug !== config.DEMO_PAGE,
-    );
+    const edges = result.data.allMarkdownRemark.edges;
 
     getTags(edges).forEach(({ slug, tag }) => {
       createPage({

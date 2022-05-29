@@ -1,4 +1,3 @@
-const { DEMO_PAGE } = require('./const');
 const _ = require('lodash');
 const path = require('path');
 const images = require('./images');
@@ -16,8 +15,7 @@ const toTimestamp = (date) => {
 };
 
 exports.applyNumbers = (nodes, createNodeField) => {
-  const numberable = nodes.filter((node) => node.fields.slug !== DEMO_PAGE);
-  const sorted = numberable.sort(
+  const sorted = nodes.sort(
     (a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date),
   );
   sorted.forEach((node, index) => {

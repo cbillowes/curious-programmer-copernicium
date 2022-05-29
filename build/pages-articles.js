@@ -1,14 +1,9 @@
-const { DEMO_PAGE } = require('./const');
-
 const path = require('path');
 const template = `./src/templates/article.js`;
 const createPages = true;
 
 const landingPage = './src/pages/index.js';
 const landingPageSlug = '/';
-
-const articlesPage = './src/pages/articles.js';
-const articlesPageSlug = '/blog';
 
 const query = async (graphql) => {
   return await graphql(`
@@ -75,23 +70,10 @@ const createThePage = (createPage, edges, index, reporter) => {
 };
 
 const createArticlePages = (createPage, result, reporter) => {
-  const edges = result.data.allMarkdownRemark.edges.filter(
-    (edge) => edge.node.fields.slug !== DEMO_PAGE,
-  );
+  const edges = result.data.allMarkdownRemark.edges;
   edges.forEach((_, index) => {
     createThePage(createPage, edges, index, reporter);
   });
-};
-
-const createDemoPage = (createPage, result, reporter) => {
-  const edges = result.data.allMarkdownRemark.edges;
-  const index =
-    edges.filter(({ node }) => node.fields.slug.indexOf(DEMO_PAGE) > -1)
-      .length > 0;
-  if (index === 0) {
-    createThePage(createPage, edges, index, reporter);
-    reporter.success(`create article: [demo]`);
-  }
 };
 
 const createLandingPage = (createPage, reporter) => {
@@ -104,18 +86,6 @@ const createLandingPage = (createPage, reporter) => {
     },
   });
   reporter.success(`create article: [home] ${slug}`);
-};
-
-const createEverythingPage = (createPage, reporter) => {
-  const slug = articlesPageSlug;
-  createPage({
-    path: slug,
-    component: path.resolve(articlesPage),
-    context: {
-      slug,
-    },
-  });
-  reporter.success(`create article: [all] ${slug}`);
 };
 
 module.exports.create = async (actions, graphql, reporter) => {
