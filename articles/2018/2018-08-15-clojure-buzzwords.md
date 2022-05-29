@@ -1,6 +1,6 @@
 ---
 title: 'Clojure Buzzwords I am Learning'
-ogImage: images/og/2018-08-15-clojure-logo.png
+cover: 'clojure.jpg'
 date: 2018-08-15 20:15:00 +0200
 tags:
   - Technical
