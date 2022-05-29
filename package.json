@@ -48,7 +48,8 @@
     "react-instantsearch-dom": "^6.26.0",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^3.1.0",
