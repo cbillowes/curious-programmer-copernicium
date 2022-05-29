@@ -30,7 +30,7 @@ const Intro = () => {
               borderRadius: '50%',
             }}
           />
-          <WavingHand className="absolute right-0 top-0" />
+          <WavingHand className="absolute right-0 top-0" onClick={greet} />
         </div>
         <h1 className="text-5xl xl:text-8xl text-center mb-5 xl:mb-10 mt-5">
           <span className="font-semibold">{greeting}!</span>

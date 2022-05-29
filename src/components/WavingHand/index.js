@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-const WavingHand = ({ className }) => {
+const WavingHand = ({ className, onClick }) => {
   const [isWaving, setWave] = useState(true);
   return (
     <div
@@ -11,6 +11,7 @@ const WavingHand = ({ className }) => {
       onAnimationEnd={() => setWave(false)}
       onClick={() => {
         setWave(true);
+        onClick && onClick();
       }}
       style={{
         transformOrigin: '70% 70%',
