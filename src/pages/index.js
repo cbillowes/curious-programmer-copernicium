@@ -49,17 +49,14 @@ const IndexPage = ({ data }) => {
               Hello <span className="font-semibold">Clarice</span>
             </h1>
           </div>
-          <div className="py-1 lg:px-5 lg:py-3 mt-1">
-            <p className="text-sm lg:text-xl xl:text-2xl text-center mb-2">
-              I&apos;m a Senior Software Engineer
+          <div className="text-2xl py-2 px-14 text-center leading-loose">
+            <p>
+              My name is <strong className="bold">Clarice Bouwer</strong> &amp;
+              I am a <strong className="bold">Senior Software Engineer</strong>{' '}
+              at <strong className="bold">Cloudsure</strong>, Mauritius. I have
+              been a curious programmer since the early 2000s. Let us learn
+              something new together.
             </p>
-            <p className="text-sm lg:text-xl xl:text-2xl text-center">
-              and I work at Cloudsure in Mauritius.
-            </p>
-          </div>
-          <div className="hidden lg:inline-block mt-2 xl:mt-10 text-center lg:text-xl xl:text-2xl">
-            <p className="mb-2">I write code. I share code. I love code.</p>
-            <p>I am a curious programmer.</p>
           </div>
           <div className="hidden lg:flex mt-12 items-center">
             <Emoji
