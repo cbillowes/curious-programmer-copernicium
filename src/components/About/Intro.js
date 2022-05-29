@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { greetings } from '../../common/greetings';
 import Emoji from '../Emoji';
+import WavingHand from '../WavingHand';
 
 const getRandomGreeting = () => {
   const index = Math.floor(Math.random() * greetings.length);
@@ -11,7 +12,6 @@ const getRandomGreeting = () => {
 
 const Intro = () => {
   const [greeting, setGreeting] = useState(getRandomGreeting());
-  const [isWaving, setWave] = useState(true);
 
   const greet = () => {
     const greeting = getRandomGreeting();
@@ -30,28 +30,7 @@ const Intro = () => {
               borderRadius: '50%',
             }}
           />
-          <div
-            className={`absolute right-0 top-0 cursor-pointer ${
-              isWaving ? 'animate-wave' : ''
-            }`}
-            onAnimationEnd={() => setWave(false)}
-            onClick={() => {
-              setWave(true);
-              greet();
-            }}
-            style={{
-              transformOrigin: '70% 70%',
-            }}
-          >
-            <StaticImage
-              src="../../images/emoji-waving-hand.png"
-              alt="Waving hand emoji"
-              width={80}
-              style={{
-                borderRadius: '30%',
-              }}
-            />
-          </div>
+          <WavingHand className="absolute right-0 top-0" />
         </div>
         <h1 className="text-5xl xl:text-8xl text-center mb-5 xl:mb-10 mt-5">
           <span className="font-semibold">{greeting}!</span>
