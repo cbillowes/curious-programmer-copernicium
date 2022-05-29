@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const CoupleKissingInTheDark = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/couple-kissing-in-the-dark.jpg"
+      src="./couple-kissing-in-the-dark.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

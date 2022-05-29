@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const Mauritius = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/mauritius.jpg"
+      src="./mauritius.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

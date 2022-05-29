@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const Git = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/git.png"
+      src="./git.png"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

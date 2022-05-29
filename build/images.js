@@ -97,7 +97,10 @@ const processImage = (
 
 const processHighRes = (sourcePath, reporter) => {
   const quality = 100;
-  const destinationPath = toDestinationPath(`src/images/articles`, sourcePath);
+  const destinationPath = toDestinationPath(
+    `src/components/Images`,
+    sourcePath,
+  );
   const width = 1920;
   const height = 1080;
   const fit = sharp.fit.cover;
@@ -179,9 +182,9 @@ const getComponentsToBeIndexed = (sourcePath) => {
 };
 
 exports.generateComponentIndex = (reporter) => {
-  const sourcePath = path.join(__dirname, '../src/images/articles');
+  const sourcePath = path.join(__dirname, '../src/components/Images');
   const filename = 'index.js';
-  const destinationRelativePath = '../src/components/images';
+  const destinationRelativePath = '../src/components/Images';
   const destinationPath = path.join(
     __dirname,
     destinationRelativePath,

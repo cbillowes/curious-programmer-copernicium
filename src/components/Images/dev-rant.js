@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const DevRant = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/dev-rant.png"
+      src="./dev-rant.png"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

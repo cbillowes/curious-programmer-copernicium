@@ -59,12 +59,20 @@ Credit.propTypes = {
   text: PropTypes.string,
 };
 
-const Thumbnail = ({ alt, to, credit, source, link, componentName }) => {
+const Thumbnail = ({
+  alt,
+  to,
+  credit,
+  source,
+  link,
+  height,
+  componentName,
+}) => {
   const Image = ComponentIndex[componentName];
   return (
     <div title={alt} className="relative shadow-md transform">
       <Anchor to={to} title={alt}>
-        <Image alt={alt} width={450} />
+        <Image alt={alt} width={250} />
       </Anchor>
       <Credit
         componentName={componentName}
@@ -84,6 +92,7 @@ Thumbnail.propTypes = {
   credit: PropTypes.string,
   source: PropTypes.string,
   link: PropTypes.string,
+  height: PropTypes.string,
   componentName: PropTypes.string,
 };
 

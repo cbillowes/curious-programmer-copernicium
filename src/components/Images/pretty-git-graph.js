@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const PrettyGitGraph = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/pretty-git-graph.png"
+      src="./pretty-git-graph.png"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

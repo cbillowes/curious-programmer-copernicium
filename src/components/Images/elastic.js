@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const Elastic = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/elastic.jpg"
+      src="./elastic.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

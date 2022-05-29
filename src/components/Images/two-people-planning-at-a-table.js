@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const TwoPeoplePlanningAtATable = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/two-people-planning-at-a-table.jpg"
+      src="./two-people-planning-at-a-table.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

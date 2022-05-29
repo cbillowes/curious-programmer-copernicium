@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const Default06 = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/default-06.jpg"
+      src="./default-06.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const DogInBlanket = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/dog-in-blanket.jpg"
+      src="./dog-in-blanket.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

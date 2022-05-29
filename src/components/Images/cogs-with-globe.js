@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const CogsWithGlobe = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/cogs-with-globe.jpg"
+      src="./cogs-with-globe.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

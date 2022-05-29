@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const PeopleAtACafeteria = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/people-at-a-cafeteria.jpg"
+      src="./people-at-a-cafeteria.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };

@@ -10,14 +10,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 export const Mac = ({ alt, ...rest }) => {
   return (
     <StaticImage
-      src="../../images/articles/mac.jpg"
+      src="./mac.jpg"
       alt={alt}
-      objectPosition="50% 50%"
-      objectFit="cover"
-      transformOptions={{
-        cropFocus: 'attention',
-      }}
-      {...rest}
+      height={250}
     />
   );
 };
