@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Gatsby = ({ alt, ...rest }) => {
+export const Gatsby = ({ alt }) => {
   return (
-    <StaticImage
-      src="./gatsby.png"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./gatsby.png" alt={alt} height={250} />
   );
 };
 

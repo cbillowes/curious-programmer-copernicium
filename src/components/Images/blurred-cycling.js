@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const BlurredCycling = ({ alt, ...rest }) => {
+export const BlurredCycling = ({ alt }) => {
   return (
-    <StaticImage
-      src="./blurred-cycling.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./blurred-cycling.jpg" alt={alt} height={250} />
   );
 };
 

@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const ChromeDevtoolsEmulation = ({ alt, ...rest }) => {
+export const ChromeDevtoolsEmulation = ({ alt }) => {
   return (
-    <StaticImage
-      src="./chrome-devtools-emulation.png"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./chrome-devtools-emulation.png" alt={alt} height={250} />
   );
 };
 

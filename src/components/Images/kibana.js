@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Kibana = ({ alt, ...rest }) => {
+export const Kibana = ({ alt }) => {
   return (
-    <StaticImage
-      src="./kibana.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./kibana.jpg" alt={alt} height={250} />
   );
 };
 

@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const DeviceEmulationPreview = ({ alt, ...rest }) => {
+export const DeviceEmulationPreview = ({ alt }) => {
   return (
-    <StaticImage
-      src="./device-emulation-preview.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./device-emulation-preview.jpg" alt={alt} height={250} />
   );
 };
 

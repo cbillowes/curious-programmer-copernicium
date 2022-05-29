@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Clojure = ({ alt, ...rest }) => {
+export const Clojure = ({ alt }) => {
   return (
-    <StaticImage
-      src="./clojure.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./clojure.jpg" alt={alt} height={250} />
   );
 };
 

@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const CogsWithGlobe = ({ alt, ...rest }) => {
+export const CogsWithGlobe = ({ alt }) => {
   return (
-    <StaticImage
-      src="./cogs-with-globe.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./cogs-with-globe.jpg" alt={alt} height={250} />
   );
 };
 

@@ -7,13 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const ClojureFirebase = ({ alt, ...rest }) => {
+export const ClojureFirebase = ({ alt }) => {
   return (
-    <StaticImage
-      src="./clojure-firebase.jpg"
-      alt={alt}
-      height={250}
-    />
+    <StaticImage src="./clojure-firebase.jpg" alt={alt} height={250} />
   );
 };
 
