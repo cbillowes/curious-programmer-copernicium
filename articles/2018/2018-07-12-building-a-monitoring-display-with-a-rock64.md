@@ -1,9 +1,5 @@
 ---
 title: 'Building a Monitoring Display with a Rock64'
-cover: 'rock64-cover.jpg'
-credit: 'rock64iota.com'
-creditLink: https://rock64iota.com
-creditSource: rock64iota
 date: 2018-07-12 22:12:00 +0200
 tags:
   - Technical
