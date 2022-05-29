@@ -12,7 +12,6 @@ const isRelativePath = (imagePath) => {
 };
 
 const getStaticPath = (imagePath) => {
-  console.log(imagePath);
   return isRelativePath(imagePath)
     ? imagePath
     : require(`../Images/${imagePath}`).default;
