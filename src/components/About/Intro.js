@@ -24,8 +24,8 @@ const Intro = () => {
           <StaticImage
             src="../../images/avatar.png"
             alt="A photo of Clarice Bouwer on a windy day at the beach"
-            width={260}
-            height={260}
+            width={300}
+            height={300}
             style={{
               borderRadius: '50%',
             }}
