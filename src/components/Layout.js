@@ -11,6 +11,12 @@ import { SearchIcon } from './Search/icon';
 import Search from './Search';
 import BuyMeCoffee from './Coffee';
 import Anchor from './Anchor';
+import { getLCP, getFID, getCLS } from 'web-vitals';
+
+getCLS(console.log);
+getFID(console.log);
+getLCP(console.log);
+
 const searchIndices = [{ name: 'Pages', title: 'Pages' }];
 
 const Toggler = ({ colorMode, setColorMode }) => {
