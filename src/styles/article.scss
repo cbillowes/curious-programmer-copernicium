@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Open Sans", "sans serif";
+    font-family: 'Open Sans', 'sans serif';
     font-weight: bold;
     line-height: 2.75rem;
     margin-top: 3rem;
@@ -53,7 +53,8 @@
     margin-bottom: 1.5rem;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-bottom: 1.5rem;
   }
 
@@ -62,6 +63,7 @@
     font-size: 1.1rem;
     line-height: 2.25rem;
     margin-left: 1rem;
+    padding-left: 1rem;
   }
 
   ul li li p,
@@ -102,7 +104,7 @@
     padding: 0.25rem 0;
     position: relative;
     z-index: 1;
-    font-family: "Handlee", cursive;
+    font-family: 'Handlee', cursive;
     font-size: 1.5rem;
     font-style: normal;
 
@@ -174,13 +176,14 @@
   code {
     display: inline-block;
     &::before {
-      content: "";
+      content: '';
       margin-top: 23px;
       display: inline-block;
     }
   }
 
-  code, pre {
+  code,
+  pre {
     /*
     Unnecessary scrollbars appear for inline-block
     https://stackoverflow.com/questions/29592010/unnecessary-scrollbars-appear-for-inline-block
