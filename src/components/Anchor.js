@@ -72,7 +72,7 @@ const Anchor = ({
 };
 
 Anchor.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   title: PropTypes.string,
   to: PropTypes.string,
