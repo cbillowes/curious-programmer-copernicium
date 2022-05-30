@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const ClojureTailwindcss = ({ alt }) => {
+export const ClojureTailwindcss = ({ alt, className }) => {
   return (
-    <StaticImage src="./clojure-tailwindcss.jpg" alt={alt} height={250} />
+    <StaticImage src="./clojure-tailwindcss.jpg" alt={alt} className={className} height={250} />
   );
 };
 
 ClojureTailwindcss.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default ClojureTailwindcss;

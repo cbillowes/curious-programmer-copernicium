@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const PrettyGitGraph = ({ alt }) => {
+export const PrettyGitGraph = ({ alt, className }) => {
   return (
-    <StaticImage src="./pretty-git-graph.png" alt={alt} height={250} />
+    <StaticImage src="./pretty-git-graph.png" alt={alt} className={className} height={250} />
   );
 };
 
 PrettyGitGraph.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default PrettyGitGraph;

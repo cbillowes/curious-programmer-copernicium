@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Git = ({ alt }) => {
+export const Git = ({ alt, className }) => {
   return (
-    <StaticImage src="./git.png" alt={alt} height={250} />
+    <StaticImage src="./git.png" alt={alt} className={className} height={250} />
   );
 };
 
 Git.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Git;

@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Kibana = ({ alt }) => {
+export const Kibana = ({ alt, className }) => {
   return (
-    <StaticImage src="./kibana.jpg" alt={alt} height={250} />
+    <StaticImage src="./kibana.jpg" alt={alt} className={className} height={250} />
   );
 };
 
 Kibana.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Kibana;

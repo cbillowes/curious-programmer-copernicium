@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const DeviceEmulationPreview = ({ alt }) => {
+export const DeviceEmulationPreview = ({ alt, className }) => {
   return (
-    <StaticImage src="./device-emulation-preview.jpg" alt={alt} height={250} />
+    <StaticImage src="./device-emulation-preview.jpg" alt={alt} className={className} height={250} />
   );
 };
 
 DeviceEmulationPreview.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default DeviceEmulationPreview;

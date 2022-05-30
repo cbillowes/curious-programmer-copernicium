@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const PeopleAtACafeteria = ({ alt }) => {
+export const PeopleAtACafeteria = ({ alt, className }) => {
   return (
-    <StaticImage src="./people-at-a-cafeteria.jpg" alt={alt} height={250} />
+    <StaticImage src="./people-at-a-cafeteria.jpg" alt={alt} className={className} height={250} />
   );
 };
 
 PeopleAtACafeteria.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default PeopleAtACafeteria;

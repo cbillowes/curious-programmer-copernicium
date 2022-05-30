@@ -7,14 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const BusyStation = ({ alt }) => {
+export const BusyStation = ({ alt, className }) => {
   return (
-    <StaticImage src="./busy-station.jpg" alt={alt} height={250} />
+    <StaticImage src="./busy-station.jpg" alt={alt} className={className} height={250} />
   );
 };
 
 BusyStation.propTypes = {
   alt: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default BusyStation;

@@ -14,6 +14,10 @@ Component['BionicBeaver'] = (props) => (
   require('./bionic-beaver').default(props)
 );
 
+Component['BionicBeaver'] = (props) => (
+  require('./bionic-beaver').default(props)
+);
+
 Component['BlurredCycling'] = (props) => (
   require('./blurred-cycling').default(props)
 );
