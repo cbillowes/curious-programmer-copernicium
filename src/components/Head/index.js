@@ -70,8 +70,8 @@ const Head = ({
 
     <Social
       url={url}
-      twitter={social && social.twitter}
-      imagePath={image || (social && social.image)}
+      twitter={social?.twitter}
+      imagePath={image || social?.image}
       pageType={pageType}
       route={route}
     />
@@ -85,7 +85,7 @@ const Head = ({
         name: author && author.name,
         url: author && author.url,
       }}
-      image={image || (social && social.image)}
+      image={image || social?.image}
     />
   </React.Fragment>
 );
@@ -97,7 +97,7 @@ const author = PropTypes.shape({
 
 const social = PropTypes.shape({
   image: PropTypes.string,
-  twitter: PropTypes.string.isRequired,
+  twitter: PropTypes.string,
 });
 
 Head.defaultProps = {
@@ -112,7 +112,7 @@ Head.propTypes = {
   keywords: PropTypes.string.isRequired,
   lang: PropTypes.string.isRequired,
   siteTitle: PropTypes.string.isRequired,
-  social: social.isRequired,
+  social: PropTypes.string,
   pageTitle: PropTypes.string,
   pageType: PropTypes.string,
   type: PropTypes.string,
