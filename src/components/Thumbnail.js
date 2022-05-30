@@ -61,7 +61,7 @@ Credit.propTypes = {
 
 const ExternalThumbnail = ({ to, alt, src }) => {
   return (
-    <Anchor to={to} title={alt}>
+    <Anchor to={to} title={alt} className="flex">
       <img alt={alt} src={src} width={450} />
     </Anchor>
   );
