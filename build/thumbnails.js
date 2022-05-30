@@ -70,6 +70,7 @@ exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { cover, creditSource, credit, creditLink } =
       node.frontmatter || getRandomThumbnail();
+
     createNodeField({
       node,
       name: `cover`,

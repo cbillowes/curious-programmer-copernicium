@@ -8,7 +8,7 @@ const landingPageSlug = '/';
 const query = async (graphql) => {
   return await graphql(`
     query ArticlesBuildQuery {
-      allMarkdownRemark(sort: { order: ASC, fields: fields___date }) {
+      allMarkdownRemark(sort: { order: ASC, fields: fields___number }) {
         edges {
           node {
             html
@@ -36,7 +36,6 @@ const getPreviousNode = (edges, index) => {
 
 const getNextNode = (edges, index) => {
   const i = index === edges.length - 1 ? 0 : index + 1;
-  return edges[i].node;
 };
 
 const getArticle = (edges, index) => {
