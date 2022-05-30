@@ -112,7 +112,7 @@ Head.propTypes = {
   keywords: PropTypes.string.isRequired,
   lang: PropTypes.string.isRequired,
   siteTitle: PropTypes.string.isRequired,
-  social: PropTypes.string,
+  social: social,
   pageTitle: PropTypes.string,
   pageType: PropTypes.string,
   type: PropTypes.string,

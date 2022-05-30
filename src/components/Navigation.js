@@ -27,7 +27,7 @@ const Navigation = ({ layout }) => {
         }`}
       >
         <Logo />
-        {/* <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} /> */}
+        <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </div>
     </div>
   );

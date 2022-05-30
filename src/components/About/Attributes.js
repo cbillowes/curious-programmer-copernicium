@@ -21,6 +21,7 @@ const Attribute = ({
   return (
     <div className="m-4">
       <div
+        role="button"
         className={`cursor-pointer border-b-4 py-2 px-4 ${hoverBorder} ${
           expanded ? border : ''
         }`}

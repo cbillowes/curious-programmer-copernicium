@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typewriter from './Typewriter';
 
-const Kebab = ({ prefix, onClick, className, children, phrases, expanded }) => {
+const Kebab = ({ onClick, className, children, phrases, expanded }) => {
   return (
     <>
       <div
+        role="button"
         className={`max-w-2xl justify-center mx-auto mt-10 flex flex-wrap relative ${
           className || ''
         }`}
