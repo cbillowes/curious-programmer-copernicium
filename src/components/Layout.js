@@ -13,10 +13,6 @@ import BuyMeCoffee from './Coffee';
 import Anchor from './Anchor';
 import { getLCP, getFID, getCLS } from 'web-vitals';
 
-getCLS(console.log);
-getFID(console.log);
-getLCP(console.log);
-
 const searchIndices = [{ name: 'Pages', title: 'Pages' }];
 
 const Toggler = ({ colorMode, setColorMode }) => {
@@ -48,6 +44,14 @@ Toggler.propTypes = {
 export const Layout = ({ meta, children }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
   const [showSearch, toggleSearchMode] = useState(false);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    getCLS(console.log);
+    getFID(console.log);
+    getLCP(console.log);
+  });
 
   return (
     <div

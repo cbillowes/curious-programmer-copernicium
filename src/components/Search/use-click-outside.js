@@ -12,6 +12,8 @@ export default (ref, onClickOutside) => {
   };
 
   useEffect(() => {
+    if (typeof document === 'undefined') return;
+
     for (const event of events) {
       document.addEventListener(event, onClick);
     }
