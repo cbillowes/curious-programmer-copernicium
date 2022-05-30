@@ -20,7 +20,22 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 80,
+          breakpoints: [360, 840, 1440, 1600, 1920],
+          backgroundColor: `transparent`,
+          forceBase64Format: `webp`, // valid formats: png,jpg,webp
+          useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+          stripMetadata: true,
+          defaultQuality: 80,
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-twitter`,
