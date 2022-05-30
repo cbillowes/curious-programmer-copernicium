@@ -163,71 +163,71 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // {
-          //   resolve: `gatsby-remark-autolink-headers`,
-          //   options: {
-          //     offsetY: `100`,
-          //     icon: `<svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>`,
-          //     className: `gatsby-remark-autolink-header`,
-          //   },
-          // },
-          // {
-          //   resolve: `gatsby-remark-interactive-gifs`,
-          //   options: {
-          //     root: `${__dirname}`,
-          //     src: `${__dirname}/src/images/interactive-gifs`,
-          //     dest: `${__dirname}/public/gifs`,
-          //     play: `${__dirname}/src/images/play.png`,
-          //     placeholder: `${__dirname}/src/images/placeholder.gif`,
-          //     loading: `${__dirname}/src/images/loading.gif`,
-          //     relativePath: `/gifs`,
-          //   },
-          // },
-          // {
-          //   resolve: 'gatsby-remark-embed-gist',
-          //   options: {
-          //     username: `cbillowes`,
-          //     gistDefaultCssInclude: false,
-          //   },
-          // },
-          // {
-          //   resolve: `gatsby-remark-images`,
-          // },
-          // {
-          //   resolve: `gatsby-remark-embed-youtube`,
-          //   options: {
-          //     // src/components/Theme/common/breakpoints.js: readingPane
-          //     // Module cannot be required because it is not a CommonJS module :(
-          //     width: 840,
-          //     height: 400,
-          //   },
-          // },
-          // {
-          //   resolve: `gatsby-remark-code-titles`,
-          //   options: {
-          //     className: `gatsby-remark-code-title`,
-          //   },
-          // },
-          // /* Emoji Catalog: https://projects.iamcal.com/emoji-data/table.htm */
-          // `gatsby-remark-emoji`,
-          // /*
-          //   Should be last?
-          //   Wraps iframes or objects (e.g. embedded YouTube videos) within
-          //   markdown files in a responsive elastic container with a fixed
-          //   aspect ratio. This ensures that the iframe or object will scale
-          //   proportionally and to the full width of its container.
-          // */
-          // `gatsby-remark-responsive-iframe`,
-          // {
-          //   // keep this as the last item in the plugins array.
-          //   // code blocks are parsed and styled which will break
-          //   // code protocols like gatsby-remark-embed-gist.
-          //   resolve: `gatsby-remark-prismjs`,
-          //   options: {
-          //     classPrefix: `language-`,
-          //     inlineCodeMarker: `±`,
-          //   },
-          // },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+              icon: `<svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>`,
+              className: `gatsby-remark-autolink-header`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-interactive-gifs`,
+            options: {
+              root: `${__dirname}`,
+              src: `${__dirname}/src/images/interactive-gifs`,
+              dest: `${__dirname}/public/gifs`,
+              play: `${__dirname}/src/images/play.png`,
+              placeholder: `${__dirname}/src/images/placeholder.gif`,
+              loading: `${__dirname}/src/images/loading.gif`,
+              relativePath: `/gifs`,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-embed-gist',
+            options: {
+              username: `cbillowes`,
+              gistDefaultCssInclude: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+          },
+          {
+            resolve: `gatsby-remark-embed-youtube`,
+            options: {
+              // src/components/Theme/common/breakpoints.js: readingPane
+              // Module cannot be required because it is not a CommonJS module :(
+              width: 840,
+              height: 400,
+            },
+          },
+          {
+            resolve: `gatsby-remark-code-titles`,
+            options: {
+              className: `gatsby-remark-code-title`,
+            },
+          },
+          /* Emoji Catalog: https://projects.iamcal.com/emoji-data/table.htm */
+          `gatsby-remark-emoji`,
+          /*
+            Should be last?
+            Wraps iframes or objects (e.g. embedded YouTube videos) within
+            markdown files in a responsive elastic container with a fixed
+            aspect ratio. This ensures that the iframe or object will scale
+            proportionally and to the full width of its container.
+          */
+          `gatsby-remark-responsive-iframe`,
+          {
+            // keep this as the last item in the plugins array.
+            // code blocks are parsed and styled which will break
+            // code protocols like gatsby-remark-embed-gist.
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: `language-`,
+              inlineCodeMarker: `±`,
+            },
+          },
         ],
       },
     },
