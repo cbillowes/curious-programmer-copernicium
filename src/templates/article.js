@@ -63,6 +63,9 @@ const ArticleTemplate = ({ data }) => {
   const { component, cover, credit, link, source } = fields;
   const keywords = getKeywords(html);
 
+  console.log(fields);
+  console.log(frontmatter);
+
   return (
     <Layout
       meta={{
@@ -77,10 +80,10 @@ const ArticleTemplate = ({ data }) => {
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
-        <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto overflow-hidden rounded-2xl">
+        <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto">
           <Thumbnail
-            alt={title}
-            photo={cover}
+            alt={credit || frontmatter.title || title}
+            cover={component === 'url' ? frontmatter.cover : cover}
             credit={credit}
             source={source}
             link={link}
