@@ -1,23 +1,25 @@
-module.exports = {
-  siteMetadata: {
-    title: 'Curious Programmer',
-    description:
-      'A curious place for a curious mind. I share my thoughts. I share my ideas. I share my what I think is cool.',
-    keywords: 'software development, software, programming',
-    url: 'https://curiousprogrammer.dev',
-    // This duplicated gem is used for gatsby-plugin-advanced-sitemap
-    // and gatsby-plugin-robots-txt
-    // https://www.gatsbyjs.com/plugins/gatsby-plugin-advanced-sitemap/?=sitemap
-    // https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/?=Robots.txt
-    siteUrl: 'https://curiousprogrammer.dev',
-    lang: 'en-US',
-    brand: '#f0ff7b',
-    author: {
-      name: 'Clarice Bouwer',
-      twitter: 'cbillowes',
-      url: 'https://clarice.bouwer.dev',
-    },
+const siteMetadata = {
+  title: 'Curious Programmer',
+  description:
+    'A curious place for a curious mind. I share my thoughts. I share my ideas. I share my what I think is cool.',
+  keywords: 'software development, software, programming',
+  url: 'https://curiousprogrammer.dev',
+  // This duplicated gem is used for gatsby-plugin-advanced-sitemap
+  // and gatsby-plugin-robots-txt
+  // https://www.gatsbyjs.com/plugins/gatsby-plugin-advanced-sitemap/?=sitemap
+  // https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/?=Robots.txt
+  siteUrl: 'https://curiousprogrammer.dev',
+  lang: 'en-US',
+  brand: '#f0ff7b',
+  author: {
+    name: 'Clarice Bouwer',
+    twitter: 'cbillowes',
+    url: 'https://clarice.bouwer.dev',
   },
+};
+
+module.exports = {
+  siteMetadata,
   plugins: [
     `gatsby-plugin-image`,
     {
@@ -165,6 +167,14 @@ module.exports = {
         createLinkInHead: true,
         // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
         addUncaughtPages: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteMetadata.siteUrl,
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
