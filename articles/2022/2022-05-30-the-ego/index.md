@@ -1,11 +1,11 @@
 ---
-title: It's not personal - soothing a bruised ego
-slug: the-ego
+title: Soothing a bruised ego
 date: 2022-05-30 17:00 +0400
 cover: https://i.picsum.photos/id/1024/1920/1280.jpg?hmac=-PIpG7j_fRwN8Qtfnsc3M8-kC3yb0XYOBfVzlPSuVII
 tags:
-  - Comfort Zone
   - Mindset
+  - Relationships
+  - Communication
 ---
 
 ## Key takeaways
