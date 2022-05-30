@@ -1,5 +1,5 @@
 ---
-title: Soothing a bruised ego
+title: Attack of the bruised ego
 date: 2022-05-30 17:00 +0400
 cover: https://i.picsum.photos/id/1024/1920/1280.jpg?hmac=-PIpG7j_fRwN8Qtfnsc3M8-kC3yb0XYOBfVzlPSuVII
 tags:
@@ -7,8 +7,6 @@ tags:
   - Relationships
   - Communication
 ---
-
-## Key takeaways
 
 1. Take feedback as objectively as possible.
 1. Don't be married to your ideas and code.
