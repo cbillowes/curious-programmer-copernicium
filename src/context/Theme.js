@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }) => {
     const initialColorValue = getInitialColorValue(root);
     rawSetColorMode(initialColorValue);
     localStorage.setItem('color-mode', initialColorValue);
-  }, []);
+  });
 
   const setColorMode = (newValue) => {
     rawSetColorMode(newValue);

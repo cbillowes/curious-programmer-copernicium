@@ -5,6 +5,7 @@ const WavingHand = ({ className, onClick }) => {
   const [isWaving, setWave] = useState(true);
   return (
     <div
+      role="button"
       className={`cursor-pointer ${className || ''} ${
         isWaving ? 'animate-wave' : ''
       }`}
