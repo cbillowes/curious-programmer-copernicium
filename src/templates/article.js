@@ -63,9 +63,6 @@ const ArticleTemplate = ({ data }) => {
   const { component, cover, credit, link, source } = fields;
   const keywords = getKeywords(html);
 
-  console.log(fields);
-  console.log(frontmatter);
-
   return (
     <Layout
       meta={{
