@@ -59,7 +59,7 @@ export const query = graphql`
         fields: { slug: { nin: "/blog/example/" } }
         frontmatter: { tags: { in: [$tag] } }
       }
-      sort: { order: DESC, fields: fields___number }
+      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {

@@ -82,11 +82,7 @@ Articles.propTypes = {
 
 export const query = graphql`
   query NotFoundPageQuery {
-    allMarkdownRemark(
-      limit: 10
-      filter: { fields: { slug: { nin: "/blog/example/" } } }
-      sort: { order: DESC, fields: fields___number }
-    ) {
+    allMarkdownRemark(limit: 10, sort: { order: DESC, fields: fields___date }) {
       edges {
         node {
           timeToRead

@@ -54,7 +54,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: 10
       filter: { frontmatter: { featured: { eq: true } } }
-      sort: { order: DESC, fields: fields___number }
+      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {

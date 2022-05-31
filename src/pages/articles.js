@@ -48,10 +48,7 @@ Articles.propTypes = {
 
 export const query = graphql`
   query ArticlesPageQuery {
-    allMarkdownRemark(
-      filter: { fields: { slug: { nin: "/blog/example/" } } }
-      sort: { order: DESC, fields: fields___number }
-    ) {
+    allMarkdownRemark(sort: { order: DESC, fields: fields___date }) {
       edges {
         node {
           timeToRead
