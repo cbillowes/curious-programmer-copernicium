@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'cursive', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
         mono: ['Fira Code', 'mono'],
         cursive: ['Handlee', 'cursive'],
         'alt-sans': ['Open Sans', 'sans-serif'],
