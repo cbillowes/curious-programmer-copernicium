@@ -1,7 +1,7 @@
 ---
 title: Attack of the bruised ego
 date: 2022-05-30 17:00 +0400
-cover: https://i.picsum.photos/id/1024/1920/1280.jpg?hmac=-PIpG7j_fRwN8Qtfnsc3M8-kC3yb0XYOBfVzlPSuVII
+cover: https://i.picsum.photos/id/1024/450/300.jpg?hmac=Qui7vXCGzf0rvB9dkE6YKp_BoOs0Xef4nkqt5Y-ydLw
 tags:
   - Mindset
   - Relationships
