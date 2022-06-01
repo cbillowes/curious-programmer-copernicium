@@ -17,9 +17,8 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }) => {
-  if (typeof window === 'undefined') return;
-
-  const root = window.document.documentElement;
+  const root =
+    typeof window !== 'undefined' ? window.document.documentElement : {};
   const initialColorValue = getInitialColorValue(root);
   root.style.setProperty('--initial-color-mode', initialColorValue);
   root.classList = initialColorValue;
