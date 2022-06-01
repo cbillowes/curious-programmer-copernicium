@@ -27,15 +27,17 @@ export const query = graphql`
         slug
         date(formatString: "LL")
         number
-        component
-        credit
-        source
-        link
+        hero {
+          component
+          image
+          credit
+          source
+          link
+        }
       }
       frontmatter {
         title
         tags
-        cover
       }
     }
     site {
@@ -60,7 +62,6 @@ const ArticleTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { component, cover, credit, link, source } = fields;
   const keywords = getKeywords(html);
 
   return (
@@ -71,21 +72,14 @@ const ArticleTemplate = ({ data }) => {
         pageTitle: frontmatter.title,
         siteTitle: title,
         description: excerpt || description,
-        image: frontmatter.cover,
+        image: fields.hero.image,
         pageType: 'article',
         route: fields.slug,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
         <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto">
-          <Thumbnail
-            alt={credit || frontmatter.title || title}
-            cover={component === 'url' ? frontmatter.cover : cover}
-            credit={credit}
-            source={source}
-            link={link}
-            componentName={component}
-          />
+          <Thumbnail {...fields.hero} />
         </div>
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {frontmatter.title}

@@ -19,35 +19,20 @@ const getCreditTitle = (source, attribute) => {
   return `Image by ${attribute}`;
 };
 
-const getCredit = (componentName, source, link, credit) => {
-  const defaultThumbnail = thumbnails.filter((thumbnail) => {
-    return thumbnail.componentName === componentName;
-  });
-  return defaultThumbnail.length > 0
-    ? defaultThumbnail[0]
-    : { source, link, credit };
-};
-
-const Credit = ({ componentName, source, link, text }) => {
-  const {
-    source: creditSource,
-    link: creditLink,
-    credit: creditText,
-  } = getCredit(componentName, source, link, text);
-
+const Credit = ({ source, link, text }) => {
   if (!source) return <span></span>;
   return (
     <Anchor
-      to={creditLink}
-      title={getCreditTitle(creditSource, creditText)}
+      to={link}
+      title={getCreditTitle(source, text)}
       className="bg-black text-gray-300 py-1 px-2 pl-6 rounded absolute bottom-2 left-2 text-sm"
     >
       <img
-        alt={creditSource}
+        alt={source}
         className="filter invert w-3 absolute left-2 top-2"
-        src={creditSource === 'unsplash' ? UnsplashLogo : DownloadLogo}
+        src={source === 'unsplash' ? UnsplashLogo : DownloadLogo}
       />
-      {creditSource}
+      {source}
     </Anchor>
   );
 };
@@ -67,11 +52,11 @@ const ExternalThumbnail = ({ to, alt, src }) => {
   );
 };
 
-const Thumbnail = ({ alt, to, cover, credit, source, link, componentName }) => {
-  if (componentName === 'url')
-    return <ExternalThumbnail to={link} alt={alt} src={cover} />;
+const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
+  if (component === 'url')
+    return <ExternalThumbnail to={link} alt={alt} src={image} />;
 
-  const Image = ComponentIndex[componentName];
+  const Image = ComponentIndex[component];
   return (
     <div className="relative text-center">
       <Anchor to={to} title={alt}>
@@ -80,7 +65,7 @@ const Thumbnail = ({ alt, to, cover, credit, source, link, componentName }) => {
         )}
       </Anchor>
       <Credit
-        componentName={componentName}
+        componentName={component}
         source={source}
         link={link}
         text={credit}
@@ -93,74 +78,11 @@ Thumbnail.propTypes = {
   alt: PropTypes.string,
   number: PropTypes.number,
   to: PropTypes.string,
-  cover: PropTypes.string,
+  image: PropTypes.string,
   credit: PropTypes.string,
   source: PropTypes.string,
   link: PropTypes.string,
-  componentName: PropTypes.string,
+  component: PropTypes.string,
 };
 
 export default Thumbnail;
-
-const thumbnails = [
-  {
-    componentName: `Default01`,
-    source: `unsplash`,
-    credit: `Arget`,
-    link: `https://unsplash.com/@arget?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default02`,
-    source: `unsplash`,
-    credit: `Kevin Ku`,
-    link: `https://unsplash.com/@ikukevk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default03`,
-    source: `unsplash`,
-    credit: `Ilya Pavlov`,
-    link: `https://unsplash.com/@ilyapavlov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default04`,
-    source: `unsplash`,
-    credit: `Vishnu R Nair`,
-    link: `https://unsplash.com/@vishnurnair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default05`,
-    source: `unsplash`,
-    credit: `Markus Spiske`,
-    link: `https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default06`,
-    source: `unsplash`,
-    credit: `Markus Spiske`,
-    link: `https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default07`,
-    source: `unsplash`,
-    credit: `Dlanor S`,
-    link: `https://unsplash.com/@dlanor_s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default08`,
-    source: `unsplash`,
-    credit: `Chris Ried`,
-    link: `https://unsplash.com/@cdr6934?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default09`,
-    source: `unsplash`,
-    credit: `Sai Kiran Anagani`,
-    link: `https://unsplash.com/@_imkiran?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText`,
-  },
-  {
-    componentName: `Default10`,
-    source: `unsplash`,
-    credit: `Markus Spiske`,
-    link: `https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTexts`,
-  },
-];

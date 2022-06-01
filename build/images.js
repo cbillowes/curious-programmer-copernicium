@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const sharp = require('sharp');
 const { copyGifs, copySvgs, copyWebps } = require('./copy');
+const { toHeroImageComponent, kebabToTitleCase } = require('./helpers');
 
 /**
  * Any source file residing in the resources directory which is used to
@@ -18,39 +19,8 @@ const toDestinationPath = (destinationPath, sourcePath) => {
   return path.join(destinationPath, path.basename(sourcePath));
 };
 
-const kebabToTitleCase = (text) => {
-  if (!text) return '';
-
-  return text
-    .replace(/-/g, ' ')
-    .replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    })
-    .replace(/ /g, '');
-};
-
-const toComponentName = (text) => {
-  if (text && text.startsWith('http')) return 'url';
-  return kebabToTitleCase(text).replace(/\.|jpg|png|gif|svg/g, '');
-};
-
 exports.getComponentName = (text) => {
-  return toComponentName(text);
-};
-
-exports.getRandomDefaultComponent = () => {
-  const sourcePath = path.join(__dirname, '../src/components/Images/');
-  const files = fs.readdirSync(sourcePath);
-
-  const defaults = files.filter((file) => {
-    return file.startsWith('default-');
-  });
-
-  const outerBounds = defaults.length;
-  const index = parseInt(Math.random() * (outerBounds + 1));
-  // eslint-disable-next-line prettier/prettier
-  const number = index < 10 ? (index === 0 ? `01` : `0${index}`) : index;
-  return `Default${number}`;
+  return toHeroImageComponent(text);
 };
 
 /**

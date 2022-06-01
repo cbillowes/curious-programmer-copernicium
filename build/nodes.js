@@ -1,20 +1,6 @@
-const _ = require('lodash');
-const path = require('path');
-const images = require('./images');
+const { toTimestamp, getSlug } = require('./helpers');
 
-const getSlug = ({ slug, title }) => {
-  return slug || path.join(`/blog`, _.kebabCase(title), `/`);
-};
-
-const getComponent = (cover) => {
-  return images.getComponentName(cover) || images.getRandomDefaultComponent();
-};
-
-const toTimestamp = (date) => {
-  return new Date(date).getTime();
-};
-
-exports.applyNumbers = (nodes, createNodeField) => {
+exports.applyNumbers = (nodes, createNodeField, reporter) => {
   const sorted = nodes.sort(
     (a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date),
   );
@@ -26,15 +12,17 @@ exports.applyNumbers = (nodes, createNodeField) => {
       name: `number`,
       value: number,
     });
+
+    reporter.success(
+      `node [applyNumbers]: { ${number}, slug: ${node.fields.slug} }`,
+    );
   });
 };
 
 exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === `MarkdownRemark`) {
-    const { date, cover } = node.frontmatter;
+    const { date } = node.frontmatter;
     const slug = getSlug(node.frontmatter);
-    const component =
-      cover && cover.startsWith('http') ? 'url' : getComponent(cover);
 
     createNodeField({
       node,
@@ -54,20 +42,6 @@ exports.createFields = (node, createNodeField, reporter) => {
       value: date,
     });
 
-    createNodeField({
-      node,
-      name: `component`,
-      value: component,
-    });
-
-    createNodeField({
-      node,
-      name: `cover`,
-      value: cover,
-    });
-
-    reporter.success(
-      `node [field]: ${slug}: { date: ${date}, component: ${component}, cover: ${cover} }`,
-    );
+    reporter.success(`node [fields]: { ${slug}, date: ${date} }`);
   }
 };

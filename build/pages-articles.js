@@ -36,22 +36,22 @@ const getPreviousNode = (edges, index) => {
 
 const getNextNode = (edges, index) => {
   const i = index === edges.length - 1 ? 0 : index + 1;
+  return edges[i].node;
 };
 
 const getArticle = (edges, index) => {
-  const node = edges[index].node;
+  const { fields } = edges[index].node;
   return {
     number: index + 1,
-    slug: node.fields.slug,
-    date: node.fields.date,
+    slug: fields.slug,
+    date: fields.date,
     previous: getPreviousNode(edges, index),
     next: getNextNode(edges, index),
   };
 };
 
 const createThePage = (createPage, edges, index, reporter) => {
-  const article = getArticle(edges, index);
-  const { slug, date, previous, next } = article;
+  const { slug, date, previous, next } = getArticle(edges, index);
   const number = index + 1;
 
   createPage({

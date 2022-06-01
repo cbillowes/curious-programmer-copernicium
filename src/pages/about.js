@@ -64,15 +64,17 @@ export const query = graphql`
             slug
             date(formatString: "LL")
             number
-            component
-            credit
-            source
-            link
+            hero {
+              component
+              image
+              credit
+              source
+              link
+            }
           }
           frontmatter {
             title
             tags
-            cover
           }
         }
       }

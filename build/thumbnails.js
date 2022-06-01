@@ -1,3 +1,5 @@
+const { toHeroImageComponent } = require('./helpers');
+
 const thumbnails = [
   {
     cover: `default-01.jpg`,
@@ -76,32 +78,15 @@ exports.createFields = (node, createNodeField, reporter) => {
 
     createNodeField({
       node,
-      name: `cover`,
-      value: cover,
-    });
-
-    createNodeField({
-      node,
-      name: `source`,
-      value: creditSource,
-    });
-
-    createNodeField({
-      node,
-      name: `link`,
-      value: creditLink,
-    });
-
-    createNodeField({
-      node,
-      name: `credit`,
-      value: credit,
-    });
-
-    reporter.success(`thumbnail [field]: ${cover}`, {
-      source: creditSource,
-      link: creditLink,
-      credit,
+      name: `hero`,
+      value: {
+        component: '',
+        image: cover,
+        source: creditSource,
+        link: creditLink,
+        credit: credit,
+        component: toHeroImageComponent(cover),
+      },
     });
   }
 };

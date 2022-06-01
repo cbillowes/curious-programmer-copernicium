@@ -16,11 +16,11 @@ const markdownNodes = [];
 
 // This is the part where numbers and any other graphql fields can be added.
 // https://www.gatsbyjs.org/docs/node-apis/#setFieldsOnGraphQLNodeType
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
+exports.setFieldsOnGraphQLNodeType = ({ type, actions, reporter }) => {
   const { name } = type;
   const { createNodeField } = actions;
   if (name === 'MarkdownRemark') {
-    nodes.applyNumbers(markdownNodes, createNodeField);
+    nodes.applyNumbers(markdownNodes, createNodeField, reporter);
   }
 };
 

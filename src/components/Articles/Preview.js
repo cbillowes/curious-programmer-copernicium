@@ -14,11 +14,7 @@ const Preview = ({
   timeToRead,
   excerpt,
   tags,
-  cover,
-  credit,
-  source,
-  link,
-  component,
+  hero,
 }) => {
   const isEven = index % 2 === 0;
   return (
@@ -71,16 +67,7 @@ const Preview = ({
       </div>
       <div className="xl:w-1/4 relative">
         <Ribbon>{number}</Ribbon>
-        <Thumbnail
-          number={number}
-          to={slug}
-          alt={title}
-          cover={cover}
-          credit={credit}
-          source={source}
-          link={link}
-          componentName={component}
-        />
+        <Thumbnail number={number} to={slug} alt={title} {...hero} />
       </div>
     </section>
   );
@@ -95,7 +82,7 @@ Preview.propTypes = {
   timeToRead: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   tags: PropTypes.array,
-  photo: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   credit: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
