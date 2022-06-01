@@ -17,7 +17,7 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }) => {
-  if (typeof document === 'undefined') return;
+  if (typeof window === 'undefined') return;
 
   const root = window.document.documentElement;
   const initialColorValue = getInitialColorValue(root);
