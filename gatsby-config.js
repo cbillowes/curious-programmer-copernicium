@@ -28,7 +28,7 @@ module.exports = {
         defaults: {
           formats: [`auto`, `webp`],
           placeholder: `dominantColor`,
-          breakpoints: [360, 840, 1440, 1600, 1920],
+          breakpoints: [340, 840, 1440, 1920],
           backgroundColor: `transparent`,
         },
       },
@@ -175,6 +175,13 @@ module.exports = {
       options: {
         name: `articles`,
         path: `./articles`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resume`,
+        path: `./resume`,
       },
     },
     {
