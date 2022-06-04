@@ -1,5 +1,13 @@
 const { toTimestamp, getSlug } = require('./helpers');
 
+exports.isArticle = (node) => {
+  return node.fileAbsolutePath.indexOf('/articles/') > -1;
+};
+
+exports.isResume = (node) => {
+  return node.fileAbsolutePath.indexOf('/resume/') > -1;
+};
+
 exports.applyNumbers = (nodes, createNodeField, reporter) => {
   const sorted = nodes.sort(
     (a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date),
@@ -23,6 +31,11 @@ exports.createFields = (node, createNodeField, reporter) => {
   if (node.internal.type === `MarkdownRemark`) {
     const { date } = node.frontmatter;
     const slug = getSlug(node.frontmatter);
+    const type = this.isArticle(node)
+      ? 'article'
+      : this.isResume(node)
+      ? 'resume'
+      : '';
 
     createNodeField({
       node,
@@ -40,6 +53,12 @@ exports.createFields = (node, createNodeField, reporter) => {
       node,
       name: `date`,
       value: date,
+    });
+
+    createNodeField({
+      node,
+      name: 'type',
+      value: type,
     });
 
     reporter.success(`node [fields]: { ${slug}, date: ${date} }`);

@@ -173,7 +173,11 @@ Articles.propTypes = {
 
 export const query = graphql`
   query IndexPageQuery {
-    allMarkdownRemark(limit: 10, sort: { order: DESC, fields: fields___date }) {
+    allMarkdownRemark(
+      limit: 10
+      sort: { order: DESC, fields: fields___date }
+      filter: { fields: { type: { eq: "article" } } }
+    ) {
       edges {
         node {
           timeToRead

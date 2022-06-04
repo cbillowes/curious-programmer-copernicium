@@ -50,7 +50,10 @@ Articles.propTypes = {
 
 export const query = graphql`
   query BlogPageQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: fields___date }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: fields___date }
+      filter: { fields: { type: { eq: "article" } } }
+    ) {
       edges {
         node {
           timeToRead

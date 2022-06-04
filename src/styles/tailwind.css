@@ -25,6 +25,9 @@
 
   --color-3: #9fdcff;
   --color-3-script: #02314d;
+
+  --color-neutral: #eeeded;
+  --color-neutral-script: #1b1d20;
 }
 
 .dark {
@@ -54,4 +57,7 @@
 
   --color-3: #e5f097;
   --color-3-script: #1f303b;
+
+  --color-neutral: #32414c;
+  --color-neutral-script: #f8f8f8;
 }

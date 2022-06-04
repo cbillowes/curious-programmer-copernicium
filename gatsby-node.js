@@ -30,7 +30,7 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions;
   thumbnails.createFields(node, createNodeField, reporter);
   nodes.createFields(node, createNodeField, reporter);
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `MarkdownRemark` && nodes.isArticle(node)) {
     markdownNodes.push(node);
   }
 };

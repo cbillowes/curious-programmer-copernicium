@@ -5,10 +5,13 @@ const createPages = true;
 const landingPage = './src/pages/index.js';
 const landingPageSlug = '/';
 
-const query = async (graphql) => {
+const articlesQuery = async (graphql) => {
   return await graphql(`
     query ArticlesBuildQuery {
-      allMarkdownRemark(sort: { order: ASC, fields: frontmatter___date }) {
+      allMarkdownRemark(
+        sort: { order: ASC, fields: frontmatter___date }
+        filter: { fields: { type: { eq: "article" } } }
+      ) {
         edges {
           node {
             html
@@ -29,6 +32,30 @@ const query = async (graphql) => {
   `);
 };
 
+const resumeQuery = async (graphql) => {
+  return await graphql(`
+    query ResumeBuildQuery {
+      allMarkdownRemark(
+        sort: { order: ASC, fields: frontmatter___slug }
+        filter: { fields: { type: { eq: "resume" } } }
+      ) {
+        edges {
+          node {
+            html
+            excerpt
+            frontmatter {
+              slug
+              resume {
+                company
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+};
+
 const getPreviousNode = (edges, index) => {
   const i = index === 0 ? edges.length - 1 : index - 1;
   return edges[i].node;
@@ -40,11 +67,12 @@ const getNextNode = (edges, index) => {
 };
 
 const getArticle = (edges, index) => {
-  const { fields } = edges[index].node;
+  const { fields, fileAbsolutePath } = edges[index].node;
   return {
     number: index + 1,
     slug: fields.slug,
     date: fields.date,
+    fileAbsolutePath,
     previous: getPreviousNode(edges, index),
     next: getNextNode(edges, index),
   };
@@ -92,13 +120,34 @@ module.exports.create = async (actions, graphql, reporter) => {
     reporter.warn(`off: create articles`);
     return;
   }
-  await query(graphql).then((result) => {
+  const { createPage } = actions;
+  // All things article related
+  await articlesQuery(graphql).then((result) => {
     if (result.errors) {
       reporter.error(`create articles: ${result.errors}`);
     }
 
-    const { createPage } = actions;
     createArticlePages(createPage, result, reporter);
     createLandingPage(createPage, reporter);
+  });
+  // All things CV related
+  await resumeQuery(graphql).then((result) => {
+    if (result.errors) {
+      reporter.error(`create articles: ${result.errors}`);
+    }
+
+    const edges = result.data.allMarkdownRemark.edges;
+    edges.forEach(({ node }) => {
+      const { slug, resume } = node.frontmatter;
+
+      createPage({
+        path: `/resume/${slug}`,
+        component: path.resolve('./src/templates/resume.js'),
+        context: {
+          slug,
+        },
+      });
+      reporter.success(`create resume: ${resume.company} [${slug}]`);
+    });
   });
 };

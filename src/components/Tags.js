@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 import Anchor from './Anchor';
 import _ from 'lodash';
 
-export const Tag = ({ tag, prefix, className }) => {
+export const Tag = ({ tag, prefix, className, redirect }) => {
   if (!tag) return <span></span>;
-
+  if (!redirect)
+    return (
+      <span className={className}>
+        {prefix}
+        {tag}
+      </span>
+    );
   return (
     <Anchor
       to={`/tag/${_.kebabCase(tag)}`}
@@ -13,7 +19,7 @@ export const Tag = ({ tag, prefix, className }) => {
       className={className}
     >
       {prefix}
-      {tag.toLowerCase()}
+      {tag}
     </Anchor>
   );
 };
@@ -24,7 +30,7 @@ Tag.propTypes = {
   className: PropTypes.string,
 };
 
-const Tags = ({ tags, isButton, additionalClasses }) => {
+const Tags = ({ tags, isButton, redirect, additionalClasses }) => {
   if (tags && tags.length === 0) return <span></span>;
 
   const className = isButton
@@ -37,7 +43,13 @@ const Tags = ({ tags, isButton, additionalClasses }) => {
     tags &&
     tags.map((tag, index) => {
       return (
-        <Tag key={index} tag={tag} className={className} prefix={prefix} />
+        <Tag
+          key={index}
+          tag={tag}
+          className={className}
+          prefix={prefix}
+          redirect={redirect}
+        />
       );
     })
   );

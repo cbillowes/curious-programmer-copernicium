@@ -53,7 +53,10 @@ export const query = graphql`
   query AboutPageQuery {
     allMarkdownRemark(
       limit: 10
-      filter: { frontmatter: { featured: { eq: true } } }
+      filter: {
+        fields: { type: { eq: "article" } }
+        frontmatter: { featured: { eq: true } }
+      }
       sort: { order: DESC, fields: fields___date }
     ) {
       edges {
