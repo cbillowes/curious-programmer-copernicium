@@ -7,6 +7,7 @@ import Brands from '../components/About/Brands';
 import Achievements from '../components/About/Achievements';
 import Attributes from '../components/About/Attributes';
 import Articles from '../components/About/Articles';
+import References from '../components/About/References';
 
 const AboutPage = ({ data }) => {
   const { allMarkdownRemark, site } = data;
@@ -27,6 +28,7 @@ const AboutPage = ({ data }) => {
         <Brands />
         <Achievements />
         <Attributes />
+        <References />
         <Articles edges={edges} />
       </div>
     </Layout>
