@@ -1,15 +1,21 @@
 ---
 slug: remata
 resume:
+  category: Career
+  logo: remata.png
   company: Remata Cross Media Solutions
   jobTitle: Senior Software Developer
   type: Full-Time
   location: Midrand, South Africa
   start: 2012-07-01
   end: 2014-03-31
+  os: windows
   tech:
     - C#
     - SQL
+    - Payment Integration
+    - jQuery
+    - Bootstrap
 ---
 
 I was responsible for the development and maintenance of automated processes and custom development integration with XMPie for on-demand variable data printing solutions.

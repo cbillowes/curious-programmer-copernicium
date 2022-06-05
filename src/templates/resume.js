@@ -17,6 +17,8 @@ import CommentSystem from '../components/CommentSystem';
 import { getKeywords } from '../common/seo';
 import Anchor from '../components/Anchor';
 import ResumeDates from '../components/ResumeDates';
+import { FaMicrophone } from 'react-icons/fa';
+import ResumeIcon from '../components/ResumeIcon';
 
 export const query = graphql`
   query ResumeTemplateQuery($slug: String!) {
@@ -40,6 +42,9 @@ export const query = graphql`
           tech
           start
           end
+          category
+          name
+          description
         }
       }
     }
@@ -65,16 +70,28 @@ const ResumeTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, html, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { logo, company, jobTitle, location, type, start, end, tech, website } =
-    frontmatter.resume;
+  const {
+    category,
+    logo,
+    company,
+    jobTitle,
+    location,
+    type,
+    start,
+    end,
+    tech,
+    website,
+    name,
+  } = frontmatter.resume;
   const keywords = getKeywords(excerpt);
-  const image = require(`../images/logos/${logo}`).default;
 
   return (
     <Layout
       meta={{
         ...data.site.siteMetadata,
-        pageTitle: `${jobTitle} @ ${company}, ${location}`,
+        pageTitle: company
+          ? `${jobTitle} @ ${company}, ${location}`
+          : `${name} | ${frontmatter.resume.description}`,
         siteTitle: title,
         description: excerpt || description,
         keywords,
@@ -83,21 +100,55 @@ const ResumeTemplate = ({ data }) => {
       }}
     >
       <div id="resume" className="pt-14 px-4 pb-24">
-        <img src={image} />
-        <h1 className="text-center font-bold max-w-screen-xl mx-auto">
-          {jobTitle}
-        </h1>
-        <h2 className="text-center font-bold max-w-screen-xl mx-auto">
-          {company}
-        </h2>
-        <div className="text-center text-neutral">
-          <Anchor to={website}>{website.replace('https://', '')}</Anchor>{' '}
-          &middot; {location} &middot; {type} &middot;{' '}
-          <ResumeDates start={start} end={end} />
-        </div>
+        <Anchor to="/resume">← Back</Anchor>
+        {logo && (
+          <img
+            src={require(`../images/logos/${logo}`).default}
+            className={`logo mx-auto ${
+              category === 'Testimonial' ? 'rounded-full' : ''
+            } `}
+          />
+        )}
+        {company && (
+          <>
+            <h1 className="text-center font-bold max-w-screen-xl mx-auto">
+              {jobTitle}
+            </h1>
+            <h2 className="text-center font-bold max-w-screen-xl mx-auto">
+              {company}
+              <ResumeIcon
+                className="inline text-3xl ml-3"
+                category={category}
+              />
+            </h2>
+            <div className="text-center text-neutral">
+              <Anchor to={website}>
+                {' '}
+                {website && website.replace('https://', '')}
+              </Anchor>{' '}
+              &middot; {location} &middot; {type}
+              &middot; <ResumeDates start={start} end={end} />
+            </div>
+          </>
+        )}
+        {name && (
+          <>
+            <h1 className="text-center font-bold max-w-screen-xl mx-auto">
+              {name}
+            </h1>
+            <p className="text-center font-bold max-w-screen-xl mx-auto">
+              {frontmatter.resume.description}
+              <ResumeIcon
+                className="inline text-3xl ml-3"
+                category={category}
+              />
+            </p>
+          </>
+        )}
         <div className="text-center">
           <Tags tags={tech} isButton={true} redirect={false} />
         </div>
+        <div className="text-center"></div>
         <div
           className="content max-w-3xl mx-auto mt-8"
           // eslint-disable-next-line react/no-danger

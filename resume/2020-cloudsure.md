@@ -1,6 +1,7 @@
 ---
 slug: cloudsure
 resume:
+  category: Career
   logo: cloudsure.png
   company: Cloudsure Limited
   jobTitle: Senior Software Engineer
@@ -8,12 +9,16 @@ resume:
   type: Full-time
   location: Mauritius
   start: 2020-01-01
+  os: macOS
   tech:
     - Clojure(Script)
     - JavaScript
+    - Rum
+    - Reagent
     - Google Cloud Platform
     - React
     - Storybook
+    - Polylith
   summary:
     I do the usual stuff like designing, developing, implementing, testing, and
     maintaining a fully integrated backend and frontend solution for

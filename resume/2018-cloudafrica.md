@@ -1,6 +1,7 @@
 ---
 slug: cloudafrica
 resume:
+  category: Career
   logo: cloudafrica.png
   company: CloudAfrica
   jobTitle: Senior Software Engineer
@@ -9,9 +10,13 @@ resume:
   location: Johannesburg, South Africa
   start: 2018-07-01
   end: 2019-07-31
+  os: linux
   tech:
-    - Clojure
-    - ClojureScript
+    - Clojure(Script)
+    - Git
+    - GitLab
+    - Reframe
+    - Datomic
     - Prometheus
     - Grafana
 ---

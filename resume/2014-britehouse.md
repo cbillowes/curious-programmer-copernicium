@@ -1,6 +1,7 @@
 ---
 slug: britehouse
 resume:
+  category: Career
   logo: britehouse.png
   company: Britehouse
   jobTitle: Senior Software Developer
@@ -8,10 +9,16 @@ resume:
   location: Randburg, South Africa
   start: 2014-04-01
   end: 2016-05-31
+  os: windows
   tech:
     - C#
     - SQL
     - Agile
+    - Git
+    - Jenkins
+    - Solr
+    - LESS
+    - SASS
 ---
 
 I was based at DStv Digital Media the day I joined 3Fifteen (now Britehouse). I was introduced to Agile and formed part of a Scrum environment in a cross-functional team.

@@ -25,11 +25,23 @@ const getTimestamp = (date) => {
   return new Date(date).getTime();
 };
 
+// show date in format
+const format = (date) => {
+  if (!date) return 'present';
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  return new Date(date).toLocaleDateString('en-US', options);
+};
+
 const ResumeDates = ({ className, start, end }) => {
   const startTimestamp = getTimestamp(start);
   const endTimestamp = getTimestamp(end) || getTimestamp(new Date());
   return (
     <span className={className}>
+      {format(start)} to {format(end)} &middot;
       {timeSince(endTimestamp - startTimestamp)}
     </span>
   );

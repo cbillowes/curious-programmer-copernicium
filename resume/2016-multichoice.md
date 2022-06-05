@@ -1,6 +1,7 @@
 ---
 slug: multichoice
 resume:
+  category: Career
   logo: multichoice.png
   company: MultiChoice Group
   jobTitle: Senior Software Developer
@@ -9,10 +10,14 @@ resume:
   location: Randburg, South Africa
   start: 2016-06-01
   end: 2018-06-30
+  os: windows
   tech:
     - C#
     - SQL
     - Agile
+    - Git
+    - Jenkins
+    - Solr
 ---
 
 I work on the DStv Now project: a service offering online streaming for linear and video on demand to DStv customers.
