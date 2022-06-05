@@ -25,7 +25,7 @@ const MenuItem = ({ children, to }) => {
         selected && 'bg-color-1-alternative font-bold'
       }`}
     >
-      <Anchor className="py-6 px-12" to={to}>
+      <Anchor className="py-3 px-12" to={to}>
         {children}
       </Anchor>
     </li>
@@ -47,7 +47,7 @@ const Navigation = ({ layout }) => {
       </div>
       {isMenuOpen && (
         <div
-          className=" bg-gradient-to-r from-color-2 to-color-1 fixed top-0 left-0 bottom-0 right-0"
+          className="bg-gradient-to-tr from-slate-900 to-color-3 fixed top-0 left-0 bottom-0 right-0"
           onClick={() => toggleMenu(false)}
         >
           <div className="overflow-scroll max-h-screen pb-6">
@@ -56,7 +56,7 @@ const Navigation = ({ layout }) => {
               <MenuItem to="/blog">Blog</MenuItem>
               <MenuItem to="/tags">Tags</MenuItem>
               <MenuItem to="/about">About me</MenuItem>
-              <MenuItem to="/cv">Resume</MenuItem>
+              <MenuItem to="/resume">Resume</MenuItem>
             </ul>
           </div>
         </div>
