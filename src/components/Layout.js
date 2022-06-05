@@ -65,7 +65,7 @@ export const Layout = ({ meta, children }) => {
       }}
     >
       <Head {...meta} />
-      <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="print:hidden fixed top-0 left-0 right-0 z-50">
         <BuyMeCoffee component="top-bar" />
         <div className="text-right text-lg bg-color-1 text-color-1-script">
           <div className="mr-3 pt-1 inline-block">
@@ -93,7 +93,9 @@ export const Layout = ({ meta, children }) => {
         />
       )}
 
-      <main className="pt-16 bg-default text-default-script">{children}</main>
+      <main className="pt-16 print:pt-0 bg-default text-default-script">
+        {children}
+      </main>
       <Footer
         toggler={<Toggler colorMode={colorMode} setColorMode={setColorMode} />}
       />

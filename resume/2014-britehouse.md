@@ -19,6 +19,10 @@ resume:
     - Solr
     - LESS
     - SASS
+  summary:
+    Britehouse, formerly known as 3Fifteen, placed me at DStv Digital Media. I joined an Agile
+    SCRUM team focusing on production based voting solutions such as Idols, Big Brother and
+    Survivor. I later joined the DStv Now web team.
 ---
 
 I was based at DStv Digital Media the day I joined 3Fifteen (now Britehouse). I was introduced to Agile and formed part of a Scrum environment in a cross-functional team.

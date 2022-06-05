@@ -39,7 +39,7 @@ const BottomAnchor = (props) => (
 );
 
 const Footer = ({ toggler }) => (
-  <footer className="relative">
+  <footer className="relative print:hidden">
     <Blocks />
     <div className="mx-auto md:max-w-screen-md md:flex md:flex-row-reverse md:justify-between md:align-baseline py-12 leading-loose font-alt-sans">
       <div className="absolute right-2 pt-1 md:relative">{toggler}</div>
@@ -87,8 +87,9 @@ const Footer = ({ toggler }) => (
         </div>
       </div>
     </div>
-
-    <BuyMeCoffee component="footer" />
+    <span className="">
+      <BuyMeCoffee component="footer" />
+    </span>
   </footer>
 );
 

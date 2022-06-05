@@ -17,7 +17,6 @@ import CommentSystem from '../components/CommentSystem';
 import { getKeywords } from '../common/seo';
 import Anchor from '../components/Anchor';
 import ResumeDates from '../components/ResumeDates';
-import { FaMicrophone } from 'react-icons/fa';
 import ResumeIcon from '../components/ResumeIcon';
 
 export const query = graphql`
@@ -45,6 +44,7 @@ export const query = graphql`
           category
           name
           description
+          summary
         }
       }
     }
@@ -82,6 +82,7 @@ const ResumeTemplate = ({ data }) => {
     tech,
     website,
     name,
+    summary,
   } = frontmatter.resume;
   const keywords = getKeywords(excerpt);
 
@@ -152,7 +153,7 @@ const ResumeTemplate = ({ data }) => {
         <div
           className="content max-w-3xl mx-auto mt-8"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: html || summary }}
         />
         <CommentSystem
           url={`${url}${fields.slug}`}

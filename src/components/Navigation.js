@@ -36,7 +36,7 @@ const Navigation = ({ layout }) => {
   const [isMenuOpen, toggleMenu] = useState(false);
 
   return (
-    <div className="bg-color-2 text-color-2-script py-2 px-4">
+    <div className="bg-color-2 text-color-2-script py-2 px-4 print:hidden">
       <div
         className={`flex justify-between items-center ${
           layout === 'fluid' ? '' : 'max-w-screen-md mx-auto w-full'

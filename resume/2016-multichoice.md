@@ -18,6 +18,17 @@ resume:
     - Git
     - Jenkins
     - Solr
+    - BitBucket
+    - Jira
+    - SonarQube
+    - Couchbase
+    - Graylog
+    - HTML5 video players
+  summary:
+    Appointed to work permanently, I continued my work in a SCRUM team working on the
+    Video On Demand offering including Live Streaming integrating with multiple
+    microservice touch points. I showed exemplary leadership qualities and worked well within the
+    team.
 ---
 
 I work on the DStv Now project: a service offering online streaming for linear and video on demand to DStv customers.

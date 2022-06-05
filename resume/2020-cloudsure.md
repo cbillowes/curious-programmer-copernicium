@@ -7,7 +7,7 @@ resume:
   jobTitle: Senior Software Engineer
   website: https://www.cloudsure.mu
   type: Full-time
-  location: Mauritius
+  location: Remote, Mauritius
   start: 2020-01-01
   os: macOS
   tech:
@@ -19,6 +19,9 @@ resume:
     - React
     - Storybook
     - Polylith
+  editors:
+    - Emacs
+    - Visual Studio Code
   summary:
     I do the usual stuff like designing, developing, implementing, testing, and
     maintaining a fully integrated backend and frontend solution for

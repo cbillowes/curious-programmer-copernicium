@@ -20,4 +20,7 @@ resume:
     - React
     - Storybook
     - Polylith
+  summary:
+    Work in a team to develop and maintain fully integrated life insurance systems for the company.
+    Develop and support a React frontend library for the company's User Experience.
 ---

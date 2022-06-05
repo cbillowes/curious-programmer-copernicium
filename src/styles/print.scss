@@ -1,5 +1,6 @@
 @media print {
-  .light, .dark {
+  .light,
+  .dark {
     --welcome-headings: #171e29;
     --search-neutral-1: #1a5478;
     --search-neutral-2: #9fdcff;
@@ -8,7 +9,7 @@
 
     --neutral: #696969;
 
-    --default: #f8f8f8;
+    --default: #ffffff;
     --default-script: #1b1d20;
 
     --inverse: #1b1d20;

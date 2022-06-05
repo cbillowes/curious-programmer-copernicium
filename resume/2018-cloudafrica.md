@@ -19,6 +19,9 @@ resume:
     - Datomic
     - Prometheus
     - Grafana
+  summary:
+    I moved to Clojure and Datomic working in a DevOps powered virtualization
+    environment. I develop software across the stack from web to infrastructure using Linux.
 ---
 
 Integrate between virtual machines and hosts by writing software to create and manage

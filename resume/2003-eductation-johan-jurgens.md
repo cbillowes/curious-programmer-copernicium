@@ -1,5 +1,5 @@
 ---
-slug: johan-jurgens
+slug: education-johan-jurgens
 resume:
   category: Education
   logo: jj.png
@@ -18,7 +18,7 @@ resume:
     - English
     - Afrikaans
   summary:
-    I passed all subjects on Higher Grade and received matric exception, represented the student council twice,
+    I passed on Higher Grade with University exception, represented the student council twice,
     was school newspaper Layout Editor and then Editor in Chief and Webmaster of
     the school's IT college.
 ---
