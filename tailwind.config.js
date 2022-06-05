@@ -49,6 +49,9 @@ module.exports = {
         'color-3': 'var(--color-3)',
         'color-3-script': 'var(--color-3-script)',
 
+        'color-neutral': 'var(--color-neutral)',
+        'color-neutral3-script': 'var(--color-neutral-script)',
+
         twitter: '#1DA1F2',
         stackoverflow: '#c9510c',
         github: '#000000',
