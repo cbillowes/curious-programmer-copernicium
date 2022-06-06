@@ -14,7 +14,6 @@ import {
   FaLinux,
   FaPrint,
   FaSpider,
-  FaTwitter,
   FaWindows,
 } from 'react-icons/fa';
 import '../styles/print.scss';
