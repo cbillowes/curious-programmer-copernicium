@@ -123,7 +123,13 @@ const Timeline = ({
               </>
             )}
             <div className="hidden print:block text-xs text-gray-600">
-              {tech && tech.map((t, i) => <>{t} &middot; </>)}
+              {tech &&
+                tech.map((t, i) => (
+                  <>
+                    <span className="text-neutral">{t}</span>
+                    {i < tech.length - 1 && <> &middot; </>}
+                  </>
+                ))}
             </div>
             <p className="mt-2 text-right print:text-sm print:text-left">
               {summary || excerpt}
@@ -157,7 +163,7 @@ const Timeline = ({
                 tech.map((t, i) => (
                   <>
                     <span className="text-neutral">{t}</span>
-                    {i < tech.length - 1 && <>&middot; </>}
+                    {i < tech.length - 1 && <> &middot; </>}
                   </>
                 ))}
             </div>
