@@ -389,7 +389,7 @@ export const query = graphql`
       edges {
         node {
           timeToRead
-          excerpt(truncate: true, pruneLength: 200, format: PLAIN)
+          excerpt(truncate: true, pruneLength: 1000, format: PLAIN)
           frontmatter {
             slug
             title
