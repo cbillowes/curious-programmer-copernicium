@@ -57,6 +57,9 @@ const Navigation = ({ layout }) => {
               <MenuItem to="/tags">Tags</MenuItem>
               <MenuItem to="/about">About me</MenuItem>
               <MenuItem to="/resume">Resume</MenuItem>
+              <MenuItem to="https://cal.com/clarice-bouwer">
+                Appointment
+              </MenuItem>
             </div>
           </div>
         </div>
