@@ -10,6 +10,7 @@ import {
   FaApple,
   FaEnvelope,
   FaGithub,
+  FaLinkedin,
   FaLinux,
   FaPrint,
   FaSpider,
@@ -213,8 +214,11 @@ const Meta = () => {
           <FaGithub className="inline" /> github.com/cbillowes
         </Anchor>
         &middot;{' '}
-        <Anchor to="https://twitter.com/cbillowes" title="Twitter profile">
-          <FaTwitter className="inline" /> twitter.com/cbillowes
+        <Anchor
+          to="https://www.linkedin.com/in/cbouwer/"
+          title="LinkedIn profile"
+        >
+          <FaLinkedin className="inline" /> linkedin.com/in/cbouwer
         </Anchor>{' '}
         <br />
         Remote &middot; Mauritius
