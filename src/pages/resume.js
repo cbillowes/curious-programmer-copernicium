@@ -65,7 +65,7 @@ const Timeline = ({
     return (
       <section
         key={index}
-        className="relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse xl:flex-row"
+        className="relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
       >
         <div
           className={`absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} print:hidden`}
@@ -191,7 +191,7 @@ const Meta = () => {
       <div className="hidden print:block print:text-2xl font-semibold">
         Resume
       </div>
-      <h1 className="text-xl mt-4 md:text-4xl leading-loose font-semibold font-alt-sans print:text-sm">
+      <h1 className="text-xl mt-4 md:text-4xl leading-loose font-semibold font-alt-sans print:text-sm print:mt-1">
         Clarice Bouwer
       </h1>
       <h2 className="text-xl mt-2 md:text-xl leading-loose font-alt-sans font-bold print:mt-0 print:text-sm">
@@ -235,7 +235,7 @@ const CoverLetter = () => {
         decisions. I work well with others forming a safe cohesive environment.
         I value keeping people in the loop through open honest communication.
       </p>
-      <p>
+      <p className="mb-4">
         I thrive in a collaborative - people first - culture. An atmosphere rich
         in constructive conversations, intrinsic willingness to help each other,
         pair/mob programming, code reviews, mentoring and the desire to
