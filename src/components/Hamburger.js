@@ -32,7 +32,7 @@ const Container = styled.button`
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
-      background-color: white;
+      background-color: var(--default);
       opacity: 1;
     }
   }
@@ -42,7 +42,7 @@ const Container = styled.button`
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: white;
+    background-color: var(--default);
   }
 
   .hamburger-box {
@@ -60,7 +60,7 @@ const Container = styled.button`
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
-    background-color: white;
+    background-color: var(--default);
     width: ${BURGER_WIDTH}px;
     height: ${BAR_HEIGHT}px;
     border-radius: 4px;
