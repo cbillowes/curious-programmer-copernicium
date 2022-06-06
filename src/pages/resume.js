@@ -65,19 +65,19 @@ const Timeline = ({
     return (
       <section
         key={index}
-        className="relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
+        className="relative mx-auto lg:w-6/12 xl:w-screen md:mt-3 md:mb-3 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
       >
         <div
-          className={`absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} print:hidden`}
+          className={`absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} hidden xl:block`}
         >
           <ResumeIcon category={category} />
         </div>
         <div className="border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 xl:text-right xl:border-r xl:pr-8">
           {company && (
-            <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold font-alt-sans print:mt-0 print:text-sm">
+            <h2 className="text-xl mt-2 xl:mt-0 md:text-2xl leading-loose font-semibold font-alt-sans print:mt-0 print:text-sm">
               <ResumeIcon
                 category={category}
-                className={`text-2xl rounded-full p-2 mr-1 ${color[category].button} hidden print:inline`}
+                className={`text-4xl rounded-full p-2 mr-1 ${color[category].button} inline xl:hidden`}
               />
               <Anchor
                 to={`/resume/${slug}`}
@@ -91,11 +91,11 @@ const Timeline = ({
           {name && (
             <>
               <h2
-                className={`text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold font-alt-sans print:mt-0 print:text-sm ${color[category].heading}`}
+                className={`text-xl mt-2 xl:mt-0 md:text-2xl leading-loose font-semibold font-alt-sans print:mt-0 print:text-sm ${color[category].heading}`}
               >
                 <ResumeIcon
                   category={category}
-                  className={`text-2xl rounded-full p-2 mr-1 ${color[category].button} hidden print:inline`}
+                  className={`text-4xl rounded-full p-2 mr-1 ${color[category].button} inline xl:hidden`}
                 />
                 <Anchor to={`/resume/${slug}`} title={name}>
                   {name}
@@ -131,7 +131,7 @@ const Timeline = ({
                   </>
                 ))}
             </div>
-            <p className="mt-2 text-right print:text-sm print:text-left">
+            <p className="mt-2 xl:text-right print:text-sm print:text-left">
               {summary || excerpt}
             </p>
           </div>
@@ -146,9 +146,9 @@ const Timeline = ({
             </Anchor>
           </div>
         </div>
-        <div className="xl:w-1/4 relative flex items-center justify-center xl:justify-start xl:text-right print:hidden">
+        <div className="hidden xl:flex xl:w-1/4 relative items-center justify-center xl:justify-start xl:text-right print:hidden">
           <div className="text-center">
-            <div className="w-48 pr-3 pt-3">
+            <div className="w-20 xl:w-48 pr-3 pt-3">
               {logo && (
                 <img
                   src={getLogo(logo)}
@@ -158,7 +158,7 @@ const Timeline = ({
                 />
               )}
             </div>
-            <div className="w-48 pr-3 pt-3 text-center print:hidden">
+            <div className="w-full xl:w-48 pr-3 pt-3 text-center print:hidden">
               {tech &&
                 tech.map((t, i) => (
                   <>
@@ -197,7 +197,7 @@ const Meta = () => {
       <h2 className="text-xl mt-2 md:text-xl leading-loose font-alt-sans font-bold print:mt-0 print:text-sm">
         Senior Software Engineer
       </h2>
-      <p className="mt-2 leading-loose print:text-sm print:mt-0">
+      <p className="px-6 mt-2 leading-loose print:text-sm print:mt-0">
         <Anchor to="mailto:clarice@bouwer.dev" title="Email address">
           <FaEnvelope className="inline" /> clarice@bouwer.dev
         </Anchor>{' '}
@@ -228,7 +228,7 @@ const Meta = () => {
 
 const CoverLetter = () => {
   return (
-    <div className="text-center max-w-5xl mx-auto m-4 leading-loose print:text-left print:text-sm">
+    <div className="px-6 text-center max-w-5xl mx-auto m-4 leading-loose print:text-left print:text-sm">
       <p className="mb-4">
         Going on {new Date().getFullYear() - 2006} years now, I professionally
         strive to develop aesthetically pleasing, user (and developer)-friendly
