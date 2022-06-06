@@ -20,15 +20,15 @@ const MenuItem = ({ children, to }) => {
   const selected =
     typeof window !== 'undefined' && window.location.pathname === to;
   return (
-    <li
-      className={`border-2 hover:bg-color-2 m-6 text-center ${
-        selected && 'bg-color-1-alternative font-bold'
+    <div
+      className={`text-color-3-script border-color-3-script border-2 hover:bg-color-1 hover:text-color-1-script m-3 text-center ${
+        selected && 'bg-color-1-alternative text-color-1-script font-bold'
       }`}
     >
       <Anchor className="py-3 px-12" to={to}>
         {children}
       </Anchor>
-    </li>
+    </div>
   );
 };
 
@@ -47,17 +47,17 @@ const Navigation = ({ layout }) => {
       </div>
       {isMenuOpen && (
         <div
-          className="bg-gradient-to-tr from-slate-900 to-color-3 fixed top-0 left-0 bottom-0 right-0"
+          className="bg-color-3 text-color-3-script fixed top-0 left-0 bottom-0 right-0"
           onClick={() => toggleMenu(false)}
         >
           <div className="overflow-scroll max-h-screen pb-6">
-            <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MenuItem to="/">Home</MenuItem>
               <MenuItem to="/blog">Blog</MenuItem>
               <MenuItem to="/tags">Tags</MenuItem>
               <MenuItem to="/about">About me</MenuItem>
               <MenuItem to="/resume">Resume</MenuItem>
-            </ul>
+            </div>
           </div>
         </div>
       )}
