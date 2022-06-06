@@ -74,6 +74,7 @@ const TagsPage = ({ data }) => {
             <Tags
               tags={tags}
               isButton={true}
+              redirect={true}
               additionalClasses="m-1 py-1 px-3 inline-block bg-color-3 text-color-3-script"
             />
           </div>

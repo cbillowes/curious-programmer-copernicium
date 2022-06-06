@@ -62,7 +62,7 @@ const Preview = ({
           >
             Full article
           </Anchor>
-          <Tags tags={tags} />
+          <Tags tags={tags} redirect={true} />
         </div>
       </div>
       <div className="xl:w-1/4 relative">

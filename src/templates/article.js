@@ -89,7 +89,7 @@ const ArticleTemplate = ({ data }) => {
           {timeToRead} minute read
         </div>
         <div className="text-center">
-          <Tags tags={frontmatter.tags} isButton={true} />
+          <Tags tags={frontmatter.tags} redirect={true} isButton={true} />
         </div>
         <div
           className="content max-w-3xl mx-auto mt-8"
