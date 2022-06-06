@@ -2,7 +2,6 @@
 slug: testimonial-from-suzaan-hepburn
 resume:
   category: Testimonial
-  logo: suzaan-hepburn.jpeg
   name: Suzaan Hepburn
   start: 2018-03-08
   jobTitle: Scrum Master at Momentum
