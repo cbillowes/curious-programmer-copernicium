@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
                   'Hello World!',
                   'How are you?',
                   'Comment ça va ?',
-                  'Tu korek ?',
+                  'Toe korek ?',
                   'Hoe gaan dit?',
                 ]}
               />
