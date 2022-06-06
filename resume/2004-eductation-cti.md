@@ -20,8 +20,13 @@ resume:
 
 ## Transcripts
 
-- Information Systems: Software Development (2004): **83%**
 - Computer Science: Internet Development (2004): **86%**
+  Computing Concepts, End User, Using Linux, Processing and logic concepts, Software engineering,
+  Program design, relational database modelling & design, SQL Server 2000, DHTML, Java, XML, Delivering Web Services, JSP, Perl
+
+- Information Systems: Software Development (2004): **83%**
+  Similar to Computer Science Diploma however included C# (Full Language), Hardware Essentials, VB.NET (Half Language)
+
 - VB.NET Certificate: **93%**
 
 ## About CTI Education Group

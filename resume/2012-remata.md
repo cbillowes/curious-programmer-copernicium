@@ -13,9 +13,10 @@ resume:
   tech:
     - C#
     - SQL
-    - Payment Integration
     - jQuery
     - Bootstrap
+    - Payment Integration
+    - XMPie Integration
   summary:
     In the Cross Media Solutions department, I was responsible for the development and
     maintenance of automated processes and custom development integration with XMPie for

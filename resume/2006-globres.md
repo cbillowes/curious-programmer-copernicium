@@ -11,10 +11,10 @@ resume:
   os: windows
   tech:
     - C#
-    - VB.NET
     - SQL
     - Visual Source Safe
-  summary: I was responsible for developing, enhancing and supporting the internal Global Hotel Reservation web application.
 ---
 
-I was responsible for developing, enhancing and supporting the internal Global Hotel Reservation web application.
+I was responsible for developing, enhancing and supporting the internal Global Hotel Reservation web application
+used by in-house agents. I liaised with them to develop rich features that would save them time and optimize their
+workflow.

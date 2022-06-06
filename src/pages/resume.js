@@ -237,8 +237,7 @@ const CoverLetter = () => {
       </p>
       <p>
         Coding, learning, solving problems, collecting e-books, reading, anime,
-        music, eating healthy, adapting to a healthier lifestyle and being bold
-        keeps me ticking.{' '}
+        music and breaking free from my comfort zone keeps me ticking.{' '}
         <span className="print:hidden">
           Find out more{' '}
           <Anchor useMarkdownStyles={true} to="/about">
