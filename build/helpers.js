@@ -27,8 +27,13 @@ const getRandomDefaultComponent = () => {
   return `Default${number}`;
 };
 
-const getSlug = ({ slug, title }) => {
-  return slug || path.join(`/blog`, _.kebabCase(title), `/`);
+const getSlug = ({ slug, title }, fileAbsolutePath, type) => {
+  return path.join(
+    '/',
+    type === 'article' ? 'blog' : type,
+    _.kebabCase(slug || title || fileAbsolutePath.split('/').pop()),
+    `/`,
+  );
 };
 
 const toHeroImageComponent = (image) => {

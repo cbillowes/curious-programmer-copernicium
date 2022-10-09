@@ -1,7 +1,9 @@
 const nodes = require('./build/nodes');
 const thumbnails = require('./build/thumbnails');
-const articles = require('./build/pages-articles');
 const tags = require('./build/pages-tags');
+const articles = require('./build/pages-articles');
+const resume = require('./build/pages-resume');
+const scribbles = require('./build/pages-scribbles');
 
 // The order of which nodes are processed is not guaranteed.
 // To add numbers to each post, nodes need to be captured
@@ -28,9 +30,9 @@ exports.setFieldsOnGraphQLNodeType = ({ type, actions, reporter }) => {
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateNode
 exports.onCreateNode = ({ node, actions, reporter }) => {
   const { createNodeField } = actions;
-  thumbnails.createFields(node, createNodeField, reporter);
   nodes.createFields(node, createNodeField, reporter);
-  if (node.internal.type === `MarkdownRemark` && nodes.isArticle(node)) {
+  thumbnails.createFields(node, createNodeField, reporter);
+  if (node.internal.type === `MarkdownRemark`) {
     markdownNodes.push(node);
   }
 };
@@ -38,8 +40,10 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
 // Create the necessary dynamic pages required to make the blog delicious.
 // https://www.gatsbyjs.org/docs/node-apis/#createPages
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await articles.create(actions, graphql, reporter);
   await tags.create(actions, graphql, reporter);
+  await articles.create(actions, graphql, reporter);
+  await resume.create(actions, graphql, reporter);
+  await scribbles.create(actions, graphql, reporter);
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
