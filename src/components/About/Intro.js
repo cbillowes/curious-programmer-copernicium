@@ -37,9 +37,12 @@ const Intro = () => {
         </h1>
         <div className="text-xl leading-loose xl:max-w-2xl mx-auto">
           <p>
-            My name is Clarice Bouwer and I am a Senior Software Engineer
+            My name is Clarice Bouwer and I am a Software Engineering Team Lead
             working in the Financial Services Industry at Cloudsure Limited in
-            Mauritius <Emoji className="inline-block">🏝️</Emoji>
+            Mauritius (born in South Africa)
+            <Emoji className="inline-block mx-2">🏝️</Emoji>
+            <Emoji className="inline-block mx-2">🇲🇺</Emoji>
+            <Emoji className="inline-block mx-2">🇿🇦</Emoji>
           </p>
           <p>
             I obsess over Clojure(Script), Gatsby and Git{' '}
