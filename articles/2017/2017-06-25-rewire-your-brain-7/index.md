@@ -1,6 +1,6 @@
 ---
 title: Rewire your brain (Part 7) - Our habits
-slug: /blog/rewire-your-brain-7
+slug: rewire-your-brain-7
 date: 2017-06-27 18:05:39 +0200
 cover: https://picsum.photos/1600/800/?image=800
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Who are you and where are you going?
-slug: /blog/who-are-you
+slug: who-are-you
 cover: 'https://picsum.photos/1600/800/?image=156'
 date: 2017-05-13 10:59:08 +0200
 tags:

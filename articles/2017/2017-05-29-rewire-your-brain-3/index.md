@@ -1,6 +1,6 @@
 ---
 title: Rewire your brain (Part 3) - Distress tolerance
-slug: /blog/rewire-your-brain-3
+slug: rewire-your-brain-3
 cover: https://picsum.photos/1600/800/?image=891
 date: 2017-05-29 11:16:43 +0200
 tags:

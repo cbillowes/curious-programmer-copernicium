@@ -1,6 +1,6 @@
 ---
 title: Rewire your brain (Part 6) - Neuroplasticity
-slug: /blog/rewire-your-brain-6
+slug: rewire-your-brain-6
 date: 2017-06-26 19:05:39 +0200
 cover: https://picsum.photos/1600/800/?image=821
 tags:
