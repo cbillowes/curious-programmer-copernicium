@@ -23,6 +23,9 @@ const ArticlesPage = ({ data }) => {
     >
       <div className="bg-default text-default-script">
         <div className="mx-auto pb-5">
+          <h1 className="text-center text-5xl font-bold mb-0 mt-12">
+            Blog
+          </h1>
           <Articles edges={edges} />
         </div>
       </div>
