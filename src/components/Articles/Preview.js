@@ -4,6 +4,9 @@ import Anchor from '../Anchor';
 import Tags from '../Tags';
 import Thumbnail from '../Thumbnail';
 import Ribbon from './Ribbon';
+import { TbScribble } from 'react-icons/tb';
+import { RiArticleLine } from 'react-icons/ri';
+import { Link } from 'gatsby';
 
 const Preview = ({
   index,
@@ -15,11 +18,12 @@ const Preview = ({
   excerpt,
   tags,
   hero,
+  type,
 }) => {
   const isEven = index % 2 === 0;
   return (
     <section
-      key={number}
+      key={index}
       className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
         isEven ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}
@@ -31,6 +35,29 @@ const Preview = ({
             : 'xl:text-right xl:border-r xl:pr-8'
         }`}
       >
+        <div
+          className={`uppercase mb-1 opacity-40 ${
+            isEven ? 'text-left' : 'text-right'
+          }`}
+        >
+          {type === 'scribbles' && (
+            <Link to="/scribbles">
+              <TbScribble
+                className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
+                alt="Scribble"
+              />
+            </Link>
+          )}
+          {type === 'article' && (
+            <Link to="/blog">
+              <RiArticleLine
+                className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
+                alt="Article"
+              />
+            </Link>
+          )}
+          {type}
+        </div>
         <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
           <Anchor to={slug} title={title}>
             {title}
@@ -60,7 +87,7 @@ const Preview = ({
             to={slug}
             title={slug}
           >
-            Full article
+            Read more
           </Anchor>
           <Tags tags={tags} redirect={true} />
         </div>
@@ -68,6 +95,7 @@ const Preview = ({
       <div className="xl:w-1/4 relative">
         <Ribbon>{number}</Ribbon>
         <Thumbnail number={number} to={slug} alt={title} {...hero} />
+        <div className="absolute b-0 l-0 z-10"></div>
       </div>
     </section>
   );
@@ -87,6 +115,7 @@ Preview.propTypes = {
   source: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   component: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
 
 export default Preview;

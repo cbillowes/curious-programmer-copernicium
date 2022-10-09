@@ -28,6 +28,7 @@ Preview.propTypes = {
       tags: PropTypes.array,
     }),
     fields: PropTypes.shape({
+      type: PropTypes.string,
       slug: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,

@@ -52,7 +52,15 @@ const ExternalThumbnail = ({ to, alt, src }) => {
   );
 };
 
-const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
+const Thumbnail = ({
+  alt,
+  to,
+  image,
+  credit,
+  source,
+  link,
+  component,
+}) => {
   if (component === 'url')
     return <ExternalThumbnail to={link} alt={alt} src={image} />;
 
@@ -76,7 +84,6 @@ const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
 
 Thumbnail.propTypes = {
   alt: PropTypes.string,
-  number: PropTypes.number,
   to: PropTypes.string,
   image: PropTypes.string,
   credit: PropTypes.string,
