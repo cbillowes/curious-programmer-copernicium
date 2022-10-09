@@ -108,7 +108,7 @@ const IndexPage = ({ data }) => {
       <div className="lg:hidden p-4 font-alt-sans">
         <div className="leading-relaxed text-center">
           <p className="text-lg md:text-2xl text-center">
-            I&apos;m <span className="font-semibold">Clarice</span> Bouwer, a
+            I&apos;m <span className="font-semibold">Clarice</span> Bouwer, a{' '}
             <span className="font-semibold">
               Software Engineering Team Lead
             </span>{' '}
