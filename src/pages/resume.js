@@ -185,7 +185,7 @@ const Meta = () => {
           alt="A photo of Clarice Bouwer holding her head in a pose"
           width={dimensions}
           height={dimensions}
-          className="rounded-full shadow-md border-8 border-color-1 print:border-0"
+          className="rounded-full shadow-md print:border-0"
         />
       </div>
       <div className="hidden print:block print:text-2xl font-semibold">
