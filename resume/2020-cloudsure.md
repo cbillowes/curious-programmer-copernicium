@@ -4,7 +4,7 @@ resume:
   category: Career
   logo: cloudsure.png
   company: Cloudsure Limited
-  jobTitle: Senior Software Engineer
+  jobTitle: Software Engineering Team Lead
   website: https://www.cloudsure.mu
   type: Full-time
   location: Remote, Mauritius
