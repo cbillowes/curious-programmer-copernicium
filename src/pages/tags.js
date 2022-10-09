@@ -7,8 +7,8 @@ import Tags from '../components/Tags';
 export const query = graphql`
   query TagsPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___date }
-      filter: { fields: { type: { eq: "article" } } }
+      sort: { order: DESC, fields: fields___number }
+      filter: { fields: { type: { in: ["article", "scribbles"] } } }
     ) {
       totalCount
       edges {

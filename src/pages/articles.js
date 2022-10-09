@@ -49,7 +49,7 @@ Articles.propTypes = {
 export const query = graphql`
   query ArticlesPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___date }
+      sort: { order: DESC, fields: fields___number }
       filter: { fields: { type: { eq: "article" } } }
     ) {
       edges {

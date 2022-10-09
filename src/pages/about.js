@@ -55,11 +55,11 @@ export const query = graphql`
   query AboutPageQuery {
     allMarkdownRemark(
       limit: 10
+      sort: { order: DESC, fields: fields___number }
       filter: {
-        fields: { type: { eq: "article" } }
+        fields: { type: { in: ["article", "scribbles"] } }
         frontmatter: { featured: { eq: true } }
       }
-      sort: { order: DESC, fields: fields___date }
     ) {
       edges {
         node {

@@ -84,8 +84,8 @@ export const query = graphql`
   query NotFoundPageQuery {
     allMarkdownRemark(
       limit: 10
-      sort: { order: DESC, fields: fields___date }
-      filter: { fields: { type: { eq: "article" } } }
+      sort: { order: DESC, fields: fields___number }
+      filter: { fields: { type: { in: ["article", "scribbles"] } } }
     ) {
       edges {
         node {
