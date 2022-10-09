@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
             </span>
             <span>
               <StaticImage
-                src="../images/cloudsure.png"
+                src="../images/logos/cloudsure.png"
                 alt="Cloudsure"
                 width={48}
               />
