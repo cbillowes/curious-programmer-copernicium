@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
           <div className="text-2xl py-2 px-14 text-center leading-loose">
             <p>
               My name is <strong className="bold">Clarice Bouwer</strong> &amp;
-              I am a <strong className="bold">Senior Software Engineer</strong>{' '}
+              I am a <strong className="bold">Software Engineering Team Lead</strong>{' '}
               at <strong className="bold">Cloudsure</strong>, Mauritius. I have
               been a curious programmer since the early 2000s. Let us learn
               something new together.
