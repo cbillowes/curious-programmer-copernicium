@@ -183,8 +183,10 @@ export const query = graphql`
           timeToRead
           excerpt(truncate: true, pruneLength: 200, format: PLAIN)
           fields {
+            type
             slug
-            date(formatString: "LL")
+            date(formatString: "dddd, DD MMMM YYYY")
+            number
             hero {
               component
               image

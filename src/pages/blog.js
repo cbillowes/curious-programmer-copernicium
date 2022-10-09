@@ -60,7 +60,8 @@ export const query = graphql`
           excerpt(truncate: true, pruneLength: 200, format: PLAIN)
           fields {
             slug
-            date(formatString: "LL")
+            date(formatString: "dddd, DD MMMM YYYY")
+            type
             number
             hero {
               component
