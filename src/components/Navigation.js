@@ -54,6 +54,7 @@ const Navigation = ({ layout }) => {
             <div className="flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MenuItem to="/">Home</MenuItem>
               <MenuItem to="/blog">Blog</MenuItem>
+              <MenuItem to="/scribbles">Scribbles</MenuItem>
               <MenuItem to="/tags">Tags</MenuItem>
               <MenuItem to="/about">About me</MenuItem>
               <MenuItem to="/resume">Resume</MenuItem>
