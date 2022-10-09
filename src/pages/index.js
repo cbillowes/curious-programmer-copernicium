@@ -61,7 +61,8 @@ const IndexPage = ({ data }) => {
           <div className="text-2xl py-2 px-14 text-center leading-loose">
             <p>
               My name is <strong className="bold">Clarice Bouwer</strong> &amp;
-              I am a <strong className="bold">Software Engineering Team Lead</strong>{' '}
+              I am a{' '}
+              <strong className="bold">Software Engineering Team Lead</strong>{' '}
               at <strong className="bold">Cloudsure</strong>, Mauritius. I have
               been a curious programmer since the early 2000s. Let us learn
               something new together.
@@ -108,8 +109,10 @@ const IndexPage = ({ data }) => {
         <div className="leading-relaxed text-center">
           <p className="text-lg md:text-2xl text-center">
             I&apos;m <span className="font-semibold">Clarice</span> Bouwer, a
-            Senior <span className="font-semibold">Software Engineer</span> at
-            Cloudsure, Mauritius
+            <span className="font-semibold">
+              Software Engineering Team Lead
+            </span>{' '}
+            at Cloudsure, Mauritius
           </p>
           <p className="mt-3 text-sm md:text-lg">
             I write code. I share code. I love code.
