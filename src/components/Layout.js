@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeContext, toggleColorMode } from '../context/Theme';
 import { MdWbSunny } from '@react-icons/all-files/md/MdWbSunny';
 import { MdBrightness2 } from '@react-icons/all-files/md/MdBrightness2';
+import { MdOutlineSchool } from 'react-icons/md';
 import { FiRss } from '@react-icons/all-files/fi/FiRss';
 import Head from '../components/Head';
 import Footer from '../components/Footer';
@@ -68,6 +69,9 @@ export const Layout = ({ meta, children }) => {
       <Head {...meta} />
       <div className="print:hidden fixed top-0 left-0 right-0 z-50">
         <BuyMeCoffee component="top-bar" />
+        <Anchor to="/courses" title="Courses" className="absolute left-14 -top-1 text-3xl hover:text-color-2 hover:animate-wiggle animate">
+          <MdOutlineSchool className="inline" />
+        </Anchor>
         <div className="text-right text-lg bg-color-1 text-color-1-script">
           <div className="mr-3 pt-1 inline-block">
             <SearchIcon

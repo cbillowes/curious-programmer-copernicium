@@ -6,6 +6,7 @@ import Thumbnail from '../Thumbnail';
 import Ribbon from './Ribbon';
 import { TbScribble } from 'react-icons/tb';
 import { RiArticleLine } from 'react-icons/ri';
+import { MdOutlineSchool } from 'react-icons/md';
 import { Link } from 'gatsby';
 
 const Preview = ({
@@ -56,6 +57,14 @@ const Preview = ({
               />
             </Link>
           )}
+          {type === 'course' && (
+            <Link to="/courses">
+              <MdOutlineSchool
+                className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
+                alt="Course"
+              />
+            </Link>
+          )}
           {type}
         </div>
         <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
@@ -95,7 +104,6 @@ const Preview = ({
       <div className="xl:w-1/4 relative">
         <Ribbon>{number}</Ribbon>
         <Thumbnail number={number} to={slug} alt={title} {...hero} />
-        <div className="absolute b-0 l-0 z-10"></div>
       </div>
     </section>
   );

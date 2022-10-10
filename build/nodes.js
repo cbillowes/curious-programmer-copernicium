@@ -12,10 +12,20 @@ exports.isScribbles = (node) => {
   return node.fileAbsolutePath.indexOf('/scribbles/') > -1;
 };
 
+exports.isCourse = (node) => {
+  return node.fileAbsolutePath.indexOf('/courses/') > -1 && node.frontmatter.index;
+};
+
+exports.isChapter = (node) => {
+  return node.fileAbsolutePath.indexOf('/courses/') > -1 && !node.frontmatter.index;
+}
+
 exports.markdownType = (node) => {
   if (this.isArticle(node)) return 'article';
   if (this.isResume(node)) return 'resume';
   if (this.isScribbles(node)) return 'scribbles';
+  if (this.isCourse(node)) return 'course';
+  if (this.isChapter(node)) return 'chapter';
   return '';
 };
 

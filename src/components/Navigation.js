@@ -55,6 +55,7 @@ const Navigation = ({ layout }) => {
               <MenuItem to="/">Home</MenuItem>
               <MenuItem to="/blog">Blog</MenuItem>
               <MenuItem to="/scribbles">Scribbles</MenuItem>
+              <MenuItem to="/courses">Courses</MenuItem>
               <MenuItem to="/tags">Tags</MenuItem>
               <MenuItem to="/about">About me</MenuItem>
               <MenuItem to="/resume">Resume</MenuItem>

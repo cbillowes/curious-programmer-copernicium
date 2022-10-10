@@ -28,6 +28,20 @@ const getRandomDefaultComponent = () => {
 };
 
 const getSlug = ({ slug, title }, fileAbsolutePath, type) => {
+  if (type === 'chapter') {
+    const dir = path.dirname(fileAbsolutePath).split(`/`).pop();
+    const basename = path.basename(fileAbsolutePath);
+    const page = basename.substring(0, 2);
+    return path.join(`/courses/`, dir, page, _.kebabCase(slug || title));
+  }
+
+  if (type === 'course') {
+    return path.join(
+      `/courses/`,
+      _.kebabCase(slug || title || fileAbsolutePath.split('/').pop()),
+    );
+  }
+
   return path.join(
     '/',
     type === 'article' ? 'blog' : type,
