@@ -11,6 +11,7 @@ import { SearchIcon } from './Search/icon';
 import Search from './Search';
 import BuyMeCoffee from './Coffee';
 import Anchor from './Anchor';
+import Cookies from './Cookies';
 import { getLCP, getFID, getCLS } from 'web-vitals';
 
 const searchIndices = [{ name: 'Pages', title: 'Pages' }];
@@ -55,7 +56,7 @@ export const Layout = ({ meta, children }) => {
 
   return (
     <div
-      className={`${colorMode} bg-color-1 text-color-1-script m-0 px-0 py-1 ${
+      className={`${colorMode} relative bg-color-1 text-color-1-script m-0 px-0 py-1 ${
         showSearch ? 'overflow-hidden max-h-screen' : 'min-h-screen'
       }`}
       onKeyUp={(e) => {
@@ -99,6 +100,7 @@ export const Layout = ({ meta, children }) => {
       <Footer
         toggler={<Toggler colorMode={colorMode} setColorMode={setColorMode} />}
       />
+      <Cookies />
     </div>
   );
 };
