@@ -44,6 +44,7 @@ module.exports.create = async (actions, graphql, reporter) => {
   await query(graphql).then((result) => {
     if (result.errors) {
       reporter.error(`create tag pages: ${result.errors}`);
+      return;
     }
 
     const { createPage } = actions;

@@ -6,7 +6,6 @@ const scribblesQuery = async (graphql) => {
   return await graphql(`
     query ScribblesBuildQuery {
       allMarkdownRemark(
-        sort: { order: DESC, fields: frontmatter___date }
         filter: { fields: { type: { eq: "scribbles" } } }
       ) {
         edges {
@@ -24,13 +23,14 @@ const scribblesQuery = async (graphql) => {
 
 module.exports.create = async (actions, graphql, reporter) => {
   if (!createPages) {
-    reporter.warn(`off: create articles`);
+    reporter.warn(`off: create scribbles`);
     return;
   }
   const { createPage } = actions;
   await scribblesQuery(graphql).then((result) => {
     if (result.errors) {
       reporter.error(`create scribbles: ${result.errors}`);
+      return;
     }
 
     const edges = result.data.allMarkdownRemark.edges;

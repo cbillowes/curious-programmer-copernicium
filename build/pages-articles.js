@@ -100,6 +100,7 @@ module.exports.create = async (actions, graphql, reporter) => {
   await articlesQuery(graphql).then((result) => {
     if (result.errors) {
       reporter.error(`create articles: ${result.errors}`);
+      return;
     }
 
     reporter.success('------------- Create all things articles:');

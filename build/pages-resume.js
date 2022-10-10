@@ -36,6 +36,7 @@ module.exports.create = async (actions, graphql, reporter) => {
   await resumeQuery(graphql).then((result) => {
     if (result.errors) {
       reporter.error(`create resume: ${result.errors}`);
+      return;
     }
 
     const edges = result.data.allMarkdownRemark.edges;
