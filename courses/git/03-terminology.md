@@ -25,8 +25,6 @@ git init
 This will create a repository and start tracking files. It does this by generating a hidden `.git` directory
 which stores all the tracking data innards in there.
 
-## Pull, fetch and push
-
 ## Commit
 
 Remember when I said that Git will **track** your files? When you **commit** a **change** then you are telling
@@ -34,6 +32,20 @@ Git to remember what happened at that point in time. Essentially, you are **offi
 
 You can consider commits to be checkpoints or snapshots of the current state of affairs. There is no limit to the number
 of commits you can make but there are a few [guidelines](/blog/why-i-create-atomic-commits-in-git/) and [other guidelines](/blog/how-to-craft-your-changes-into-small-atomic-commits-using-git/) and etiquette that we will get into later.
+
+## Fetch, pull and push
+
+A **fetch** will download commits, files and refs from the remote repository. Use this when you want to see what
+other people have done to the repository. It is important to note that the files in your local repository is not affected.
+You need to explicitly checkout that work. That means that fetching is a safe way to review commits before integrating them with
+your local repository.
+
+```bash
+git fetch
+```
+
+A **pull** will download the remote content for the active local branch and immediately execute `git merge` to create a merge commit
+for the new remote content.
 
 ## Branch
 
@@ -46,6 +58,7 @@ You can **deviate** from the main line by creating your own **branch** where you
 
 ```bash
 git checkout -b <branch>
+git branch
 ```
 
 You will need to be able to switch between branches. To do so, assuming your working directory is clean enough for it to switch:

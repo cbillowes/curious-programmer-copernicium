@@ -14,3 +14,13 @@ credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 creditSource: dribbble.com
 ---
+
+## Objectives
+
+At the end of this course you should be able to:
+
+- install and configure Git.
+- clone and work on repositories.
+- run basic commands from the terminal.
+- use a GUI with ease.
+- deal with merge conflicts.

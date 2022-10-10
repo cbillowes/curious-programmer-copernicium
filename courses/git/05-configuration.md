@@ -27,3 +27,4 @@ git init
 
 This will create a repository and start tracking files. It does this by generating a hidden `.git` directory
 which stores all the tracking data innards in there.
+
