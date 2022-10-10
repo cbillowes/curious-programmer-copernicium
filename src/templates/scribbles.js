@@ -75,7 +75,7 @@ const ScribblesTemplate = ({ data }) => {
           <Link to="/scribbles">
             <TbScribble
               className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-              alt="Scribble"
+              alt="Scribbles"
             />
           </Link>
           {fields.type}
@@ -85,7 +85,7 @@ const ScribblesTemplate = ({ data }) => {
               <Anchor to={frontmatter.devTo} forceNewTab={true}>
                 <FaDev
                   className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-                  alt="Scribble"
+                  alt="dev.to"
                 />
                 dev.to
               </Anchor>
