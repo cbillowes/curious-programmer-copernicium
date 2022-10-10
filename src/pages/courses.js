@@ -9,8 +9,8 @@ import Ribbon from '../components/Articles/Ribbon';
 
 const Courses = ({ edges }) => {
   return edges.map(({ node }, index) => {
-    const { title, date, abstract, tags, hero } = node.frontmatter;
-    const { slug } = node.fields;
+    const { title, date, abstract, tags } = node.frontmatter;
+    const { slug, hero } = node.fields;
     const isEven = index % 2 === 0;
 
     return (

@@ -5,6 +5,7 @@ import { Layout } from '../components/Layout';
 import Tags from '../components/Tags';
 import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
+import Thumbnail from '../components/Thumbnail';
 import { MdOutlineSchool } from 'react-icons/md';
 
 export const query = graphql`
@@ -17,6 +18,13 @@ export const query = graphql`
         slug
         date(formatString: "dddd, DD MMMM YYYY")
         type
+        hero {
+          component
+          image
+          credit
+          source
+          link
+        }
       }
       frontmatter {
         title
@@ -80,6 +88,9 @@ const CourseTemplate = ({ data, pageContext }) => {
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
+        <div className="w-6/12 md:w-6/12 xl:w-4/12 mx-auto">
+          <Thumbnail {...fields.hero} />
+        </div>
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {courseTitle}
         </h1>
@@ -100,9 +111,7 @@ const CourseTemplate = ({ data, pageContext }) => {
             month: 'long',
             day: 'numeric',
           })}
-          <p>
-            {abstract}
-          </p>
+          <p>{abstract}</p>
         </div>
         <div className="text-center">
           <Tags tags={tags} redirect={true} isButton={true} />
@@ -119,7 +128,11 @@ const CourseTemplate = ({ data, pageContext }) => {
             const { slug } = node.fields;
             const paths = slug.split(`/`);
             const page = paths[paths.length - 2];
-            return <Link to={slug} className="block">{page} - {title}</Link>;
+            return (
+              <Link to={slug} className="block">
+                {page} - {title}
+              </Link>
+            );
           })}
         </div>
         <CommentSystem
