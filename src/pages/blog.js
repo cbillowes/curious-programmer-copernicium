@@ -17,7 +17,7 @@ const BlogPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'A place for a curious mind',
+        pageTitle: 'Blog',
         siteTitle: title,
         route: '/blog',
       }}

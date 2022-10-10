@@ -17,7 +17,7 @@ const ArticlesPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Articles',
+        pageTitle: 'Blog',
         siteTitle: title,
       }}
     >
