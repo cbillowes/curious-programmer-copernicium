@@ -25,11 +25,10 @@ const Privacy = ({ data }) => {
       <div className="privacy max-w-screen-md mx-auto p-4">
         <h1>Privacy Policy for Curious Programmer</h1>
         <p>
-          At Curious Programmer, accessible from https://curiousprogrammer.dev
-          and https://curiousprogrammer.oi, one of our main priorities is the
-          privacy of our visitors. This Privacy Policy document contains types
-          of information that is collected and recorded by Curious Programmer
-          and how we use it.
+          At Curious Programmer, accessible from https://curiousprogrammer.dev,
+          one of our main priorities is the privacy of our visitors. This Privacy
+          Policy document contains types of information that is collected and
+          recorded by Curious Programmer and how we use it.
         </p>
 
         <p>
