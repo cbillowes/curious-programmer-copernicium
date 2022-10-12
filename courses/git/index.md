@@ -17,10 +17,19 @@ creditSource: dribbble.com
 
 ## Objectives
 
-At the end of this course you should be able to:
+:tada: At the end of this course you should be able to:
 
 - install and configure Git.
 - clone and work on repositories.
 - run basic commands from the terminal.
 - use a GUI with ease.
 - deal with merge conflicts.
+- understand how CI/CD and GitLab works.
+- have basic Git etiquette and understand the discipline.
+
+## Resources
+
+- [Official documentation](https://git-scm.com/doc)
+- [Free Pro Git book](https://git-scm.com/book/en/v2)
+- [Learn about GitHub](https://guides.github.com/)
+- [Learn Git](https://www.gitkraken.com/learn/git) - GitKraken

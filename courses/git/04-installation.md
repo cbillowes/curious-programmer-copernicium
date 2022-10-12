@@ -3,20 +3,34 @@ title: Installation
 parent: /courses/git
 ---
 
+`youtube:https://www.youtube.com/embed/UFEby2zo-9E`
+
+---
+
 ## Installation
 
-Click on the download link for your operating system on the [download](https://git-scm.com/downloads) page
-and follow the wizard to let the magic unfold.
+### Windows
 
-Once it is done, verify that it is installed by going to your terminal and typing the following and being
-prompted with the version that has been installed.
+1. [Download][download-git] Git for Windows and open it.
+1. Follow the wizard to let the magic unfold.
+1. Open your WSL or Git Bash terminal.
+
+### macOS
+
+1. Open your [terminal][terminal].
+1. First verify if Git is installed or not using the command below.
+1. [Download][download-git] Git for Mac and open it.
+1. Follow the wizard to let the magic unfold.
+
+### Verify that Git is installed
+
+If you see a version number below the command when you press enter, then Git is installed successfully.
+If it says that the command cannot be found then there has been a problem with the installation
+or the application has not been installed.
 
 ```bash
 git --version
 ```
-
-:white_check_mark: The default Bash terminal will be sufficient if you are using a Mac or Linux machine.\
-:white_check_mark: Use the built-in Powershell terminal or the Git Bash terminal on Windows. [See more](https://zarkom.net/blogs/how-to-install-git-and-git-bash-on-windows-9140).
 
 > ## But why the terminal? :worried:
 >
@@ -27,3 +41,6 @@ git --version
 ## Reference
 
 - [Official website](https://git-scm.com/) - Git
+
+[download-git]: https://git-scm.com/downloads
+[terminal]: /courses/git/03/terminology#terminal

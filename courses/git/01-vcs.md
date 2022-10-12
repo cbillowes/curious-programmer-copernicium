@@ -12,15 +12,15 @@ It got hairy!
 
 Deployments and website publishing was even more of a nightmare.
 We would do an old-school FTP of our files to a server somewhere
-and hope nothing goes wrong.
+and hope nothing went wrong.
 
 Some problems would surface:
 
-- We didn't know what the most recent **working version** of the file is in the sea of backups.
+- We didn't know what the most recent **working version** of a particular file in the sea of backups was.
 - We didn't know what changed in the file before it stopped working.
 - We didn't know which file to target when a breaking change was introduced.
 - We didn't know what version of the website was live.
-- We couldn't easily recover from lost files.
+- We couldn't easily recover from lost or damaged files.
 - Teams couldn't effectively and safely collaborate.
 
 ## A different approach
@@ -53,6 +53,8 @@ Some popular systems include:
 - Mecurial
 - Bazaar
 - Monotone
+
+`youtube:https://www.youtube.com/embed/2ReR1YJrNOM`
 
 ## References
 
