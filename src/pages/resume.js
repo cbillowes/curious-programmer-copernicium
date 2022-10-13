@@ -152,6 +152,7 @@ const Timeline = ({
               {logo && (
                 <img
                   src={getLogo(logo)}
+                  alt={company || name}
                   className={`mx-auto ${
                     category === 'Testimonial' ? 'rounded-full' : ''
                   }`}
