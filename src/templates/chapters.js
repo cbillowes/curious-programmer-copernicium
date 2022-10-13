@@ -63,7 +63,6 @@ export const query = graphql`
 `;
 
 const ChaptersTemplate = ({ data, pageContext }) => {
-  console.log(data, pageContext);
   const { markdownRemark, allMarkdownRemark, site } = data;
   const { page, total, next, previous } = pageContext;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
@@ -100,12 +99,12 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                 Courses
               </Anchor>{' '}
               /{' '}
-              <span
-                className="cursor-pointer"
+              <button
+                className="cursor-pointer uppercase"
                 onClick={() => toggleToc(!showToc)}
               >
                 Table of Contents
-              </span>
+              </button>
             </div>
             <Anchor to={next} className={next ? '' : 'invisible'}>
               Next &rarr;
