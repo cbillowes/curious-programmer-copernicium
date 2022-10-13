@@ -66,7 +66,7 @@ const Thumbnail = ({
 
   const Image = ComponentIndex[component];
   return (
-    <div className="relative text-center">
+    <div className="relative text-center max-w-[500px] mx-auto">
       <Anchor to={to} title={alt}>
         {Image && (
           <Image className="shadow-md transform" alt={alt} width={250} />

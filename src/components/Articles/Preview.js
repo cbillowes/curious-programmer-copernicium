@@ -25,7 +25,7 @@ const Preview = ({
   return (
     <section
       key={index}
-      className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
+      className={`relative mx-auto max-w-[1600px] lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
         isEven ? 'xl:flex-row-reverse' : 'xl:flex-row'
       }`}
     >

@@ -65,7 +65,7 @@ const Timeline = ({
     return (
       <section
         key={index}
-        className="relative mx-auto lg:w-6/12 xl:w-screen md:mt-3 md:mb-3 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
+        className="relative mx-auto max-w-[1600px] lg:w-6/12 xl:w-screen md:mt-3 md:mb-3 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
       >
         <div
           className={`absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} hidden xl:block`}
