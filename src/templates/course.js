@@ -7,6 +7,7 @@ import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import Thumbnail from '../components/Thumbnail';
 import { MdOutlineSchool } from 'react-icons/md';
+import { toMauritiusLocaleDateString } from '../common/date';
 
 export const query = graphql`
   query CourseTemplateQuery($slug: String!) {
@@ -29,6 +30,8 @@ export const query = graphql`
       frontmatter {
         title
         abstract
+        date
+        modified
         tags
       }
     }
@@ -67,12 +70,11 @@ export const query = graphql`
   }
 `;
 
-const CourseTemplate = ({ data, pageContext }) => {
+const CourseTemplate = ({ data }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
-  const { modified } = pageContext;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: courseTitle, tags, abstract } = frontmatter;
+  const { title: courseTitle, tags, abstract, date, modified } = frontmatter;
   const keywords = getKeywords(excerpt);
 
   return (
@@ -104,13 +106,13 @@ const CourseTemplate = ({ data, pageContext }) => {
           {fields.type}
         </div>
         <div className="text-center text-neutral">
-          Estimated {timeToRead} minute read &middot; Last modified:{' '}
-          {new Date(modified).toLocaleDateString('en-MU', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
+          Estimated {timeToRead} minute read &middot; Created on{' '}
+          {toMauritiusLocaleDateString(date)}{' '}
+          {modified && (
+            <>
+              &middot; Last modified on {toMauritiusLocaleDateString(modified)}
+            </>
+          )}
           <p>{abstract}</p>
         </div>
         <div className="text-center">

@@ -15,6 +15,7 @@ const chaptersQuery = async (graphql) => {
             fileAbsolutePath
             frontmatter {
               date
+              parent
             }
             fields {
               slug
@@ -49,15 +50,15 @@ module.exports.create = async (actions, graphql, reporter) => {
       const page = parseInt(path.basename(filepath).substring(0, 2), 10);
       const dirname = path.dirname(node.fileAbsolutePath);
       const { slug } = node.fields;
+      const { parent } = node.frontmatter;
       const files = fs.readdirSync(dirname);
-      const modified = fs.statSync(filepath).mtime;
       createPage({
         path: slug,
         component: path.resolve(template),
         context: {
+          parent,
           slug,
           page,
-          modified,
           total: files.length - 1,
           next:
             index + 1 < edges.length ? edges[index + 1].node.fields.slug : null,

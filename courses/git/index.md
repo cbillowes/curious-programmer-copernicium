@@ -3,6 +3,7 @@ title: A gentle introduction to Git
 slug: git
 index: true
 date: 2022-10-10
+modified: 2022-10-14
 tags:
   - Git
   - Tutorial

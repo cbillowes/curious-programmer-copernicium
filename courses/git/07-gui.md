@@ -1,6 +1,7 @@
 ---
 title: Graphical User Interfaces
 parent: /courses/git
+date: 2022-10-10
 ---
 
 ## Visual Studio Code

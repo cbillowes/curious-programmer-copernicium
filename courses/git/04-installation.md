@@ -1,6 +1,7 @@
 ---
 title: Installation
 parent: /courses/git
+date: 2022-10-10
 ---
 
 `youtube:https://www.youtube.com/embed/UFEby2zo-9E`

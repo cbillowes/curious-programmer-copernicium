@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { toMauritiusLocaleDateString } from '../common/date';
 import Tags from '../components/Tags';
 import Anchor from '../components/Anchor';
 import Thumbnail from '../components/Thumbnail';
@@ -34,12 +35,7 @@ const Courses = ({ edges }) => {
           </h2>
           <div className="leading-loose mb-4">
             <p className="text-neutral">
-              {new Date(date).toLocaleDateString('en-MU', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
+              Created on {toMauritiusLocaleDateString(date)}
             </p>
             <p
               className={`mt-2 text-left ${
@@ -67,7 +63,7 @@ const Courses = ({ edges }) => {
           </div>
         </div>
         <div className="xl:w-1/4 relative">
-          <Ribbon>{index}</Ribbon>
+          <Ribbon>#{index + 1}</Ribbon>
           <Thumbnail number={index} to={slug} alt={title} {...hero} />
         </div>
       </section>
@@ -118,9 +114,7 @@ export const query = graphql`
   query CoursesPageQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: fields___date }
-      filter: {
-        fields: { type: { eq: "course" } }
-      }
+      filter: { fields: { type: { eq: "course" } } }
     ) {
       edges {
         node {

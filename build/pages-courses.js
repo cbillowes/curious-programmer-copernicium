@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const template = `./src/templates/course.js`;
 const createPages = true;
 
@@ -42,15 +41,12 @@ module.exports.create = async (actions, graphql, reporter) => {
     );
 
     edges.forEach(async ({ node }) => {
-      const filepath = node.fileAbsolutePath;
-      const modified = fs.statSync(filepath).mtime;
       const { slug } = node.fields;
       createPage({
         path: slug,
         component: path.resolve(template),
         context: {
           slug,
-          modified,
         },
       });
 

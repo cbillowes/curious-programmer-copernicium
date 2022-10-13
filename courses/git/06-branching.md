@@ -1,6 +1,7 @@
 ---
 title: Branching and Merging
 parent: /courses/git
+date: 2022-10-10
 ---
 
 We briefly touched on branches in the terminology section of this course.

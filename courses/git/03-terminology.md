@@ -1,6 +1,7 @@
 ---
 title: Terminology
 parent: /courses/git
+date: 2022-10-10
 ---
 
 `youtube:https://www.youtube.com/embed/n-p1RUmdl9M`

@@ -1,6 +1,7 @@
 ---
 title: About Git
 parent: /courses/git
+date: 2022-10-10
 ---
 
 - Git is a distributed Version Control System as in it is software that runs locally on your - and your team members' - machines and remotely on the server.

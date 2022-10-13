@@ -1,6 +1,7 @@
 ---
 title: CI/CD
 parent: /courses/git
+date: 2022-10-10
 ---
 
 1. Stands for Continuous Integration and Continuous Delivery.
