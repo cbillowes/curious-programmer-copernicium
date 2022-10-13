@@ -6,7 +6,10 @@ const createPages = true;
 const chaptersQuery = async (graphql) => {
   return await graphql(`
     query ChaptersBuildQuery {
-      allMarkdownRemark(filter: { fields: { type: { eq: "chapter" } } }) {
+      allMarkdownRemark(
+        filter: { fields: { type: { eq: "chapter" } } }
+        sort: { fields: fields___slug }
+      ) {
         edges {
           node {
             fileAbsolutePath
@@ -41,7 +44,7 @@ module.exports.create = async (actions, graphql, reporter) => {
       `------------- Create all things course chapters [${edges.length}]:`,
     );
 
-    edges.forEach(async ({ node }) => {
+    edges.forEach(async ({ node }, index) => {
       const filepath = node.fileAbsolutePath;
       const page = parseInt(path.basename(filepath).substring(0, 2), 10);
       const dirname = path.dirname(node.fileAbsolutePath);
@@ -56,6 +59,9 @@ module.exports.create = async (actions, graphql, reporter) => {
           page,
           modified,
           total: files.length - 1,
+          next:
+            index + 1 < edges.length ? edges[index + 1].node.fields.slug : null,
+          previous: index - 1 >= 0 ? edges[index - 1].node.fields.slug : null,
         },
       });
 
