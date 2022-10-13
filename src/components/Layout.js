@@ -67,25 +67,31 @@ export const Layout = ({ meta, children }) => {
       }}
     >
       <Head {...meta} />
-      <div className="print:hidden fixed top-0 left-0 right-0 z-50">
-        <BuyMeCoffee component="top-bar" />
-        <Anchor to="/courses" title="Courses" className="absolute left-14 -top-1 text-3xl hover:text-color-2 hover:animate-wiggle animate">
-          <MdOutlineSchool className="inline" />
-        </Anchor>
-        <div className="text-right text-lg bg-color-1 text-color-1-script">
-          <div className="mr-3 pt-1 inline-block">
-            <SearchIcon
-              show={showSearch}
-              toggle={() => toggleSearchMode(!showSearch)}
-            />
-          </div>
-          <div className="mr-4 pt-1 inline-block">
-            <Toggler colorMode={colorMode} setColorMode={setColorMode} />
-          </div>
-          <div className="mr-4 pt-1 inline-block">
-            <Anchor to="/rss.xml" forceNewTab={true} title="RSS Feed">
-              <FiRss />
-            </Anchor>
+      <div className="print:hidden fixed top-0 left-0 right-0 z-50 bg-color-1 text-color-1-script">
+        <div className="max-w-[1440px] mx-auto relative">
+          <BuyMeCoffee component="top-bar" />
+          <Anchor
+            to="/courses"
+            title="Courses"
+            className="absolute left-14 -top-1 text-3xl hover:text-color-2 hover:animate-wiggle animate"
+          >
+            <MdOutlineSchool className="inline" />
+          </Anchor>
+          <div className="text-right text-lg">
+            <div className="mr-3 pt-1 inline-block">
+              <SearchIcon
+                show={showSearch}
+                toggle={() => toggleSearchMode(!showSearch)}
+              />
+            </div>
+            <div className="mr-4 pt-1 inline-block">
+              <Toggler colorMode={colorMode} setColorMode={setColorMode} />
+            </div>
+            <div className="mr-4 pt-1 inline-block">
+              <Anchor to="/rss.xml" forceNewTab={true} title="RSS Feed">
+                <FiRss />
+              </Anchor>
+            </div>
           </div>
         </div>
         <Navigation layout="fluid" />

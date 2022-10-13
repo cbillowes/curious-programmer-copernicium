@@ -32,11 +32,11 @@ const IndexPage = ({ data }) => {
         route: '/',
       }}
     >
-      <div className="relative font-alt-sans">
-        <div>
+      <div className="relative font-alt-sans max-w-[1440px] mx-auto">
+        <div className="">
           <StaticImage
             src="../images/profile.jpg"
-            alt="I am standing in a star fish pose on top of Mauritius rocks by the sea"
+            alt="I visited the upside down room in Curious Corner, Chamarel, Mauritius"
             layout="constrained"
             width={1440}
           />

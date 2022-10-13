@@ -38,7 +38,7 @@ const Navigation = ({ layout }) => {
   return (
     <div className="bg-color-2 text-color-2-script py-2 px-4 print:hidden">
       <div
-        className={`flex justify-between items-center ${
+        className={`max-w-[1440px] mx-auto flex justify-between items-center ${
           layout === 'fluid' ? '' : 'max-w-screen-md mx-auto w-full'
         }`}
       >
