@@ -105,6 +105,7 @@ const ResumeTemplate = ({ data }) => {
         {logo && (
           <img
             src={require(`../images/logos/${logo}`).default}
+            alt={company}
             className={`logo mx-auto ${
               category === 'Testimonial' ? 'rounded-full' : ''
             } `}
