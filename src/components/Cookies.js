@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import Anchor from './Anchor';
 
 const accept = () => {
-  document.cookie = 'cookie_banner=ACCEPTED; path=/';
+  if (typeof document !== 'undefined') {
+    document.cookie = 'cookie_banner=ACCEPTED; path=/';
+  }
 };
 
 const shouldShow = () => {
-  return document.cookie.indexOf('cookie_banner=ACCEPTED') !== -1;
-}
+  if (typeof document !== 'undefined') {
+    return document.cookie.indexOf('cookie_banner=ACCEPTED') !== -1;
+  }
+};
 
 const Cookies = () => {
   const [closed, setClosed] = useState(shouldShow());
-  if (closed) console.log('Hey, looks like you have already accepted our cookie policy.');
+  if (closed)
+    console.log('Hey, looks like you have already accepted our cookie policy.');
   return (
     !closed && (
       <div className="absolute bg-black text-white rounded-lg bottom-5 right-5 w-1/4 py-8 px-12 shadow-md opacity-95">
