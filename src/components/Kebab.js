@@ -55,7 +55,7 @@ const Kebab = ({ onClick, className, children, phrases, expanded }) => {
 
 Kebab.propTypes = {
   prefix: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   onClick: PropTypes.func,
   expanded: PropTypes.bool,

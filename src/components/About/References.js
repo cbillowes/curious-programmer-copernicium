@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Kebab from '../Kebab';
 import Anchor from '../Anchor';
 
-const References = ({ edges }) => {
+const References = () => {
   const [visible, toggleVisibility] = useState(false);
   return (
     <>
@@ -49,10 +49,6 @@ const References = ({ edges }) => {
       </div>
     </>
   );
-};
-
-References.propTypes = {
-  edges: PropTypes.array.isRequired,
 };
 
 export default References;
