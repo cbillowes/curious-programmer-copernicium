@@ -102,7 +102,7 @@ const Preview = ({
         </div>
       </div>
       <div className="xl:w-1/4 relative">
-        <Ribbon>{number}</Ribbon>
+        <Ribbon>#{number}</Ribbon>
         <Thumbnail number={number} to={slug} alt={title} {...hero} />
       </div>
     </section>
