@@ -51,6 +51,12 @@ const Navigation = ({ layout }) => {
           onClick={() => toggleMenu(false)}
         >
           <div className="overflow-scroll max-h-screen pb-6">
+            <button
+              className="absolute text-6xl right-8 top-4"
+              onClick={() => toggleMenu(false)}
+            >
+              &times;
+            </button>
             <div className="flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MenuItem to="/">Home</MenuItem>
               <MenuItem to="/blog">Blog</MenuItem>
