@@ -13,7 +13,6 @@ import Search from './Search';
 import BuyMeCoffee from './Coffee';
 import Anchor from './Anchor';
 import Cookies from './Cookies';
-import { getLCP, getFID, getCLS } from 'web-vitals';
 
 const searchIndices = [{ name: 'Pages', title: 'Pages' }];
 
