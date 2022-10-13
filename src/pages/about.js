@@ -23,7 +23,7 @@ const AboutPage = ({ data }) => {
         route: '/about',
       }}
     >
-      <div className="pt-16 pb-16">
+      <div className="pt-16 pb-16 px-8">
         <Intro />
         <Brands />
         <Achievements />
