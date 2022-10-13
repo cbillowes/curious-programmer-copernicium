@@ -19,7 +19,7 @@ const Cookies = () => {
     console.log('Hey, looks like you have already accepted our cookie policy.');
   return (
     !closed && (
-      <div className="absolute bg-black text-white rounded-lg bottom-5 right-5 w-1/4 py-8 px-12 shadow-md opacity-95">
+      <div className="absolute bg-black text-white rounded-lg bottom-5 right-5 w-1/4 py-8 px-12 shadow-md opacity-95 print:hidden">
         <button
           className="absolute top-2 right-4"
           onClick={() => setClosed(true)}
