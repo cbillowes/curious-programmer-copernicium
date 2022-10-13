@@ -5,7 +5,7 @@ import BuyMeCoffee from './Coffee';
 
 const Blocks = () => {
   return (
-    <div className="w-screen overflow-hidden">
+    <div className="max-w-[2048px] mx-auto overflow-hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
