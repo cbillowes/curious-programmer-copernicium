@@ -13,7 +13,7 @@ const CloseIcon = () => {
 
 export const SearchIcon = ({ show, toggle }) => {
   return (
-    <div
+    <button
       title="Search"
       aria-label="Search"
       onClick={toggle}
@@ -21,7 +21,7 @@ export const SearchIcon = ({ show, toggle }) => {
     >
       {!show && <Search />}
       {show && <CloseIcon />}
-    </div>
+    </button>
   );
 };
 

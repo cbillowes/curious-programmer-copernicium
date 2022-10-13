@@ -5,8 +5,7 @@ import Typewriter from './Typewriter';
 const Kebab = ({ onClick, className, children, phrases, expanded }) => {
   return (
     <>
-      <div
-        role="button"
+      <button
         className={`max-w-2xl justify-center mx-auto mt-10 flex flex-wrap relative ${
           className || ''
         }`}
@@ -49,7 +48,7 @@ const Kebab = ({ onClick, className, children, phrases, expanded }) => {
         <div className="border-t w-full absolute top-1/2 border-neutral">
           &nbsp;
         </div>
-      </div>
+      </button>
     </>
   );
 };

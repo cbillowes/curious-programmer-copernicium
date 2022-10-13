@@ -46,7 +46,7 @@ const Navigation = ({ layout }) => {
         <Hamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </div>
       {isMenuOpen && (
-        <div
+        <button
           className="bg-color-3 text-color-3-script fixed top-0 left-0 bottom-0 right-0"
           onClick={() => toggleMenu(false)}
         >
@@ -70,7 +70,7 @@ const Navigation = ({ layout }) => {
               </MenuItem>
             </div>
           </div>
-        </div>
+        </button>
       )}
     </div>
   );

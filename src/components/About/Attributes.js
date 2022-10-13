@@ -20,8 +20,7 @@ const Attribute = ({
 
   return (
     <div className="m-4">
-      <div
-        role="button"
+      <button
         className={`cursor-pointer border-b-4 py-2 px-4 ${hoverBorder} ${
           expanded ? border : ''
         }`}
@@ -37,7 +36,7 @@ const Attribute = ({
         }}
       >
         {title}
-      </div>
+      </button>
       {expanded && (
         <div
           className={`z-20 ${bg} ${text} absolute py-2 px-3 text-sm mt-2 rounded-md shadow-sm max-w-xs border-2 border-default`}
