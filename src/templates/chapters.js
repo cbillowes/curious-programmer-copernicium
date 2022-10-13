@@ -87,18 +87,17 @@ const ChaptersTemplate = ({ data, pageContext }) => {
         <div className="uppercase text-center my-3 opacity-40"></div>
         <div className="relative">
           <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
-            <Anchor to={previous} className={previous ? '' : 'invisible'}>
+            <Anchor to={previous} className={previous ? 'w-40' : 'invisible'}>
               &larr; Previous
             </Anchor>
             <div>
-              <Anchor to="/courses">
+              <Anchor to="/courses" className="hidden md:inline">
                 <MdOutlineSchool
                   className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
                   alt="Courses"
                 />
-                Courses
+                Courses /{' '}
               </Anchor>{' '}
-              /{' '}
               <button
                 className="cursor-pointer uppercase"
                 onClick={() => toggleToc(!showToc)}
@@ -106,7 +105,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                 Table of Contents
               </button>
             </div>
-            <Anchor to={next} className={next ? '' : 'invisible'}>
+            <Anchor to={next} className={next ? 'w-40' : 'invisible'}>
               Next &rarr;
             </Anchor>
           </div>
