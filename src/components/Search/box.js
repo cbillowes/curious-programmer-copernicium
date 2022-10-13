@@ -11,7 +11,6 @@ export default connectSearchBox(
         aria-label="Search"
         onChange={(e) => refine(e.target.value)}
         value={currentRefinement}
-        autoFocus={true}
         onFocus={onFocus}
         onKeyUp={(e) => {
           if (e.key === 'Escape') {
