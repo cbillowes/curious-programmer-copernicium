@@ -47,13 +47,9 @@ export const Layout = ({ meta, children }) => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
   const [showSearch, toggleSearchMode] = useState(false);
 
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-
-    getCLS(console.log);
-    getFID(console.log);
-    getLCP(console.log);
-  });
+  console.log(
+    '👋 Welcome! Thank you for your interest in my blog. In the famous words of Deckard Cain: "Stay a while and listen." 💖',
+  );
 
   return (
     <div
