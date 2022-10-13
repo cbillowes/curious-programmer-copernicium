@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext, toggleColorMode } from '../context/Theme';
 import { MdWbSunny } from '@react-icons/all-files/md/MdWbSunny';
