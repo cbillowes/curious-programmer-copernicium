@@ -4,8 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 const WavingHand = ({ className, onClick }) => {
   const [isWaving, setWave] = useState(true);
   return (
-    <div
-      role="button"
+    <button
       className={`cursor-pointer ${className || ''} ${
         isWaving ? 'animate-wave' : ''
       }`}
@@ -26,7 +25,7 @@ const WavingHand = ({ className, onClick }) => {
           borderRadius: '30%',
         }}
       />
-    </div>
+    </button>
   );
 };
 
