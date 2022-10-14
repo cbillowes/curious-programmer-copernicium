@@ -117,7 +117,19 @@ const IndexPage = ({ data }) => {
           <p className="mt-3 text-sm md:text-lg">
             I write code. I share code. I love code.
           </p>
-          <p className="mt-1 text-sm md:text-lg">I am a curious programmer.</p>
+          <p className="mt-1 mb-5 text-sm md:text-lg">I am a curious programmer.</p>
+          <h1 className="text-xl text-center mb-5">
+            <Typewriter
+              phrases={[
+                'Hello World!',
+                'How are you?',
+                'Comment ça va ?',
+                'Toe korek ?',
+                'Hoe gaan dit?',
+              ]}
+            />
+          </h1>
+          <WavingHand />
         </div>
       </div>
 
