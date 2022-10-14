@@ -10,13 +10,15 @@ const trackClickEvent = (data) => {
   }
 };
 
-const getClassNames = (className, useMarkdownStyles) => {
+const getClassNames = (className, useMarkdownStyles, isBlock) => {
   const markdownClasses =
     'font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline';
 
-  return `w-auto inline-block ${className || ''} ${
+  const display = isBlock ? 'block' : 'inline-block';
+
+  return `w-auto ${className || ''} ${
     useMarkdownStyles ? markdownClasses : ''
-  }`;
+  } ${display ? display : ''}`;
 };
 
 const Anchor = ({
@@ -27,9 +29,10 @@ const Anchor = ({
   useMarkdownStyles,
   newTabIndicator,
   forceNewTab,
+  isBlock = false,
 }) => {
   const trackingData = { to, title };
-  const classNames = getClassNames(className, useMarkdownStyles);
+  const classNames = getClassNames(className, useMarkdownStyles, isBlock);
 
   if (!to)
     return (

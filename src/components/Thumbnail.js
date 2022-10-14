@@ -66,10 +66,10 @@ const Thumbnail = ({
 
   const Image = ComponentIndex[component];
   return (
-    <div className="relative text-center max-w-[500px] mx-auto">
-      <Anchor to={to} title={alt}>
+    <div className="relative text-center lg:max-w-[500px] mx-auto">
+      <Anchor to={to} title={alt} isBlock>
         {Image && (
-          <Image className="shadow-md transform" alt={alt} width={250} />
+          <Image className="shadow-md transform w-full" alt={alt} width={250} />
         )}
       </Anchor>
       <Credit
