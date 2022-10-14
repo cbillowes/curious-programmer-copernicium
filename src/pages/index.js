@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
       }}
     >
       <div className="relative font-alt-sans max-w-[1440px] mx-auto">
-        <div className="">
+        <div>
           <StaticImage
             src="../images/profile.jpg"
             alt="I visited the upside down room in Curious Corner, Chamarel, Mauritius"
@@ -100,6 +100,20 @@ const IndexPage = ({ data }) => {
             </span>
           </div>
         </div>
+        <div className="lg:hidden absolute left-5 top-5">
+          <h1 className="text-xl text-text mb-5 bg-black text-white p-1 pl-2">
+            <Typewriter
+              phrases={[
+                'Hello World!',
+                'How are you?',
+                'Comment ça va ?',
+                'Toe korek ?',
+                'Hoe gaan dit?',
+              ]}
+            />
+          </h1>
+          <WavingHand />
+        </div>
         <div>
           <BuyMeCoffee component="header" />
         </div>
@@ -117,19 +131,9 @@ const IndexPage = ({ data }) => {
           <p className="mt-3 text-sm md:text-lg">
             I write code. I share code. I love code.
           </p>
-          <p className="mt-1 mb-5 text-sm md:text-lg">I am a curious programmer.</p>
-          <h1 className="text-xl text-center mb-5">
-            <Typewriter
-              phrases={[
-                'Hello World!',
-                'How are you?',
-                'Comment ça va ?',
-                'Toe korek ?',
-                'Hoe gaan dit?',
-              ]}
-            />
-          </h1>
-          <WavingHand />
+          <p className="mt-1 mb-5 text-sm md:text-lg">
+            I am a curious programmer.
+          </p>
         </div>
       </div>
 
