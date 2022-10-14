@@ -100,8 +100,10 @@ const ResumeTemplate = ({ data }) => {
         route: fields.slug,
       }}
     >
-      <div id="resume" className="pt-14 px-4 pb-24">
-        <Anchor to="/resume">← Back</Anchor>
+      <div id="resume" className="pt-14 px-4 pb-24 max-w-3xl mx-auto">
+        <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
+          <Anchor to="/resume">&larr; Back</Anchor>
+        </div>
         {logo && (
           <img
             src={require(`../images/logos/${logo}`).default}
@@ -152,7 +154,7 @@ const ResumeTemplate = ({ data }) => {
         </div>
         <div className="text-center"></div>
         <div
-          className="content max-w-3xl mx-auto mt-8"
+          className="content max-w-3xl mx-auto mt-8 leading-loose"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html || summary }}
         />
