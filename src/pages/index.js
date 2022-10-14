@@ -101,7 +101,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         <div className="lg:hidden absolute left-5 top-5">
-          <h1 className="text-xl text-text mb-5 bg-black text-white p-1 pl-2">
+          <h1 className="text-xl text-text mb-5 opacity-90 bg-default text-welcome p-1 pl-2">
             <Typewriter
               phrases={[
                 'Hello World!',
