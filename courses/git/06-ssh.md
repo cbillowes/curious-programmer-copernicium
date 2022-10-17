@@ -42,7 +42,7 @@ That means that in order to open your connection successfully, you will need to 
 1. At the prompt, enter a passphrase to be used as your password.
    Enter this again after the second prompt.
 
-```bash:title=terminal
+```bash:title=command
 # If your system supports the Ed25519 algorithm run this:
 ssh-keygen -t ed25519 -C "you@email.com"
 
@@ -50,7 +50,7 @@ ssh-keygen -t ed25519 -C "you@email.com"
 ssh-keygen -t rsa -b 4096 -C "you@email.com"
 ```
 
-```bash:title=terminal
+```bash:title=output
 ❯ ssh-keygen -t ed25519 -C "you@email.com"
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/me/.ssh/id_ed25519):
@@ -74,7 +74,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-```bash:title=terminal
+```bash:title=output
 ❯ tree ~/.ssh
 /Users/me/.ssh
 ├── id_ed25519      <-- private key
@@ -87,7 +87,7 @@ The key's randomart image is:
 Back this up and **NEVER** share it with anyone no matter how nicely they ask.
 Out of curiosity, this is what a private key can look like:
 
-```bash:title=terminal
+```bash:title=output
 ❯ cat ~/.ssh/id_ed25519
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
@@ -100,7 +100,7 @@ MV9RHLeV676zg1YLy8LJAAAADXlvdUBlbWFpbC5jb20=
 
 ### Configure public key
 
-```bash:title=terminal
+```bash:title=output
 ❯ cat ~/.ssh/id_ed25519.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHYVnieNZ43AjBXBxRoB8ihMV9RHLeV676zg1YLy8LJ you@email.com
 ```

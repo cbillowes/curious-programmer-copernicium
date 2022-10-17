@@ -33,7 +33,7 @@ abstract:
 :negative_squared_cross_mark: If it says that the command cannot be found then there has been a problem with the installation
 or the application has not been installed.
 
-```bash:title=terminal
+```bash:title=command
 git --version
 ```
 
@@ -52,7 +52,7 @@ Don't worry too much about the Git commands section for now. We will explore the
 You can access the built in tutorial introduction to Git at any time by using either command below.
 The tutorial explains how to import a new project, make changes to it and share changes with other developers.
 
-```bash:title=terminal
+```bash:title=command
 man gittutorial
 #or
 git help tutorial
@@ -74,7 +74,7 @@ about the author by displaying their avatar and hyperlinking to the author profi
 To introduce yourself to Git, provide your name and public email address
 (or registered remote service email address).
 
-```bash
+```bash:title=command
 git config --global user.name "Your Name"
 git config --global user.email "your@email.com"
 ```
@@ -84,7 +84,7 @@ git config --global user.email "your@email.com"
 Git isn't implicit so you need to set that up for your project.
 If you decide to create a repository, all you need to do is **initialize** Git in your project directory with the following command:
 
-```bash:title=terminal
+```bash:title=command
 git init
 ```
 

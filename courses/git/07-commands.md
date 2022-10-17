@@ -301,7 +301,7 @@ The asterisk marks the branch you are currently on so you will need to `switch` 
 
 ### Switching branches
 
-```bash
+```bash:title=command
 git switch <branch>
 ```
 
@@ -370,11 +370,11 @@ Remote repositories are useful because they foster collaboration and provide hel
 
 Your default remote repository will most likely be called `origin`.
 
-```bash
+```bash:title=command
 git remote show origin
 ```
 
-```bash
+```bash:title=command
 git remote add <name> <url>
 # name = default is usually origin
 # made a spelling mistake?
@@ -387,7 +387,7 @@ As Git is distributed, we do a [Dolly][dolly-the-sheep] the sheep, and make a cl
 so that you can work on it.
 The clone of the project is an exact copy of the original project on the remote server.
 
-```bash
+```bash:title=command
 git clone <url>
 ```
 
@@ -401,7 +401,7 @@ Once you have made a bunch of changes, you quadruple-triple check your diffs bef
 Once you have quality commits, you are ready to get your changes onto the remote repository.
 To do this, you will **push** to the appropriate remote.
 
-```bash
+```bash:title=command
 git push <remote> <branch>
 
 # Example
@@ -439,7 +439,7 @@ git stash list
 stash@{0}: On main: Git course materials
 ```
 
-```bash:title
+```bash:title=command
 git pop stash@{0}
 ```
 
@@ -454,7 +454,7 @@ It is important to note that the files in your local repository are not affected
 You need to explicitly checkout that work. That means that fetching is a safe way to review commits before integrating them with
 your local repository.
 
-```bash
+```bash:title=command
 git fetch
 ```
 
@@ -544,7 +544,7 @@ git log v2.5.. Makefile        # commits since v2.5 which modify Makefile
 
 You can also give the log a "range" of commits
 
-```bash:title-command
+```bash:title=command
 git log -p origin/main..main  # commits between origin/main and local main branch
 ```
 

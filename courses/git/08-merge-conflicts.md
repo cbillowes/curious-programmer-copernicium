@@ -10,7 +10,7 @@ date: 2022-10-10
 :thinking: If you change a line, and I change the same line differently, which line should Git use?
 In the snippet below, we have example output of what the conflict information will look like on a particular file.
 
-```bash
+```bash:title=output
 ❯ git merge awesome-stuff
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
@@ -22,7 +22,7 @@ The merge process is paused as it requires manual intervention to resolve the co
 You will notice foreign text in files with conflicts. These are **conflict-resolution markers**
 and look something like this:
 
-```diff
+```diff:title=footer.html
 <<<<<<< HEAD:index.html
 <div id="footer">contact : email.you@email.dev</div>
 =======
