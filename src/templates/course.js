@@ -118,11 +118,6 @@ const CourseTemplate = ({ data }) => {
         <div className="text-center">
           <Tags tags={tags} redirect={true} isButton={true} />
         </div>
-        <div
-          className="content max-w-3xl mx-auto mt-8"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
         <div className="content max-w-3xl mx-auto mt-8">
           <h2>Table of Contents</h2>
           {allMarkdownRemark.edges.map(({ node }) => {
@@ -137,6 +132,11 @@ const CourseTemplate = ({ data }) => {
             );
           })}
         </div>
+        <div
+          className="content max-w-3xl mx-auto mt-8"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
         <CommentSystem
           url={`${url}${fields.slug}`}
           identifier={fields.slug}
