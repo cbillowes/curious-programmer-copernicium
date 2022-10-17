@@ -99,4 +99,4 @@ Document enough for collaborators and for future you.
 
 [perfect-commit]: https://www.youtube.com/watch?v=Uszj_k0DGsg&t=87s
 [tips-1]: https://hackernoon.com/git-it-together-some-tips-on-commit-etiquette-and-best-practices-for-junior-developers-1f147b8dfd56
-[tips-2]:
+[tips-2]: https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message
