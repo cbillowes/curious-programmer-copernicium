@@ -31,6 +31,7 @@ creditSource: dribbble.com
 ## Resources
 
 - [Official documentation](https://git-scm.com/doc)
-- [Free Pro Git book](https://git-scm.com/book/en/v2)
-- [Learn about GitHub](https://guides.github.com/)
+- [Source Code](https://github.com/git/git) - GitHub
+- [Free Pro Git book](https://git-scm.com/book/en/v2) - Official Git Documentation
+- [Learn about GitHub](https://guides.github.com/) - GitHub
 - [Learn Git](https://www.gitkraken.com/learn/git) - GitKraken

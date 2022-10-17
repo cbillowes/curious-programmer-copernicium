@@ -1,58 +1,9 @@
 ---
-title: Terminology
+title: Basic commands
 parent: /courses/git
 date: 2022-10-10
+modified: 2022-10-17
 ---
-
-`youtube:https://www.youtube.com/embed/n-p1RUmdl9M`
-
----
-
-## Terminal
-
-A command line interface tool that let's you _talk_ to your computer by interacting with various commands and utilities.
-This is where you will start to work with Git.
-
-:white_check_mark: The default Bash Terminal will be sufficient if you are using a Mac or Linux machine. I use [iTerm2][iterm] which is a replacement for the Terminal.\
-:white_check_mark: Use the **Windows Subsystem for Linux (WSL)** available [here][wsl] or the Git Bash terminal that is installed with Git.
-
-> I will introduce you to the GUI but I strongly suggest getting comfortable using the terminal
-> as it is faster, you get a better understanding of how Git works and your skill proficiency will
-> increase which is a desirable skill to have in your career.
-
-## Repository (Repo)
-
-> From Wikipedia: A data structure that stores metadata for a set of files or directory structure.
-
-Essentially Git will refer to your project as a repository provided Git has been initialized in that directory.
-You are **tracking** a **working directory** of files in a repository that is hosted **locally** on your machine.
-You can safely make changes to your code without impacting the work of others.
-
-```bash
-git init
-```
-
-The above command will initialize a repository and start tracking files. It does this by generating a hidden `.git` directory
-which stores all the tracking data innards. Sometimes you will notice files that are auto-generated, binary, logs, cache or
-something containing sensitive information. You don't want to commit these files. You can safely ignore them by adding
-the path to a file called [.gitignore][gitignore] that is in the root of your repository.
-
-```text:title=.gitignore
-# Ignore Mac system files
-.DS_store
-
-# Ignore node_modules folder
-node_modules
-
-# Ignore all text files
-*.txt
-
-# Ignore files related to API keys
-.env
-
-# Ignore SASS config files
-.sass-cache
-```
 
 ## Commit
 
@@ -301,6 +252,19 @@ your local repository.
 git fetch
 ```
 
+## Recap
+
+In this video, you'll go over all the important stuff you need to know to get started using Git.
+Take a look at git add, git commit, git branch, git checkout, and git merge! [Here][notion-notes] are the video notes.
+
+`youtube:https://www.youtube.com/embed/USjZcfj8yxE`
+
+In this video, you'll go over some vocabulary used in Git.
+
+`youtube:https://www.youtube.com/embed/n-p1RUmdl9M`
+
+---
+
 ## References
 
 - [What is Gitignore and How to Add it to Your Repo][gitignore] - freecodecamp.com
@@ -323,3 +287,4 @@ git fetch
 [git-syncing]: https://www.atlassian.com/git/tutorials/syncing
 [wsl]: https://ubuntu.com/wsl
 [iterm]: https://iterm2.com/
+[notion-notes]: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkNOSXJUNGNzZW80NlFzeEtNanR2VGFVeEMtZ3xBQ3Jtc0ttMS1FMzBXVzJtWi1GZlJIWm1COFBEOTlRcEMyRFplU0UyZEtRZjZndlloeVdmaHBzaXc3OEVkNVJuVDdsTTJ6OUQ0dXZiLUFrbnRUZ0lpTG95bUl4bUxydlZwNXpTcm1qdzdIbEhaNFpqbFBMakplVQ&q=https%3A%2F%2Fwww.notion.so%2FIntroduction-to-Git-ac396a0697704709a12b6a0e545db049&v=USjZcfj8yxE
