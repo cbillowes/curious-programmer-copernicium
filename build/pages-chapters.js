@@ -6,7 +6,7 @@ const createPages = true;
 const chaptersQuery = async (graphql) => {
   return await graphql(`
     query ChaptersBuildQuery {
-      allMarkdownRemark(
+      chapters: allMarkdownRemark(
         filter: { fields: { type: { eq: "chapter" } } }
         sort: { fields: fields___slug }
       ) {
@@ -16,6 +16,20 @@ const chaptersQuery = async (graphql) => {
             frontmatter {
               date
               parent
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      courses: allMarkdownRemark(
+        filter: { fields: { type: { eq: "course" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
             }
             fields {
               slug
@@ -40,29 +54,37 @@ module.exports.create = async (actions, graphql, reporter) => {
       return;
     }
 
-    const edges = result.data.allMarkdownRemark.edges;
+    const chapters = result.data.chapters.edges;
     reporter.success(
-      `------------- Create all things course chapters [${edges.length}]:`,
+      `------------- Create all things course chapters [${chapters.length}]:`,
     );
 
-    edges.forEach(async ({ node }, index) => {
+    chapters.forEach(async ({ node }, index) => {
       const filepath = node.fileAbsolutePath;
       const page = parseInt(path.basename(filepath).substring(0, 2), 10);
       const dirname = path.dirname(node.fileAbsolutePath);
       const { slug } = node.fields;
       const { parent } = node.frontmatter;
       const files = fs.readdirSync(dirname);
+      const { title: courseTitle } = result.data.courses.edges.filter(
+        (c) => c.node.fields.slug === parent,
+      )[0].node.frontmatter;
+
       createPage({
         path: slug,
         component: path.resolve(template),
         context: {
           parent,
+          courseTitle,
           slug,
           page,
           total: files.length - 1,
           next:
-            index + 1 < edges.length ? edges[index + 1].node.fields.slug : null,
-          previous: index - 1 >= 0 ? edges[index - 1].node.fields.slug : null,
+            index + 1 < chapters.length
+              ? chapters[index + 1].node.fields.slug
+              : null,
+          previous:
+            index - 1 >= 0 ? chapters[index - 1].node.fields.slug : null,
         },
       });
 

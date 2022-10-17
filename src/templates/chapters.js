@@ -89,10 +89,10 @@ const Navigation = ({ previous, next, toggleToc }) => {
 
 const ChaptersTemplate = ({ data, pageContext }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
-  const { page, total, next, previous } = pageContext;
+  const { page, total, next, previous, courseTitle } = pageContext;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: courseTitle, date, modified, parent, abstract } = frontmatter;
+  const { title: chapterTitle, date, modified, parent, abstract } = frontmatter;
   const keywords = getKeywords(excerpt);
   const [showToc, toggleToc] = useState(false);
 
@@ -100,7 +100,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
     <Layout
       meta={{
         ...data.site.siteMetadata,
-        pageTitle: courseTitle,
+        pageTitle: `${chapterTitle} - ${courseTitle}`,
         siteTitle: title,
         description: excerpt || description,
         keywords,
@@ -174,7 +174,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
           </div>
         </div>
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
-          {courseTitle}
+          {chapterTitle}
         </h1>
         <div className="text-center opacity-40">
           <div className="text-sm leading-7">
@@ -204,7 +204,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
         <CommentSystem
           url={`${url}${fields.slug}`}
           identifier={fields.slug}
-          title={courseTitle}
+          title={chapterTitle}
         />
       </div>
     </Layout>
