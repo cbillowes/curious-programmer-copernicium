@@ -62,6 +62,31 @@ export const query = graphql`
   }
 `;
 
+const Navigation = ({ previous, next, toggleToc }) => {
+  return (
+    <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
+      <Anchor to={previous} className={`w-40 ${previous ?? 'invisible'}`}>
+        &larr; Previous
+      </Anchor>
+      <div>
+        <Anchor to="/courses" className="hidden md:inline" title="Courses">
+          <MdOutlineSchool
+            className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
+            alt="Courses"
+          />
+          Courses /{' '}
+        </Anchor>{' '}
+        <button className="cursor-pointer uppercase" onClick={toggleToc}>
+          Table of Contents
+        </button>
+      </div>
+      <Anchor to={next} className={`w-40 ${next ?? 'invisible'}`}>
+        Next &rarr;
+      </Anchor>
+    </div>
+  );
+};
+
 const ChaptersTemplate = ({ data, pageContext }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
   const { page, total, next, previous } = pageContext;
@@ -84,43 +109,37 @@ const ChaptersTemplate = ({ data, pageContext }) => {
       }}
     >
       <div id="article" className="pt-14 px-8 pb-24 max-w-screen-lg mx-auto">
-        <div className="uppercase text-center my-3 opacity-40"></div>
-        <div className="relative">
-          <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
-            <Anchor to={previous} className={previous ? 'w-40' : 'invisible'}>
-              &larr; Previous
-            </Anchor>
-            <div>
-              <Anchor to="/courses" className="hidden md:inline">
-                <MdOutlineSchool
-                  className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-                  alt="Courses"
-                />
-                Courses /{' '}
-              </Anchor>{' '}
-              <button
-                className="cursor-pointer uppercase"
-                onClick={() => toggleToc(!showToc)}
-              >
-                Table of Contents
-              </button>
-            </div>
-            <Anchor to={next} className={next ? 'w-40' : 'invisible'}>
-              Next &rarr;
-            </Anchor>
-          </div>
-          <div
-            className={`bg-color-1 text-color-1-script w-full absolute top-0 mt-9 z-10 p-8 rounded-lg shadow-lg bg-gradient-to-b from-color-3 to-color-2 ${
-              showToc ? 'block' : 'hidden'
-            }`}
-          >
+        <Navigation
+          previous={previous}
+          next={next}
+          toggleToc={() => toggleToc(!showToc)}
+        />
+        <div
+          className={`bg-black opacity-[95%] fixed top-0 left-0 right-0 bottom-0 z-40 ${
+            showToc ? 'block' : 'hidden'
+          }`}
+        >
+          <div className="bg-color-1 text-color-1-script fixed top-1/2 left-1/2 -translate-y-1/2 max-w-2xl -translate-x-1/2 p-8 rounded-lg shadow-lg bg-gradient-to-b from-color-3 to-color-2 z-50 w-2/3">
             <button
               className="absolute top-4 right-8 text-3xl opacity-60"
               onClick={() => toggleToc(false)}
             >
               &times;
             </button>
-            <h2 className="toc">Table of Contents</h2>
+            <h2 className="toc">
+              <Anchor
+                to="/courses"
+                className="hidden md:inline"
+                title="Courses"
+              >
+                <MdOutlineSchool
+                  className="inline-block mr-2 text-4xl rounded"
+                  alt="Courses"
+                />
+                Courses /{' '}
+              </Anchor>{' '}
+              Table of Contents
+            </h2>
             {allMarkdownRemark.edges.map(({ node }) => {
               const { title } = node.frontmatter;
               const { slug } = node.fields;
@@ -129,7 +148,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
               const isOnPage = fields.slug === slug;
               return (
                 <div className="mt-2">
-                  <Anchor to={slug}>
+                  <Anchor to={slug} title={title}>
                     <span
                       className={`hover:underline ${
                         isOnPage ? 'font-bold' : ''
@@ -142,8 +161,15 @@ const ChaptersTemplate = ({ data, pageContext }) => {
               );
             })}
             <br />
-            <div className="opacity-60">
-              <Anchor to={parent}>&larr; Back to the course</Anchor>
+            <div className="opacity-80">
+              <Anchor
+                to={parent}
+                className="hover:underline"
+                title="Back to the course"
+              >
+                &larr; Back to the course
+              </Anchor>
+              <br />
             </div>
           </div>
         </div>
@@ -162,13 +188,18 @@ const ChaptersTemplate = ({ data, pageContext }) => {
               </>
             )}
           </div>
-          <p className="mt-2">{abstract}</p>
+          <p className="mt-2 max-w-3xl mx-auto">{abstract}</p>
         </div>
         <hr />
         <div
           className="content max-w-3xl mx-auto mt-8"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html }}
+        />
+        <Navigation
+          previous={previous}
+          next={next}
+          toggleToc={() => toggleToc(!showToc)}
         />
         <CommentSystem
           url={`${url}${fields.slug}`}
