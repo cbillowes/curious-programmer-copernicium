@@ -38,6 +38,7 @@ export const query = graphql`
         }
       }
       frontmatter {
+        cover
         title
         tags
       }
@@ -77,6 +78,7 @@ const ArticleTemplate = ({ data }) => {
         image: fields.hero.image,
         pageType: 'article',
         route: fields.slug,
+        cover: frontmatter.cover,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">

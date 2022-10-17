@@ -22,6 +22,7 @@ export const query = graphql`
       frontmatter {
         title
         abstract
+        cover
         parent
         date
         modified
@@ -92,7 +93,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
   const { page, total, next, previous, courseTitle } = pageContext;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: chapterTitle, date, modified, parent, abstract } = frontmatter;
+  const { title: chapterTitle, date, modified, parent, abstract, cover } = frontmatter;
   const keywords = getKeywords(excerpt);
   const [showToc, toggleToc] = useState(false);
 
@@ -106,6 +107,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
         keywords,
         pageType: 'article',
         route: fields.slug,
+        cover,
       }}
     >
       <div id="article" className="pt-14 px-8 pb-24 max-w-screen-lg mx-auto">

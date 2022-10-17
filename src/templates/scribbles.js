@@ -25,6 +25,7 @@ export const query = graphql`
         title
         tags
         devTo
+        cover
       }
     }
     site {
@@ -49,7 +50,7 @@ const ScribblesTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: scribbleTitle, tags } = frontmatter;
+  const { title: scribbleTitle, tags, cover } = frontmatter;
   const keywords = getKeywords(excerpt);
 
   return (
@@ -62,6 +63,7 @@ const ScribblesTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: fields.slug,
+        cover,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">

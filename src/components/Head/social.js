@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+
 const getResource = (url, route) => `${url}${route || '/'}`;
 
 const isUrl = (imagePath) => {
@@ -11,16 +12,16 @@ const isRelativePath = (imagePath) => {
   return imagePath && imagePath.startsWith('../');
 };
 
-const getStaticPath = (imagePath) => {
+const getStaticPath = (imagePath, cover) => {
   return isRelativePath(imagePath)
     ? imagePath
-    : require(`../Images/${imagePath}`).default;
+    : require(`../Images/${cover || "default-01.jpg"}`).default;
 };
 
-const Social = ({ pageType, imagePath, url, route, twitter }) => {
+const Social = ({ pageType, imagePath, url, route, twitter, cover }) => {
   const canonical = getResource(url, route);
   const image = `${url}${
-    isUrl(imagePath) ? imagePath : getStaticPath(imagePath)
+    isUrl(imagePath) ? imagePath : getStaticPath(imagePath, cover)
   }`;
 
   return (

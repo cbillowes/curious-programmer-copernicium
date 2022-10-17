@@ -29,6 +29,7 @@ const Head = ({
   siteTitle,
   type,
   url,
+  cover,
   route,
   crawl = true,
 }) => (
@@ -74,6 +75,7 @@ const Head = ({
       imagePath={image || social?.image}
       pageType={pageType}
       route={route}
+      cover={cover}
     />
 
     <Schema

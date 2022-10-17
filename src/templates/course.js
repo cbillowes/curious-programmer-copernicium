@@ -32,6 +32,7 @@ export const query = graphql`
         abstract
         date
         modified
+        cover
         tags
       }
     }
@@ -74,7 +75,7 @@ const CourseTemplate = ({ data }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: courseTitle, tags, abstract, date, modified } = frontmatter;
+  const { title: courseTitle, tags, abstract, date, modified, cover } = frontmatter;
   const keywords = getKeywords(excerpt);
 
   return (
@@ -87,6 +88,7 @@ const CourseTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: fields.slug,
+        cover,
       }}
     >
       <div id="article" className="pt-14 px-4 pb-24">
