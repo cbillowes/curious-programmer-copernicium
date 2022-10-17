@@ -16,6 +16,10 @@ creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachme
 creditSource: dribbble.com
 ---
 
+According to the [Stack Overflow](https://insights.stackoverflow.com/survey/2021#other-tools)
+software developer survey for 2021 - 94.41% (50,563 out of 54,943) professional developers
+suggest that Git is a fundamental tool to being a developer.
+
 ## Objectives
 
 :tada: At the end of this course you should be able to:
@@ -28,6 +32,11 @@ creditSource: dribbble.com
 - understand how CI/CD and GitLab works.
 - have basic Git etiquette and understand the discipline.
 
+## Repository
+
+There is a remote [repository](https://github.com/cbillowes/gentle-intro-to-git) on GitHub for you to
+practice and play around with. Your exercises will make use of this repository.
+
 ## Resources
 
 - [Official documentation](https://git-scm.com/doc)
@@ -35,3 +44,4 @@ creditSource: dribbble.com
 - [Free Pro Git book](https://git-scm.com/book/en/v2) - Official Git Documentation
 - [Learn about GitHub](https://guides.github.com/) - GitHub
 - [Learn Git](https://www.gitkraken.com/learn/git) - GitKraken
+- [Introduction to Git and GitHub](https://hackernoon.com/step-to-step-ebook-to-learn-the-git-and-github-basics-ag4833pd) - Hackernoon

@@ -30,6 +30,7 @@ Now that you have a deployable build, it is ready to be deployed to production. 
 to check the feature before deploying to production.
 
 > ### Deployment
+
 > But wait? Let's first cover the term **deploy**. Let's think of a website. When you run the website you are developing, you will spin up a web server
 > on localhost which serves your pages and are then accessible on your browser on `localhost`.
 > The files that are served are often copied or generated in or to a specific directory in your project. That directory is your build and it is the
@@ -53,13 +54,37 @@ A pipeline - at a minimum - should probably:
 
 `youtube:https://www.youtube.com/embed/Jav4vbUrqII`
 
----
+## GitHub
+
+Learn about Git and GitHub in this tutorial by Gwen Faraday.
+Git and GitHub make it easier to manage different software versions and make it easier for multiple people to work on the same software project.
+
+`youtube:https://www.youtube.com/embed/RGOj5yH7evk`
+
+## GitLab
 
 This course will give you an overview of what we just learned and dive into
 using Git with GitLab repositories. Watch the video in YouTube to
 jump between different lessons in the description.
 
 `youtube:https://www.youtube.com/embed/4lxvVj7wlZw`
+
+In this Complete GitLab CI Tutorial, Moss(@tech_with_moss), an expert in DevOps and CI/CD tools, deep dives into Git commands, navigates you through GitLab Interface, and helps creating a GitLab pipeline in detail.
+
+By the end of this video, you will learn -:
+
+◾ What is GitLab CI?\
+◾ Introduction to GitLab Interface\
+◾ What is GitLab Workflow?\
+◾ What is GitLab Flow?\
+◾ How does GitLab CI work?\
+◾ How to use GitLab Flow in GitLab Project?\
+◾ What is GitLab Pipeline?\
+◾ How to create a GitLab Pipeline?\
+◾ How to Migrate from Jenkins Pipeline to GitLab CI?\
+◾ What is GitLab Registry?
+
+`youtube:https://www.youtube.com/embed/8aV5AxJrHDg`
 
 ## References
 
