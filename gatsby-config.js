@@ -285,6 +285,8 @@ module.exports = {
             proportionally and to the full width of its container.
           */
           `gatsby-remark-responsive-iframe`,
+          // https://thundermiracle.com/blog/en/2022-03-13-gatsby-add-copy-button-to-code-block/
+          `gatsby-remark-prismjs-copy-button`,
           {
             // keep this as the last item in the plugins array.
             // code blocks are parsed and styled which will break

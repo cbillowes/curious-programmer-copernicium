@@ -233,4 +233,16 @@
     font-size: 0.75rem;
     opacity: 0.6;
   }
+
+  .gatsby-remark-prismjs-copy-button {
+    margin-right: 1rem;
+    padding: 0 0.5rem;
+    background-color: var(--color-neutral);
+    color: var(--color-neutral-script);
+
+    &:hover {
+      background-color: var(--color-1);
+      color: var(--color-1-script);
+    }
+  }
 }
