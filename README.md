@@ -9,9 +9,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/84ff184c-60d8-4df7-85d0-d18874cf7a6f/deploy-status)](https://app.netlify.com/sites/gallant-cray-096f77/deploys)
 
-## 🕵️ .env
+## 🕵️ Environment variables
 
-Add the following (with the respective values) to `.env` file in the root of the codebase.
+Add the following (with their respective values) to your `.env` file in the root of the codebase.
+You could also duplicate `.env.example`.
 
 ```text
 # https://www.algolia.com/
@@ -21,12 +22,6 @@ ALGOLIA_BASE_URL=
 ALGOLIA_DISABLED=false
 GATSBY_ALGOLIA_APP_ID=
 GATSBY_ALGOLIA_SEARCH_KEY=
-
-# https://astra.datastax.com/
-ASTRA_DB_ID=
-ASTRA_DB_REGION=
-ASTRA_DB_APPLICATION_TOKEN=
-
 ```
 
 ## 🚀 Run the website
@@ -57,6 +52,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 ├── articles <------------ blog post md files
 ├── build <--------------- generate fields and pages
 ├── courses <------------- course material md files
+├── functions <----------- netlify cloud functions
 ├── node_modules <-------- npm dependencies (requires npm install)
 ├── public <-------------- auto-generated output dir
 ├── resources <----------- non-deployable assets
@@ -92,6 +88,10 @@ This is the main configuration file for a Gatsby site. This is where you can spe
 ### gatsby-node.js
 
 This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+## Images
+
+Add a source image to `resources/source` and run `npm run build:images` to build all the things!
 
 ## 🎓 Learning Gatsby
 
