@@ -1,6 +1,9 @@
 ---
 title: How to debug a specific Gatsby package on build
 devTo: https://dev.to/cbillowes/how-to-debug-a-specific-gatsby-package-on-build-3bid
+cover: gatsby.png
+credit: gatsbyjs
+creditLink: https://www.gatsbyjs.org/
 tags:
   - Technical
   - Tip

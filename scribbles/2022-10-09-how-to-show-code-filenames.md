@@ -1,5 +1,8 @@
 ---
 title: How to show filenames in code snippets in Gatsby in Markdown
+cover: gatsby.png
+credit: gatsbyjs
+creditLink: https://www.gatsbyjs.org/
 tags:
   - Technical
   - Tip

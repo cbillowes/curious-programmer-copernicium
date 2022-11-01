@@ -1,5 +1,8 @@
 ---
 title: Utility to fix npm dependencies
+cover: npm.png
+creditSource: Wikipedia
+creditLink: https://en.wikipedia.org/wiki/Npm_(software)#/media/File:Npm-logo.svg
 tags:
   - Technical
   - Tools

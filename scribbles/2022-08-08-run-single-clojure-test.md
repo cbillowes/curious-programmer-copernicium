@@ -1,6 +1,9 @@
 ---
 title: How to run a single Clojure test from the terminal using Leiningen
 devTo: https://dev.to/cbillowes/how-to-run-a-single-clojure-test-from-the-terminal-using-leiningen-e1l
+cover: clojure.jpg
+credit: Tom & Rich Hickey
+creditLink: https://en.wikipedia.org/wiki/Clojure
 tags:
   - Technical
   - Clojure

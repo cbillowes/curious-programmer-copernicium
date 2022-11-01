@@ -1,6 +1,9 @@
 ---
 title: How to reference a local Webpack npm package
 featured: true
+cover: npm.png
+creditSource: Wikipedia
+creditLink: https://en.wikipedia.org/wiki/Npm_(software)#/media/File:Npm-logo.svg
 devTo: https://dev.to/cbillowes/how-to-reference-a-local-webpack-npm-package-20g4
 tags:
   - Technical

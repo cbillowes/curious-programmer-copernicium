@@ -1,6 +1,9 @@
 ---
 title: How to see the contents of stashed changes in Git
 devTo: https://dev.to/cbillowes/how-to-see-the-contents-of-stashed-changes-in-git-4aj8
+cover: git.png
+credit: Vasil Enchev
+creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 tags:
   - Technical
   - Tip

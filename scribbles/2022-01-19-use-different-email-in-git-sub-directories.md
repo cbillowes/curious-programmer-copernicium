@@ -1,6 +1,9 @@
 ---
 title: How to use a different email address in Git in sub directories
 devTo: https://dev.to/cbillowes/how-to-use-a-different-email-address-in-git-in-sub-directories-jp9
+cover: git.png
+credit: Vasil Enchev
+creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 tags:
   - Technical
   - Git

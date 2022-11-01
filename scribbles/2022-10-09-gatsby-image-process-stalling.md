@@ -1,5 +1,8 @@
 ---
 title: Hack to fix Gatsby image process from stalling
+cover: gatsby.png
+credit: gatsbyjs
+creditLink: https://www.gatsbyjs.org/
 tags:
   - Technical
   - Hack

@@ -286,6 +286,14 @@ Component['NodejsLock'] = (props) => (
   require('./nodejs-lock').default(props)
 );
 
+Component['Npm'] = (props) => (
+  require('./npm').default(props)
+);
+
+Component['Npm'] = (props) => (
+  require('./npm').default(props)
+);
+
 Component['PagespeedScore'] = (props) => (
   require('./pagespeed-score').default(props)
 );
@@ -340,6 +348,14 @@ Component['Vscode'] = (props) => (
 
 Component['Vscode'] = (props) => (
   require('./vscode').default(props)
+);
+
+Component['Webpack'] = (props) => (
+  require('./webpack').default(props)
+);
+
+Component['Webpack'] = (props) => (
+  require('./webpack').default(props)
 );
 
 export default Component;
