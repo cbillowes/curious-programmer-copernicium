@@ -326,4 +326,12 @@ Component['TwoPeoplePlanningAtATable'] = (props) => (
   require('./two-people-planning-at-a-table').default(props)
 );
 
+Component['Vscode'] = (props) => (
+  require('./vscode').default(props)
+);
+
+Component['Vscode'] = (props) => (
+  require('./vscode').default(props)
+);
+
 export default Component;
