@@ -96,9 +96,9 @@ const processLowRes = (sourcePath, reporter) => {
     `src/images/social-media`,
     sourcePath,
   );
-  const width = 1200;
-  const height = 600;
-  const fit = sharp.fit.cover;
+  const width = 1440;
+  const height = 810;
+  const fit = sharp.fit.contain;
   const position = sharp.strategy.attention;
 
   reporter.verbose(`image [low res]: ${path.basename(sourcePath)}`);
