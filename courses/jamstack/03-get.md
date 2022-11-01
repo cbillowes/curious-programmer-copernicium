@@ -55,23 +55,23 @@ for running your own server or VM or pod. It runs on Netlify automatically
 in response to events and can process jobs in the background.
 
 ```js:title=./src/api.js
-const wrapError = (response, message) => {
-  return {
+const throwError = (response, message) => {
+  throw new Error({
     status: response.status,
     message,
     response,
-  };
+  });
 };
 
 const respond = (response) => {
   if (response.status >= 500) {
-    throw wrapError(response, 'Internal Server Error');
+    throwError(response, 'Internal Server Error');
   }
   if (response.status === 404) {
-    throw wrapError(response, 'Not Found');
+    throwError(response, 'Not Found');
   }
   if (response.status >= 400) {
-    throw wrapError(response, 'Bad Request');
+    throwError(response, 'Bad Request');
   }
   return response.json();
 };

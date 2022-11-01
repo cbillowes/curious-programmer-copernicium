@@ -52,7 +52,7 @@ const deleteTodo = async (id) => {
   if (deletedTodo.deleted) {
     return id;
   }
-  throw `Task ${id} was not deleted.`;
+  throw new Error(`Task ${id} was not deleted.`);
 };
 ```
 
