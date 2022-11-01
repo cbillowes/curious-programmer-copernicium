@@ -314,6 +314,16 @@ npm run dev
 
 ◈ Server will be ready on http://localhost:8888
 
+#### Environment variables on Netlify
+
+- Go to your site on Netlify
+- Click on the Site Overview tab
+- Click on the Site settings buttons
+- Click on the Build & deploy navigation item
+- Click on the Environment sub navigation item
+- Click on Edit variables button
+- Add the variables in your environment variable file to Netlify
+
 ## Clean up
 
 Your app is full of stuff you don't need.
