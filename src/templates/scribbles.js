@@ -20,6 +20,13 @@ export const query = graphql`
         slug
         date(formatString: "dddd, DD MMMM YYYY")
         type
+        hero {
+          component
+          image
+          credit
+          source
+          link
+        }
       }
       frontmatter {
         title
