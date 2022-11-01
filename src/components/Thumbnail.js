@@ -6,10 +6,14 @@ import UnsplashLogo from '../images/svgs/unsplash.svg';
 import ComponentIndex from '../components/Images';
 
 const getCreditTitle = (source, attribute) => {
-  if (!attribute) return <span></span>;
+  if (!source && !attribute) return '';
 
   if (source && source.toLowerCase() === 'unsplash') {
     return `Download free do whatever you want high-resolution photos from ${attribute}`;
+  }
+
+  if (!attribute) {
+    return `Image from ${source}`;
   }
 
   if (source) {
@@ -52,15 +56,7 @@ const ExternalThumbnail = ({ to, alt, src }) => {
   );
 };
 
-const Thumbnail = ({
-  alt,
-  to,
-  image,
-  credit,
-  source,
-  link,
-  component,
-}) => {
+const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
   if (component === 'url')
     return <ExternalThumbnail to={link} alt={alt} src={image} />;
 
