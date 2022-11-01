@@ -52,7 +52,7 @@ Scribbles.propTypes = {
 export const query = graphql`
   query ScribblesPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___number }
+      sort: { order: DESC, fields: fields___date }
       filter: { fields: { type: { eq: "scribbles" } } }
     ) {
       edges {
