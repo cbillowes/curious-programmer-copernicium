@@ -1,6 +1,9 @@
 ---
 title: Make sure Git knows about case-sensitive changes to your file names
 date: 2022-06-01 00:00 +0400
+cover: git.png
+credit: Vasil Enchev
+creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
 tags:
   - Technical
   - React
