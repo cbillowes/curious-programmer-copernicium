@@ -115,7 +115,7 @@ const CourseTemplate = ({ data }) => {
               &middot; Last modified on {toMauritiusLocaleDateString(modified)}
             </>
           )}
-          <p>{abstract}</p>
+          <p className="mt-2 max-w-3xl mx-auto">{abstract}</p>
         </div>
         <div className="text-center">
           <Tags tags={tags} redirect={true} isButton={true} />
