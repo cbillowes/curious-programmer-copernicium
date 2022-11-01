@@ -127,7 +127,7 @@ const generateComponent = (sourcePath, reporter) => {
 
       const component = data
         .toString()
-        .replace(/%COMPONENT_NAME%/g, toComponentName(filename))
+        .replace(/%COMPONENT_NAME%/g, kebabToTitleCase(filename).split(".")[0])
         .replace(/%IMAGE_FILENAME%/g, path.basename(sourcePath))
         .replace(/%IMAGE_WIDTH%/, 1920);
 

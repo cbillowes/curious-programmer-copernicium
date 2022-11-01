@@ -7,15 +7,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
-export const Curiousprogrammer = ({ alt, className }) => {
+export const Jamstack = ({ alt, className }) => {
   return (
-    <StaticImage src="./curiousprogrammer.dev.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./jamstack.png" alt={alt} className={className} height={250} />
   );
 };
 
-Curiousprogrammer.propTypes = {
+Jamstack.propTypes = {
   alt: PropTypes.string,
   className: PropTypes.string,
 };
 
-export default Curiousprogrammer;
+export default Jamstack;

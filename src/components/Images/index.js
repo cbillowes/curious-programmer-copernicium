@@ -246,6 +246,14 @@ Component['Index'] = (props) => (
   require('./index').default(props)
 );
 
+Component['Jamstack'] = (props) => (
+  require('./jamstack').default(props)
+);
+
+Component['Jamstack'] = (props) => (
+  require('./jamstack').default(props)
+);
+
 Component['Kibana'] = (props) => (
   require('./kibana').default(props)
 );
