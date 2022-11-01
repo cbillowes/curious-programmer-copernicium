@@ -15,8 +15,8 @@ tags:
 export const parameters = {
   options: {
     storySort: (a, b) => {
-      const aId = getStoryId(a[1]);
-      const bId = getStoryId(b[1]);
+      const aId = a[1].kind;
+      const bId = b[1].kind;
       return aId === bId
         ? 0
         : aId.localeCompare(bId, undefined, { numeric: true });
