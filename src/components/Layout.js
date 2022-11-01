@@ -68,7 +68,7 @@ export const Layout = ({ meta, children }) => {
           <Anchor
             to="/courses"
             title="Courses"
-            className="absolute left-10 -top-1 text-3xl hover:text-color-2 hover:animate-wiggle animate"
+            className="absolute left-12 -top-1 text-3xl hover:text-color-2 hover:animate-wiggle animate"
           >
             <MdOutlineSchool className="inline" />
           </Anchor>
