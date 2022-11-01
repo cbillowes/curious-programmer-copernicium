@@ -51,6 +51,6 @@ or simply create a [Pull Request][pr] on GitHub.
 [jamstack]: https://jamstack.org/
 [datastax]: https://www.datastax.com/
 [netlify]: https://docs.netlify.com/get-started/
-[final-product]: https://resonant-haupia-720365.netlify.app/
+[final-product]: https://my-primitive-todo-app.netlify.app/
 [todo-repo]: https://github.com/cbillowes/my-primitive-todo-app
 [pr]: https://github.com/cbillowes/curious-programmer-copernicium
