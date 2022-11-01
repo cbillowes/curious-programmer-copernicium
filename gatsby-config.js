@@ -87,14 +87,16 @@ module.exports = {
             query: `
             {
               allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] },
+                sort: {order: DESC, fields: [frontmatter___date]}
                 limit: 125
+                filter: {fields: {type: {in: ["article", "scribble"]}}}
               ) {
                 edges {
                   node {
-                    excerpt
-                    html
-                    fields { slug }
+                    excerpt(pruneLength: 250)
+                    fields {
+                      slug
+                    }
                     frontmatter {
                       title
                       date
