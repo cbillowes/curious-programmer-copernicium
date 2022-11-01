@@ -47,6 +47,7 @@ const Preview = ({
                 className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
                 alt="Scribble"
               />
+              {type}
             </Link>
           )}
           {type === 'article' && (
@@ -55,6 +56,7 @@ const Preview = ({
                 className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
                 alt="Article"
               />
+              {type}
             </Link>
           )}
           {type === 'course' && (
@@ -63,9 +65,9 @@ const Preview = ({
                 className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
                 alt="Course"
               />
+              {type}
             </Link>
           )}
-          {type}
         </div>
         <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
           <Anchor to={slug} title={title}>
