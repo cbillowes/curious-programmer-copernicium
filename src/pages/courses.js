@@ -63,8 +63,8 @@ const Courses = ({ edges }) => {
           </div>
         </div>
         <div className="xl:w-1/4 relative">
-          <Ribbon>#{index + 1}</Ribbon>
-          <Thumbnail number={index} to={slug} alt={title} {...hero} />
+          <Ribbon>#{edges.length - index}</Ribbon>
+          <Thumbnail number={edges.length - index} to={slug} alt={title} {...hero} />
         </div>
       </section>
     );
