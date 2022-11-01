@@ -278,6 +278,14 @@ Component['Mauritius'] = (props) => (
   require('./mauritius').default(props)
 );
 
+Component['NodejsLock'] = (props) => (
+  require('./nodejs-lock').default(props)
+);
+
+Component['NodejsLock'] = (props) => (
+  require('./nodejs-lock').default(props)
+);
+
 Component['PagespeedScore'] = (props) => (
   require('./pagespeed-score').default(props)
 );
