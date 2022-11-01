@@ -4,13 +4,27 @@ import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
 import List from '../components/Articles/List';
 
+const numberTheEdges = (edges) => {
+  return edges.map((edge, i) => {
+    return Object.assign(edge.node, {
+      node: {
+        ...edge.node,
+        fields: {
+          ...edge.node.fields,
+          number: edges.length - (i + 1),
+        },
+      },
+    });
+  });
+};
+
 const Scribbles = ({ edges }) => {
   return <List edges={edges} />;
 };
 
 const ScribblesPage = ({ data }) => {
   const { allMarkdownRemark, site } = data;
-  const edges = allMarkdownRemark.edges;
+  const edges = numberTheEdges(allMarkdownRemark.edges);
   const { title } = site.siteMetadata;
 
   return (
@@ -63,7 +77,6 @@ export const query = graphql`
             slug
             date(formatString: "dddd, DD MMMM yyyy")
             type
-            number
             hero {
               component
               image
