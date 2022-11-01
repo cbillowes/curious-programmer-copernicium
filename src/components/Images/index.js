@@ -334,6 +334,14 @@ Component['PrettyGitGraph'] = (props) => (
   require('./pretty-git-graph').default(props)
 );
 
+Component['Storybook'] = (props) => (
+  require('./storybook').default(props)
+);
+
+Component['Storybook'] = (props) => (
+  require('./storybook').default(props)
+);
+
 Component['TwoPeoplePlanningAtATable'] = (props) => (
   require('./two-people-planning-at-a-table').default(props)
 );
