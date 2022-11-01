@@ -31,7 +31,7 @@ const TopBar = () => (
 const getClassNames = (component) => {
   switch (component) {
     case 'top-bar': {
-      return 'absolute left-4 top-1 text-2xl';
+      return 'absolute top-1 text-2xl';
     }
     case 'header': {
       return 'absolute bottom-2 right-2 md:left-2 md:right-auto';

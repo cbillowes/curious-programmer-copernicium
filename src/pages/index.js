@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
         route: '/',
       }}
     >
-      <div className="relative font-alt-sans max-w-[1440px] mx-auto">
+      <div className="relative font-alt-sans max-w-[1920px] mx-auto">
         <div>
           <StaticImage
             src="../images/profile.jpg"
