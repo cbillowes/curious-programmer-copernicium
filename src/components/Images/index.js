@@ -218,6 +218,14 @@ Component['Elastic'] = (props) => (
   require('./elastic').default(props)
 );
 
+Component['FirebaseReactGcp'] = (props) => (
+  require('./firebase-react-gcp').default(props)
+);
+
+Component['FirebaseReactGcp'] = (props) => (
+  require('./firebase-react-gcp').default(props)
+);
+
 Component['Gatsby'] = (props) => (
   require('./gatsby').default(props)
 );
