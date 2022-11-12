@@ -36,7 +36,7 @@ const Anchor = ({
 
   if (!to)
     return (
-      <span className={classNames} title={title || children}>
+      <span className={classNames} title={title}>
         {children}
       </span>
     );
@@ -46,7 +46,7 @@ const Anchor = ({
       <Link
         className={classNames}
         to={to}
-        title={title || children}
+        title={title}
         onClick={() => trackClickEvent(trackingData)}
       >
         {children}
