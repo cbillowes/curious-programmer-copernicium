@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Cisco = ({ alt, className }) => {
   return (
-    <StaticImage src="./cisco.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./cisco.png" alt={alt} className={className} height={500} />
   );
 };
 

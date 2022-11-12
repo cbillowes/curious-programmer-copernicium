@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const ChromeDevtoolsEmulation = ({ alt, className }) => {
   return (
-    <StaticImage src="./chrome-devtools-emulation.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./chrome-devtools-emulation.png" alt={alt} className={className} height={500} />
   );
 };
 

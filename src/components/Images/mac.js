@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Mac = ({ alt, className }) => {
   return (
-    <StaticImage src="./mac.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./mac.jpg" alt={alt} className={className} height={500} />
   );
 };
 

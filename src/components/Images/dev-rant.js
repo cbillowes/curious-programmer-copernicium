@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const DevRant = ({ alt, className }) => {
   return (
-    <StaticImage src="./dev-rant.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./dev-rant.png" alt={alt} className={className} height={500} />
   );
 };
 

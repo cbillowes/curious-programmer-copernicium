@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const PrettyGitGraph = ({ alt, className }) => {
   return (
-    <StaticImage src="./pretty-git-graph.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./pretty-git-graph.png" alt={alt} className={className} height={500} />
   );
 };
 

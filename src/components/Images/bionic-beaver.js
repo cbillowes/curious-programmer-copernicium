@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const BionicBeaver = ({ alt, className }) => {
   return (
-    <StaticImage src="./bionic-beaver.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./bionic-beaver.png" alt={alt} className={className} height={500} />
   );
 };
 

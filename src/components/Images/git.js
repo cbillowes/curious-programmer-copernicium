@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Git = ({ alt, className }) => {
   return (
-    <StaticImage src="./git.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./git.png" alt={alt} className={className} height={500} />
   );
 };
 

@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Vscode = ({ alt, className }) => {
   return (
-    <StaticImage src="./vscode.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./vscode.png" alt={alt} className={className} height={500} />
   );
 };
 

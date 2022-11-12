@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const NodejsLock = ({ alt, className }) => {
   return (
-    <StaticImage src="./nodejs-lock.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./nodejs-lock.png" alt={alt} className={className} height={500} />
   );
 };
 

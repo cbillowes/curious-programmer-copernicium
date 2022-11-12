@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const DogInBlanket = ({ alt, className }) => {
   return (
-    <StaticImage src="./dog-in-blanket.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./dog-in-blanket.jpg" alt={alt} className={className} height={500} />
   );
 };
 

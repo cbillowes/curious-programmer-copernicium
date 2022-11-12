@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Npm = ({ alt, className }) => {
   return (
-    <StaticImage src="./npm.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./npm.png" alt={alt} className={className} height={500} />
   );
 };
 

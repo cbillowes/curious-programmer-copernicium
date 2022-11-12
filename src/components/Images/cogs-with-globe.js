@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const CogsWithGlobe = ({ alt, className }) => {
   return (
-    <StaticImage src="./cogs-with-globe.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./cogs-with-globe.jpg" alt={alt} className={className} height={500} />
   );
 };
 

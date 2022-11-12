@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const TwoPeoplePlanningAtATable = ({ alt, className }) => {
   return (
-    <StaticImage src="./two-people-planning-at-a-table.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./two-people-planning-at-a-table.jpg" alt={alt} className={className} height={500} />
   );
 };
 

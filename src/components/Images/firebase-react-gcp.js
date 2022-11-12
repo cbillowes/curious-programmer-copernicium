@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const FirebaseReactGcp = ({ alt, className }) => {
   return (
-    <StaticImage src="./firebase-react-gcp.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./firebase-react-gcp.png" alt={alt} className={className} height={500} />
   );
 };
 

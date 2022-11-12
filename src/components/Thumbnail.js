@@ -77,7 +77,7 @@ const Thumbnail = ({
             className="shadow-md transform w-full"
             alt={alt}
             title={alt}
-            width={800}
+            width={1200}
           />
         )}
       </Anchor>

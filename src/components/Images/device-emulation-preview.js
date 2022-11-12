@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const DeviceEmulationPreview = ({ alt, className }) => {
   return (
-    <StaticImage src="./device-emulation-preview.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./device-emulation-preview.jpg" alt={alt} className={className} height={500} />
   );
 };
 

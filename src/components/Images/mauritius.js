@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Mauritius = ({ alt, className }) => {
   return (
-    <StaticImage src="./mauritius.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./mauritius.jpg" alt={alt} className={className} height={500} />
   );
 };
 

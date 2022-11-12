@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const PagespeedScore = ({ alt, className }) => {
   return (
-    <StaticImage src="./pagespeed-score.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./pagespeed-score.png" alt={alt} className={className} height={500} />
   );
 };
 

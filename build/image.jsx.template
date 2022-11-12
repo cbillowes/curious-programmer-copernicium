@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const %COMPONENT_NAME% = ({ alt, className }) => {
   return (
-    <StaticImage src="./%IMAGE_FILENAME%" alt={alt} className={className} height={250} />
+    <StaticImage src="./%IMAGE_FILENAME%" alt={alt} className={className} height={500} />
   );
 };
 

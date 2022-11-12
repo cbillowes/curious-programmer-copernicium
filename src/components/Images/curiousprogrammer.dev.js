@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Curiousprogrammer = ({ alt, className }) => {
   return (
-    <StaticImage src="./curiousprogrammer.dev.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./curiousprogrammer.dev.png" alt={alt} className={className} height={500} />
   );
 };
 

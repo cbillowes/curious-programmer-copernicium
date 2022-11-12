@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Webpack = ({ alt, className }) => {
   return (
-    <StaticImage src="./webpack.png" alt={alt} className={className} height={250} />
+    <StaticImage src="./webpack.png" alt={alt} className={className} height={500} />
   );
 };
 

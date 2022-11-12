@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const BlurredCycling = ({ alt, className }) => {
   return (
-    <StaticImage src="./blurred-cycling.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./blurred-cycling.jpg" alt={alt} className={className} height={500} />
   );
 };
 

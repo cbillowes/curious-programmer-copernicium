@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const ClojureFirebase = ({ alt, className }) => {
   return (
-    <StaticImage src="./clojure-firebase.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./clojure-firebase.jpg" alt={alt} className={className} height={500} />
   );
 };
 

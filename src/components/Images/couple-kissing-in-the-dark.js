@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const CoupleKissingInTheDark = ({ alt, className }) => {
   return (
-    <StaticImage src="./couple-kissing-in-the-dark.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./couple-kissing-in-the-dark.jpg" alt={alt} className={className} height={500} />
   );
 };
 

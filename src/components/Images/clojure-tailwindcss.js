@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const ClojureTailwindcss = ({ alt, className }) => {
   return (
-    <StaticImage src="./clojure-tailwindcss.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./clojure-tailwindcss.jpg" alt={alt} className={className} height={500} />
   );
 };
 

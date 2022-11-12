@@ -9,7 +9,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export const Kibana = ({ alt, className }) => {
   return (
-    <StaticImage src="./kibana.jpg" alt={alt} className={className} height={250} />
+    <StaticImage src="./kibana.jpg" alt={alt} className={className} height={500} />
   );
 };
 
