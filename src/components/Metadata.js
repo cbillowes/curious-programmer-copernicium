@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { toMauritiusLocaleDateString } from '../common/date';
 
 const Divider = ({ props, index }) => {
-  return index + 1 <= props.length && props[index + 1] ? (
+  return index + 1 <= props.length &&
+    props.slice(index + 1).filter((p) => p).length > 0 ? (
     <>&nbsp;&middot;&nbsp;</>
   ) : (
     <></>
@@ -19,15 +20,8 @@ const Metadata = ({
   page,
   totalPages,
 }) => {
-  const props = [
-    timeToRead,
-    date,
-    created,
-    modified,
-    abstract,
-    page,
-    totalPages,
-  ];
+  // data to decide where to put the mid-dot dividers
+  const props = [timeToRead, date, page, created, modified];
   return (
     <div className="text-center text-neutral leading-loose text-sm">
       <div className=" opacity-50">
