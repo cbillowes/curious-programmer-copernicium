@@ -7,7 +7,7 @@ import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import Thumbnail from '../components/Thumbnail';
 import { MdOutlineSchool } from 'react-icons/md';
-import { toMauritiusLocaleDateString } from '../common/date';
+import Metadata from '../components/Metadata';
 
 export const query = graphql`
   query CourseTemplateQuery($slug: String!) {
@@ -75,7 +75,14 @@ const CourseTemplate = ({ data }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: courseTitle, tags, abstract, date, modified, cover } = frontmatter;
+  const {
+    title: courseTitle,
+    tags,
+    abstract,
+    date,
+    modified,
+    cover,
+  } = frontmatter;
   const keywords = getKeywords(excerpt);
 
   return (
@@ -107,16 +114,12 @@ const CourseTemplate = ({ data }) => {
           </Link>
           {fields.type}
         </div>
-        <div className="text-center text-neutral">
-          Estimated {timeToRead} minute read &middot; Created on{' '}
-          {toMauritiusLocaleDateString(date)}{' '}
-          {modified && (
-            <>
-              &middot; Last modified on {toMauritiusLocaleDateString(modified)}
-            </>
-          )}
-          <p className="mt-2 max-w-3xl mx-auto">{abstract}</p>
-        </div>
+        <Metadata
+          timeToRead={timeToRead}
+          created={date}
+          modified={modified}
+          abstract={abstract}
+        />
         <div className="text-center">
           <Tags tags={tags} redirect={true} isButton={true} />
         </div>

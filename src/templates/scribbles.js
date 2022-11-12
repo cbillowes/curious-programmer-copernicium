@@ -6,6 +6,7 @@ import Tags from '../components/Tags';
 import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import Thumbnail from '../components/Thumbnail';
+import Metadata from '../components/Metadata';
 import { TbScribble } from 'react-icons/tb';
 import { FaDev } from 'react-icons/fa';
 import Anchor from '../components/Anchor';
@@ -101,9 +102,7 @@ const ScribblesTemplate = ({ data }) => {
             </>
           )}
         </div>
-        <div className="text-center text-neutral">
-          {fields.date} &middot; Estimated {timeToRead} minute read
-        </div>
+        <Metadata date={fields.date} timeToRead={timeToRead} />
         <div className="text-center">
           <Tags tags={tags} redirect={true} isButton={true} />
         </div>

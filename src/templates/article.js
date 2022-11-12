@@ -17,6 +17,7 @@ import '../styles/prismjs/light.scss';
 import CommentSystem from '../components/CommentSystem';
 import { getKeywords } from '../common/seo';
 import { RiArticleLine } from 'react-icons/ri';
+import Metadata from '../components/Metadata';
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -95,12 +96,9 @@ const ArticleTemplate = ({ data }) => {
               alt="Article"
             />
           </Link>
-          {fields.type}
+          {fields.type} &middot; #{fields.number}
         </div>
-        <div className="text-center text-neutral">
-          #{fields.number} &middot; {fields.date} &middot; Estimated{' '}
-          {timeToRead} minute read
-        </div>
+        <Metadata timeToRead={timeToRead} date={fields.date} />
         <div className="text-center">
           <Tags tags={frontmatter.tags} redirect={true} isButton={true} />
         </div>

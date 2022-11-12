@@ -6,7 +6,7 @@ import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import { MdOutlineSchool } from 'react-icons/md';
 import Anchor from '../components/Anchor';
-import { toMauritiusLocaleDateString } from '../common/date';
+import Metadata from '../components/Metadata';
 
 export const query = graphql`
   query ChaptersTemplateQuery($parent: String!, $slug: String!) {
@@ -93,7 +93,14 @@ const ChaptersTemplate = ({ data, pageContext }) => {
   const { page, total, next, previous, courseTitle } = pageContext;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
   const { title, description, url } = site.siteMetadata;
-  const { title: chapterTitle, date, modified, parent, abstract, cover } = frontmatter;
+  const {
+    title: chapterTitle,
+    date,
+    modified,
+    parent,
+    abstract,
+    cover,
+  } = frontmatter;
   const keywords = getKeywords(excerpt);
   const [showToc, toggleToc] = useState(false);
 
@@ -178,20 +185,14 @@ const ChaptersTemplate = ({ data, pageContext }) => {
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {chapterTitle}
         </h1>
-        <div className="text-center opacity-40">
-          <div className="text-sm leading-7">
-            Estimated {timeToRead} minute read &middot; Page{' '}
-            {parseInt(page, 10)} out of {total} &middot; Created on{' '}
-            {toMauritiusLocaleDateString(date)}{' '}
-            {modified && (
-              <>
-                &middot; Last modified on{' '}
-                {toMauritiusLocaleDateString(modified)}
-              </>
-            )}
-          </div>
-          <p className="mt-2 max-w-3xl mx-auto">{abstract}</p>
-        </div>
+        <Metadata
+          timeToRead={timeToRead}
+          created={date}
+          modified={modified}
+          abstract={abstract}
+          page={page}
+          totalPages={total}
+        />
         <hr />
         <div
           className="content max-w-3xl mx-auto mt-8"

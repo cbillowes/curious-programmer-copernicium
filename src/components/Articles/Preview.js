@@ -8,6 +8,7 @@ import { TbScribble } from 'react-icons/tb';
 import { RiArticleLine } from 'react-icons/ri';
 import { MdOutlineSchool } from 'react-icons/md';
 import { Link } from 'gatsby';
+import Metadata from '../Metadata';
 
 const Preview = ({
   index,
@@ -75,9 +76,7 @@ const Preview = ({
           </Anchor>
         </h2>
         <div className="leading-loose mb-4">
-          <p className="text-neutral">
-            {date} - Estimated {timeToRead} minute read
-          </p>
+          <Metadata data={date} timeToRead={timeToRead} />
           <p
             className={`mt-2 text-left ${
               isEven ? 'xl:text-left' : 'xl:text-right'
