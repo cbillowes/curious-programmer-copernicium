@@ -4,17 +4,41 @@ parent: /courses/full-stack
 date: 2022-11-04
 modified: 2022-11-05
 abstract:
-  You will create an authentication mechanism that integrates with Firebase auth so that you
-  don't have to build an authentication solution from the ground up.
+  Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to
+  authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated
+  identity providers like Google, Facebook and Twitter, and more.
+  In this chapter, you will create an email/password authentication mechanism that integrates with
+  Firebase auth so that you don't have to build an authentication solution from the ground up.
 ---
 
 ## Objectives
 
-1. Create a Firebase Authentication project
-1. Build pages with registration and login forms
-1. Restrict access to ratings and comments to authenticated users only
-1. Change navigation bar based on user state
-1. Only allow authenticated users to contribute a single rating
+1. Learn more about Firebase Authentication.
+1. Understand how to navigate parts of Firestore in order to configure the authentication for your app.
+1. Register and log users into your app.
+1. Customize the navigation bar menu items based on the authentication status of the user.
+1. Hide certain functionality based on the authentication status of the user.
+
+## Get started
+
+Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to
+authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated
+identity providers like Google, Facebook and Twitter, and more.
+
+What's the difference between authorization and authentication?
+How can you protect your backend system and your users' data?
+What's a trusted environment, and why is it safe to access your app's
+data directly from the client? Join the Firebase team to learn all of this and more in
+Better Safe than Sorry, our new show about writing safe and secure apps
+using Firebase and Firebase Authentication.
+
+`youtube:https://www.youtube.com/embed/vBUk293QSKY`
+
+In this episode of Firebase Fundamentals, Firebase Developer Advocate
+Peter Friese will show you how to get up and running quickly with Firebase Authentication
+in your web application.
+
+`youtube:https://www.youtube.com/embed/rbuSx1yEgV8`
 
 ## New Firebase project
 
@@ -781,13 +805,16 @@ const ReviewPage = () => {
 export default ReviewPage;
 ```
 
-
 ### References
 
 - [Firebase][firebase]
 - [firebase-admin][firebase-admin-npm] npm package
 - [firebase][firebase-npm] npm package
+- [What is Firebase Authentication? | Better Safe than Sorry][auth-vid-what] - YouTube @Firebase
+- [Getting started with Firebase Authentication on the web - Firebase Fundamentals][auth-vid-get-started] - YouTube @Firebase
 
 [firebase]: https://console.firebase.google.com
 [firebase-admin-npm]: https://www.npmjs.com/package/firebase-admin
 [firebase-npm]: https://www.npmjs.com/package/firebase
+[auth-vid-what]: https://www.youtube.com/watch?v=vBUk293QSKY
+[auth-vid-get-started]: https://www.youtube.com/watch?v=rbuSx1yEgV8

@@ -2,15 +2,33 @@
 title: Prettify your web application with Tailwind CSS
 parent: /courses/full-stack
 date: 2022-11-04
-modified: 2022-11-05
-abstract: You will install and configure Tailwind CSS.
-  You will also prettify existing components.
+modified: 2022-11-11
+abstract:
+  Tailwind CSS is an open source CSS framework.
+  The main feature of this library is that, unlike other CSS frameworks like Bootstrap,
+  it does not provide a series of predefined classes for elements such as buttons or tables.
+  In this chapter, you will install, configure and use it in your components.
 ---
 
 ## Objectives
 
 1. Install and configure Tailwind CSS.
-1. Prettify components.
+1. Prettify your components.
+
+## Get started
+
+In this video, you will set up the Tailwind CLI and
+create a landing page from start to finish,
+going over many of the common utility classes and then deploying
+it to InMotion Hosting using Git.
+
+`youtube:https://www.youtube.com/embed/dFgzHOX84xQ`
+
+In this video you will learn the basics of Tailwind CSS by building a
+Discord-inspired navbar from scratch.
+Learn how to leverage utility classes to build responsive animated UI elements faster.
+
+`youtube:https://www.youtube.com/embed/pfaSUYaSgRo`
 
 ## Install
 
@@ -380,4 +398,9 @@ return (
 );
 ```
 
+## References
+
+- [Tailwind Crash Course | Project From Scratch][tailwindcss-vid] - YouTube @Traversy Media
+
 [guide]: https://curiousprogrammer.dev/courses/jamstack/08/prettify-with-tailwind-css
+[tailwindcss-vid]: https://www.youtube.com/watch?v=dFgzHOX84xQ

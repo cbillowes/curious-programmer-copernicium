@@ -2,31 +2,35 @@
 title: Connect the backend to the frontend
 parent: /courses/full-stack
 date: 2022-11-03
-modified: 2022-11-05
-abstract: You will create requests from the frontend to your backend server API.
-  You will overcome Cross Origin Resource Sharing issues by whitelisting the client's
-  server and port in your Express server.
+modified: 2022-11-11
+abstract:
+  In this chapter, you will learn to whitelist your frontend domain to combat CORS when
+  communicating between the frontend and backend server API.
+  You will also interact with the API by updating some of your frontend components.
 ---
 
 ## Objectives
 
-1. Whitelist http://localhost:3000 in your Express server.
-1. Remove in-memory data to replace with database functionality.
-1. Update pages interact with the API and render the results on screen.
+1. Whitelist your frontend domain (which includes the port because it's not `80`)
+   http://localhost:3000 in your ExpressJS server.
+1. Replace the in-memory database with actual database functionality.
+1. Update pages and components to interact with the API and render the results on screen.
 
-## CORS
+## Cross Origin Resource Sharing (CORS)
 
 The backend and frontend are running on different ports -
 3001 and 3000 respectively. A Cross Origin Resource Sharing [CORS][cors]
-network error will occur on requests made to the API from the frontend.
+network error will occur on requests made to the API from the frontend
+because of this. In order to access the resource, you need to either be on the same domain (and port)
+or be whitelisted so that the server can accept your request.
 
-Install the [cors][install] npm package in the server directory
-so that you can enable CORS on the express server.
+`youtube:https://www.youtube.com/embed/4KHiSt0oLJ0`
 
-```bash:title=>./
-cd server
+Install the [cors][cors] npm package in the server directory
+so that you can enable CORS on the ExpressJS server.
+
+```bash:title=>./server
 npm install cors
-cd ../
 ```
 
 ```js:title=./server/src/server.js
@@ -35,7 +39,7 @@ import cors from 'cors';
 import { withCollection } from './db.js';
 
 const app = express();
-// The endpoint will later be configurable.
+// The endpoint will be configurable later.
 app.use(
   cors({
     origin: 'http://localhost:3000',
@@ -45,17 +49,25 @@ app.use(
 // ...
 ```
 
-## Remove in-memory
+## Interact with the API
 
-Remove the in memory data file.
+Remove your in-memory database.
 
 ```bash:title=>./
 rm -rf web/src/data/reviews.json
 ```
 
-## Interact with the API
+Install [axios][axios] npm package.
 
-Render each company review on the Home Page by iterating through the reviews array
+```bash:title=./
+npm install axios
+```
+
+In this video you will learn how to make HTTP requests with GET, POST, PUT and DELETE.
+
+`youtube:https://www.youtube.com/embed/661GhwA3nYI`
+
+You are going to render each review on the Home Page by iterating through the reviews array
 returned from the get request made by `axios` in the `fetch` function in the `useEffect`.
 
 If there are no reviews, text is rendered to say that there is nothing.
@@ -70,6 +82,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetch = async () => {
+      // This hardcoded value will be configured later on.
       const response = await axios.get(`http://localhost:3001/api/reviews`);
       setReviews(response.data);
     };
@@ -317,12 +330,6 @@ const Comment = ({ commentOn, onSave }) => {
   const email = useRef();
   const comment = useRef();
 
-  const resetForm = () => {
-    name.current.value = '';
-    email.current.value = '';
-    comment.current.value = '';
-  };
-
   const handleSave = () => {
     onSave &&
       onSave({
@@ -330,7 +337,6 @@ const Comment = ({ commentOn, onSave }) => {
         email: email.current.value,
         comment: comment.current.value,
       });
-    resetForm();
   };
 
   return (
@@ -478,6 +484,14 @@ const ReviewPage = () => {
 export default ReviewPage;
 ```
 
+## References
+
+- [CORS in 100 seconds][cors-vid] - YouTube @Fireship
+- [cors][cors] - npm package
+- [axios][axios] - npm package
+
+[axios]: https://www.npmjs.com/package/axios
 [cors]: https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/
-[install]: https://www.npmjs.com/package/cors
+[cors-vid]: https://www.youtube.com/watch?v=4KHiSt0oLJ0
+[cors]: https://www.npmjs.com/package/cors
 [forward-refs]: https://reactjs.org/docs/forwarding-refs.html

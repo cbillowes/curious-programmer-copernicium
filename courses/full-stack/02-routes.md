@@ -2,16 +2,18 @@
 title: Route to different pages in the application
 parent: /courses/full-stack
 date: 2022-11-02
-modified: 2022-11-05
-abstract: You will build the mechanism to create accessible page routes and access them via a navigation menu.
+modified: 2022-11-11
+abstract:
+  In this chapter, you will use the react-router-dom to manage your routes
+  and navigate to different pages using a navigation menu bar.
 ---
 
 ## Objectives
 
-1. Expose routes so that different pages are accessible.
-1. Create anchors to link to access these pages.
+1. Make pages available using `react-router-dom`.
+1. Create a navigation menu bar to render links for the different pages.
 
-## Install dependency
+## Dependency
 
 You need to install an npm package called [react-router-dom][react-router-dom]
 that will manage your routes in React for you.
@@ -20,15 +22,29 @@ that will manage your routes in React for you.
 npm install react-router-dom
 ```
 
-## Import pages
+React Router is seemingly the most popular way to add page routing in React Apps.
+It is used very frequently in React projects.
+What you'll learn in the video below:
 
-You'll import a few things from it. Checkout the [docs][react-router-dom] to find out more about each one.
+- Crash course for beginners.
+- Learn how to use React Router v6.
+
+`youtube:https://www.youtube.com/embed/59IXY5IDrBA`
+
+## Create routes
+
+You'll import a few things from `react-router-dom`.
+Checkout the [docs][react-router-dom] to find out more about each one.
 You'll also be importing all the pages you need routes for.
-Your routing will be hooked up in the page below.
+Your routing will be hooked up in `index.js`.
 
 Each path is a route and it will render an element when matched on.
-The path `/*` matches on any path and will render the `NotFoundPage` if that match does not match on any of the other
+The path `/*` matches on any path and will render the `NotFoundPage`
+if that match does not match on any of the other
 Route paths specified in the list.
+
+`:slug` is a param in the URL segment that allows for variable content
+that we can access programmatically.
 
 ```jsx:title=./src/index.js
 // ... other imports
@@ -71,7 +87,7 @@ root.render(
 // ... other code
 ```
 
-You no longer need the `App` files so you can remove them.
+You no longer need the `App` files so you can safely remove them.
 
 ```bash:title=bash
 rm src/App.*
@@ -81,7 +97,7 @@ rm src/App.*
 
 You will want to navigate to the different pages that you have created.
 In order to do so, create a navigation component with links to the different pages in it
-using the `react-router-dom` package from earlier.
+using the `react-router-dom` package.
 
 ```bash:title=bash
 touch src/components/Navigation.js
@@ -113,7 +129,8 @@ export default Navigation;
 
 The Navigation component uses the routes so it needs [context][so-usehref] to the `RouterProvider`.
 Change the Layout component to make render `Outlet` instead of the former `children` prop.
-[Read][outlet] more about Outlet.
+
+Use [Outlet][outlet] to render the `element` component associated with the path specified in `index.js`.
 
 ```jsx:title=./src/Layout.js
 import { Outlet } from 'react-router-dom';
@@ -242,7 +259,10 @@ export default HomePage;
 ## References
 
 - [react-router-dom][react-router-dom] - Official documentation
+- [React Router 6 - Tutorial for Beginners][react-router-vid] - YouTube @freeCodeCamp.org
+- [&lt;Outlet /&gt; component][outlet] - Official documentation
 
 [react-router-dom]: https://reactrouter.com/en/main
+[react-router-vid]: https://www.youtube.com/watch?v=59IXY5IDrBA
 [so-usehref]: https://stackoverflow.com/questions/70220413/error-usehref-may-be-used-only-in-the-context-of-a-router-component-it-wor
 [outlet]: https://reactrouter.com/en/main/components/outlet
