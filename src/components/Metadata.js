@@ -71,9 +71,9 @@ export default Metadata;
 
 Metadata.propTypes = {
   timeToRead: PropTypes.number,
-  date: PropTypes.instanceOf(Date),
-  crated: PropTypes.instanceOf(Date),
-  modified: PropTypes.instanceOf(Date),
+  date: PropTypes.string,
+  crated: PropTypes.string,
+  modified: PropTypes.string,
   abstract: PropTypes.string,
   page: PropTypes.string,
   totalPages: PropTypes.string,
