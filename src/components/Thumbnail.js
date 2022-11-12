@@ -56,7 +56,15 @@ const ExternalThumbnail = ({ to, alt, src }) => {
   );
 };
 
-const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
+const Thumbnail = ({
+  alt = '',
+  to,
+  image,
+  credit,
+  source,
+  link,
+  component,
+}) => {
   if (component === 'url')
     return <ExternalThumbnail to={link} alt={alt} src={image} title={alt} />;
 
@@ -65,7 +73,12 @@ const Thumbnail = ({ alt, to, image, credit, source, link, component }) => {
     <div className="relative text-center lg:max-w-[600px] mx-auto">
       <Anchor to={to} isBlock>
         {Image && (
-          <Image className="shadow-md transform w-full" alt={alt} title={alt} width={800} />
+          <Image
+            className="shadow-md transform w-full"
+            alt={alt}
+            title={alt}
+            width={800}
+          />
         )}
       </Anchor>
       <Credit
