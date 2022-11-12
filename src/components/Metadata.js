@@ -2,6 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { toMauritiusLocaleDateString } from '../common/date';
 
+const Divider = ({ props, index }) => {
+  return index + 1 <= props.length && props[index + 1] ? (
+    <>&nbsp;&middot;&nbsp;</>
+  ) : (
+    <></>
+  );
+};
+
 const Metadata = ({
   timeToRead,
   date,
@@ -11,23 +19,46 @@ const Metadata = ({
   page,
   totalPages,
 }) => {
+  const props = [
+    timeToRead,
+    date,
+    created,
+    modified,
+    abstract,
+    page,
+    totalPages,
+  ];
   return (
     <div className="text-center text-neutral leading-loose text-sm">
       <div className=" opacity-50">
-        Estimated {timeToRead} minute read{' '}
-        {date && <>&nbsp;&middot; {toMauritiusLocaleDateString(date)}</>}
+        {timeToRead && (
+          <>
+            Estimated {timeToRead} minute read
+            <Divider props={props} index={0} />
+          </>
+        )}
+        {date && (
+          <>
+            {toMauritiusLocaleDateString(date)}
+            <Divider props={props} index={1} />
+          </>
+        )}
         {page && totalPages && (
           <>
-            &nbsp;&middot; Page {parseInt(page, 10)} out of {totalPages}
+            Page {parseInt(page, 10)} out of {totalPages}
+            <Divider props={props} index={2} />
           </>
         )}
         {created && (
-          <>&nbsp;&middot; Created on {toMauritiusLocaleDateString(created)}</>
+          <>
+            Created on {toMauritiusLocaleDateString(created)}
+            <Divider props={props} index={3} />
+          </>
         )}
         {modified && (
           <>
-            &nbsp;&middot; Last modified on{' '}
-            {toMauritiusLocaleDateString(modified)}
+            Last modified on {toMauritiusLocaleDateString(modified)}
+            <Divider props={props} index={4} />
           </>
         )}
       </div>
@@ -39,7 +70,7 @@ const Metadata = ({
 export default Metadata;
 
 Metadata.propTypes = {
-  timeToRead: PropTypes.number.isRequired,
+  timeToRead: PropTypes.number,
   date: PropTypes.instanceOf(Date),
   crated: PropTypes.instanceOf(Date),
   modified: PropTypes.instanceOf(Date),

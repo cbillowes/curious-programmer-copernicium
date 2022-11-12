@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout } from '../components/Layout';
 import Tags from '../components/Tags';
@@ -7,9 +7,9 @@ import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import Thumbnail from '../components/Thumbnail';
 import Metadata from '../components/Metadata';
-import { TbScribble } from 'react-icons/tb';
 import { FaDev } from 'react-icons/fa';
 import Anchor from '../components/Anchor';
+import Type from '../components/Type';
 
 export const query = graphql`
   query ScribblesTemplateQuery($slug: String!) {
@@ -81,14 +81,8 @@ const ScribblesTemplate = ({ data }) => {
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {scribbleTitle}
         </h1>
-        <div className="uppercase text-center my-3 opacity-40">
-          <Link to="/scribbles">
-            <TbScribble
-              className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-              alt="Scribbles"
-            />
-          </Link>
-          {fields.type}
+        <div className="uppercase text-center my-3 opacity-50">
+          <Type type="scribbles" to="/scribbles" />
           {frontmatter.devTo && (
             <>
               <span className="opacity-25 inline-block mx-2">/</span>

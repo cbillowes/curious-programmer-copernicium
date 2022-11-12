@@ -6,8 +6,8 @@ import Tags from '../components/Tags';
 import { getKeywords } from '../common/seo';
 import CommentSystem from '../components/CommentSystem';
 import Thumbnail from '../components/Thumbnail';
-import { MdOutlineSchool } from 'react-icons/md';
 import Metadata from '../components/Metadata';
+import Type from '../components/Type';
 
 export const query = graphql`
   query CourseTemplateQuery($slug: String!) {
@@ -105,15 +105,7 @@ const CourseTemplate = ({ data }) => {
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {courseTitle}
         </h1>
-        <div className="uppercase text-center my-3 opacity-40">
-          <Link to="/courses">
-            <MdOutlineSchool
-              className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-              alt="Courses"
-            />
-          </Link>
-          {fields.type}
-        </div>
+        <Type type={fields.type} to="/courses" />
         <Metadata
           timeToRead={timeToRead}
           created={date}

@@ -7,6 +7,7 @@ import Tags from '../components/Tags';
 import Anchor from '../components/Anchor';
 import Thumbnail from '../components/Thumbnail';
 import Ribbon from '../components/Articles/Ribbon';
+import Metadata from '../components/Metadata';
 
 const Courses = ({ edges }) => {
   return edges.map(({ node }, index) => {
@@ -34,6 +35,7 @@ const Courses = ({ edges }) => {
             </Anchor>
           </h2>
           <div className="leading-loose mb-4">
+            <Metadata created={date} />
             <p className="text-neutral">
               Created on {toMauritiusLocaleDateString(date)}
             </p>
@@ -64,7 +66,12 @@ const Courses = ({ edges }) => {
         </div>
         <div className="xl:w-1/4 relative">
           <Ribbon>#{edges.length - index}</Ribbon>
-          <Thumbnail number={edges.length - index} to={slug} alt={title} {...hero} />
+          <Thumbnail
+            number={edges.length - index}
+            to={slug}
+            alt={title}
+            {...hero}
+          />
         </div>
       </section>
     );

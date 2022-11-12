@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Layout } from '../components/Layout';
 import Thumbnail from '../components/Thumbnail';
@@ -16,8 +16,8 @@ import '../styles/prismjs/dark.scss';
 import '../styles/prismjs/light.scss';
 import CommentSystem from '../components/CommentSystem';
 import { getKeywords } from '../common/seo';
-import { RiArticleLine } from 'react-icons/ri';
 import Metadata from '../components/Metadata';
+import Type from '../components/Type';
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -89,15 +89,7 @@ const ArticleTemplate = ({ data }) => {
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {frontmatter.title}
         </h1>
-        <div className="uppercase text-center opacity-40 my-3">
-          <Link to="/blog">
-            <RiArticleLine
-              className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
-              alt="Article"
-            />
-          </Link>
-          {fields.type} &middot; #{fields.number}
-        </div>
+        <Type type={fields.type} to="/blog" number={fields.number} />
         <Metadata timeToRead={timeToRead} date={fields.date} />
         <div className="text-center">
           <Tags tags={frontmatter.tags} redirect={true} isButton={true} />
