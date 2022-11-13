@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const template = `./src/templates/chapters.js`;
 const createPages = true;
 
@@ -41,6 +40,40 @@ const chaptersQuery = async (graphql) => {
   `);
 };
 
+const getChapters = (chapters, slug) => {
+  return chapters.filter((chapter) => {
+    return chapter.node.frontmatter.parent === slug;
+  });
+};
+
+const createChapters = (createPage, course, chapters, totalPages, reporter) => {
+  chapters.forEach(async ({ node }, index) => {
+    const page = index < 10 ? `0${index + 1}` : (index + 1).toString();
+    const { slug } = node.fields;
+    const { parent } = node.frontmatter;
+    const { title: courseTitle } = course.node.frontmatter;
+
+    createPage({
+      path: slug,
+      component: path.resolve(template),
+      context: {
+        parent,
+        courseTitle,
+        slug,
+        page,
+        total: totalPages,
+        next:
+          index + 1 < totalPages ? chapters[index + 1].node.fields.slug : null,
+        previous: index - 1 >= 0 ? chapters[index - 1].node.fields.slug : null,
+      },
+    });
+
+    reporter.success(
+      `create course chapter: [ ${slug}: ${page}/${totalPages} ]`,
+    );
+  });
+};
+
 module.exports.create = async (actions, graphql, reporter) => {
   if (!createPages) {
     reporter.warn(`off: create course chapters`);
@@ -54,43 +87,19 @@ module.exports.create = async (actions, graphql, reporter) => {
       return;
     }
 
-    const chapters = result.data.chapters.edges;
-    reporter.success(
-      `------------- Create all things course chapters [${chapters.length}]:`,
-    );
+    const courses = result.data.courses.edges;
 
-    chapters.forEach(async ({ node }, index) => {
-      const filepath = node.fileAbsolutePath;
-      const page = parseInt(path.basename(filepath).substring(0, 2), 10);
-      const dirname = path.dirname(node.fileAbsolutePath);
-      const { slug } = node.fields;
-      const { parent } = node.frontmatter;
-      const files = fs.readdirSync(dirname);
-      const { title: courseTitle } = result.data.courses.edges.filter(
-        (c) => c.node.fields.slug === parent,
-      )[0].node.frontmatter;
-
-      createPage({
-        path: slug,
-        component: path.resolve(template),
-        context: {
-          parent,
-          courseTitle,
-          slug,
-          page,
-          total: files.length - 1,
-          next:
-            index + 1 < chapters.length
-              ? chapters[index + 1].node.fields.slug
-              : null,
-          previous:
-            index - 1 >= 0 ? chapters[index - 1].node.fields.slug : null,
-        },
-      });
+    courses.forEach(async (course) => {
+      const chapters = getChapters(
+        result.data.chapters.edges,
+        course.node.fields.slug,
+      );
+      const totalPages = chapters.length;
 
       reporter.success(
-        `create course chapter: { ${slug}: ${page}/${files.length} }`,
+        `------------- Create all things course [${course.node.fields.slug}] chapters [${totalPages}]:`,
       );
+      createChapters(createPage, course, chapters, totalPages, reporter);
     });
   });
 };
