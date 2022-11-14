@@ -2,7 +2,7 @@
 title: Prettify your web application with Tailwind CSS
 parent: /courses/full-stack
 date: 2022-11-04
-modified: 2022-11-11
+modified: 2022-11-14
 abstract:
   Tailwind CSS is an open source CSS framework.
   The main feature of this library is that, unlike other CSS frameworks like Bootstrap,
@@ -398,9 +398,14 @@ return (
 );
 ```
 
+## Next steps
+
+You are going to remove hardcoded variables by adding environment variables.
+
 ## References
 
-- [Tailwind Crash Course | Project From Scratch][tailwindcss-vid] - YouTube @Traversy Media
+- [Tailwind Crash Course | Project From Scratch][tailwindcss-vid] - Traversy Media on YouTube
+- [Prettify with Tailwind CSS][guide] - Curious Programmer
 
 [guide]: https://curiousprogrammer.dev/courses/jamstack/08/prettify-with-tailwind-css
 [tailwindcss-vid]: https://www.youtube.com/watch?v=dFgzHOX84xQ

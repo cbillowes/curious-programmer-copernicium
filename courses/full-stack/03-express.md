@@ -2,7 +2,7 @@
 title: Create the backend with ExpressJS
 parent: /courses/full-stack
 date: 2022-11-03
-modified: 2022-11-11
+modified: 2022-11-13
 abstract:
   ExpressJS claims to be a fast, un-opinionated, minimalist web framework for Node.js.
   In this chapter, you will create a backend server with a dummy API that your frontend will connect to,
@@ -51,7 +51,7 @@ going to [move][mv-cmd] the web application into a directory of its own.
 mkdir -p web; mv * $_
 ```
 
-Update `.gitignore` to exclude `node_modules/` (not the forward-slash is at the end).
+Update `.gitignore` to exclude `node_modules/` (note the forward-slash is at the end).
 This directory will now be excluded from anywhere within your project instead of just the root directory.
 
 ## Create the ExpressJS server
@@ -78,6 +78,22 @@ the `package.json` and specifying `type` as `module`.
 }
 ```
 
+### Run the server
+
+Add the following script to your `package.json` file under scripts.
+
+```json:title=./server/package.json
+{
+  "start": "node src/server.js"
+}
+```
+
+And run the server using
+
+```bash:title=>./server
+npm start
+```
+
 ### :tennis: Ping pong
 
 Create a new Express server listening on port `3001`.
@@ -99,25 +115,9 @@ app.listen('3001', () => {
 })
 ```
 
-### Run the server
-
-Add the following script to your `package.json` file under scripts.
-
-```json:title=./server/package.json
-{
-  "start": "node src/server.js"
-}
-```
-
-And run the server using
-
-```bash:title=>./server
-npm start
-```
-
 ### Automatic updating
 
-Let's update the server to use `nodemon` so that we can avoid manually
+Let's update the server to use [nodemon][nodemon] so that we can avoid manually
 restarting the server when changes are made.
 
 ```bash:title=>./server
@@ -171,11 +171,19 @@ Test the request in an API tester like Postman and remember to set the method to
 curl --location --request PUT 'http://localhost:3001/api/review/1/rate/1'
 ```
 
+## Next steps
+
+Time to get serious and implement a real database.
+I've chosen to explore MongoDB for this course but you could essentially
+connect to any database you would like to.
+
 ## References
 
 - [Express.js][express.js] - Official documentation
-- [Node.js Tutorial for Beginners: Learn Node in 1 Hour][node.js-vid] - YouTube @Programming with Mosh
-- [Learn Express JS In 35 Minutes][expressjs-vid] - YouTube @Web Dev Simplified
+- [Node.js Tutorial for Beginners: Learn Node in 1 Hour][node.js-vid] - Programming with Mosh on YouTube
+- [Learn Express JS In 35 Minutes][expressjs-vid] - Web Dev Simplified on YouTune
+- [express][express-npm] - npm
+- [nodemon][nodemon] - npm
 
 [express.js]: https://expressjs.com/
 [mv-cmd]: https://stackoverflow.com/questions/547719/is-there-a-way-to-make-mv-create-the-directory-to-be-moved-to-if-it-doesnt-exis
@@ -183,3 +191,4 @@ curl --location --request PUT 'http://localhost:3001/api/review/1/rate/1'
 [expressjs-vid]: https://youtu.be/SccSCuHhOw0
 [monorepo]: https://dev.to/limal/simplify-your-monorepo-with-npm-7-workspaces-5gmj
 [express-npm]: https://www.npmjs.com/package/express
+[nodemon]: https://www.npmjs.com/package/nodemon

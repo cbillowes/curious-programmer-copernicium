@@ -2,16 +2,16 @@
 title: Route to different pages in the application
 parent: /courses/full-stack
 date: 2022-11-02
-modified: 2022-11-11
+modified: 2022-11-13
 abstract:
   In this chapter, you will use the react-router-dom to manage your routes
-  and navigate to different pages using a navigation menu bar.
+  and navigate to different pages using a navigation bar component.
 ---
 
 ## Objectives
 
-1. Make pages available using `react-router-dom`.
-1. Create a navigation menu bar to render links for the different pages.
+1. Add routes to each page in order to navigate to them.
+1. Create a navigation bar to render links for pages.
 
 ## Dependency
 
@@ -23,11 +23,10 @@ npm install react-router-dom
 ```
 
 React Router is seemingly the most popular way to add page routing in React Apps.
-It is used very frequently in React projects.
-What you'll learn in the video below:
+The video below offers:
 
-- Crash course for beginners.
-- Learn how to use React Router v6.
+- A crash course for beginners.
+- Learning how to use React Router v6.
 
 `youtube:https://www.youtube.com/embed/59IXY5IDrBA`
 
@@ -38,10 +37,11 @@ Checkout the [docs][react-router-dom] to find out more about each one.
 You'll also be importing all the pages you need routes for.
 Your routing will be hooked up in `index.js`.
 
-Each path is a route and it will render an element when matched on.
+Each path is a route and it will render an element to render
+corresponding to a page when matched on.
 The path `/*` matches on any path and will render the `NotFoundPage`
 if that match does not match on any of the other
-Route paths specified in the list.
+Route paths specified.
 
 `:slug` is a param in the URL segment that allows for variable content
 that we can access programmatically.
@@ -148,18 +148,27 @@ const Layout = () => {
 export default Layout;
 ```
 
-Update the route element to render the Layout component and remove the Layout wrapper on RouterProvider.
+The Navigation component relies on the RouterProvider in order
+to render correctly. Right now it's outside the provider.
+
+Let's wrap the page inside the Layout component within the provider.
+Update the route element to render the Layout component and
+remove the Layout wrapper on RouterProvider.
 
 ```jsx:title=./src/App.js
 // ....
 
-<Route element={<Layout />}>
-  <Route path="/" element={<HomePage />} />
-  <Route path="*" element={<NotFoundPage />} />
-  <Route path="register" element={<RegisterPage />} />
-  <Route path="login" element={<LoginPage />} />
-  <Route path="review/:slug" element={<ReviewPage />} />
-</Route>,
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<NotFoundPage />} />
+      <Route path="register" element={<RegisterPage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="review/:slug" element={<ReviewPage />} />
+    </Route>,
+  ),
+);
 
 // ....
 
@@ -175,7 +184,8 @@ root.render(
 
 ## URL params
 
-Create a fake in-memory data file for the interim. This data will be displayed in our app.
+Create a fake in-memory data file for the interim.
+This data will be displayed in our app for the interim.
 
 ```bash:title=bash
 mkdir src/data && touch src/data/reviews.json
@@ -256,10 +266,15 @@ const HomePage = () => {
 export default HomePage;
 ```
 
+## Next steps
+
+You will create a backend API that will contain logic to authenticate, rate and comment
+on things.
+
 ## References
 
 - [react-router-dom][react-router-dom] - Official documentation
-- [React Router 6 - Tutorial for Beginners][react-router-vid] - YouTube @freeCodeCamp.org
+- [React Router 6 - Tutorial for Beginners][react-router-vid] - freeCodeCamp.org on YouTube
 - [&lt;Outlet /&gt; component][outlet] - Official documentation
 
 [react-router-dom]: https://reactrouter.com/en/main

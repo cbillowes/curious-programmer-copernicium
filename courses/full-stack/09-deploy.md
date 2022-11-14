@@ -2,7 +2,9 @@
 title: Deployment
 parent: /courses/full-stack
 date: 2022-11-08
-abstract: You will ...
+modified: 2022-11-14
+abstract:
+  In this chapter, you will deploy your application to AppEngine on Google Cloud Platform.
 ---
 
 ## Objectives
@@ -207,6 +209,20 @@ cd server; npm run deploy;
 
 echo "Done."
 ```
+
+## Next steps
+
+You may want to disable billing for your app when you are not using it so that
+you don't get billed for it. Go to Navigation menu > Billing > Account Management >
+Actions kebab > Disable billing.
+
+## References
+
+- [MongoDB Atlas][mongo-atlas] - Official documentation
+- [Google Cloud Platform Console][gcp] - Official website
+- [Google CLI][gcloud-cli] - Official website
+- [Google Cloud Build][cloud-build] - Official website
+- [Google AppEngine Pricing][pricing] - Official website
 
 [mongo-atlas]: https://www.mongodb.com/atlas/database
 [gcp]: https://console.cloud.google.com

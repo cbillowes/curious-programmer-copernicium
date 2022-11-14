@@ -2,7 +2,7 @@
 title: Create a new React web application
 parent: /courses/full-stack
 date: 2022-11-02
-modified: 2022-11-11
+modified: 2022-11-14
 abstract:
   React is currently claimed to be the most popular JavaScript library out there.
   In this chapter, you will learn more about getting started with React,
@@ -114,10 +114,15 @@ function App() {
 export default App;
 ```
 
+## Next steps
+
+Now that you have the basic components and pages, you can routes to each
+page with a navigation component for users to click on.
+
 ## References
 
 - [How to create a React app without using create-react-app][sans-cra] - Dev.to
-- [Getting Started with React][react-vid] - YouTube @DigitalOcean
+- [Getting Started with React][react-vid] - DigitalOcean on YouTube
 
 [sans-cra]: https://dev.to/ivadyhabimana/how-to-create-a-react-app-without-using-create-react-app-a-step-by-step-guide-30nl
 [react-vid]: https://www.youtube.com/watch?v=DEdO37kkodo

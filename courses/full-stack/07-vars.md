@@ -2,7 +2,7 @@
 title: Configure environment variables for your application
 parent: /courses/full-stack
 date: 2022-11-04
-modified: 2022-11-11
+modified: 2022-11-14
 abstract: All hardcoded references must be eradicated.
   In this chapter, you are going to remove all them
   from your web client and server API by introducing environment variables.
@@ -276,6 +276,15 @@ const withCollection = async (name, executeQuery) => {
 
 export { openConnection, closeConnection, withCollection };
 ```
+
+## Next steps
+
+Add Firebase authentication for users to register and login.
+
+## References
+
+- [dotenv][dotenv] - npm
+- [Adding custom environment variables in CRA][cra-env] - Official documentation
 
 [dotenv]: https://www.npmjs.com/package/dotenv
 [cra-env]: https://create-react-app.dev/docs/adding-custom-environment-variables/#what-other-env-files-can-be-used

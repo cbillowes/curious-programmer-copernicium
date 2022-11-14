@@ -1,8 +1,8 @@
 ---
-title: Connect the backend to the frontend
+title: Connect the frontend to the backend
 parent: /courses/full-stack
 date: 2022-11-03
-modified: 2022-11-11
+modified: 2022-11-14
 abstract:
   In this chapter, you will learn to whitelist your frontend domain to combat CORS when
   communicating between the frontend and backend server API.
@@ -26,7 +26,7 @@ or be whitelisted so that the server can accept your request.
 
 `youtube:https://www.youtube.com/embed/4KHiSt0oLJ0`
 
-Install the [cors][cors] npm package in the server directory
+Install the [cors][cors-npm] npm package in the server directory
 so that you can enable CORS on the ExpressJS server.
 
 ```bash:title=>./server
@@ -57,7 +57,7 @@ Remove your in-memory database.
 rm -rf web/src/data/reviews.json
 ```
 
-Install [axios][axios] npm package.
+Install [axios][axios-npm] npm package.
 
 ```bash:title=./
 npm install axios
@@ -484,14 +484,21 @@ const ReviewPage = () => {
 export default ReviewPage;
 ```
 
+## Next steps
+
+The web app is kind of bland so you will be adding some styling
+via Tailwind CSS.
+
 ## References
 
-- [CORS in 100 seconds][cors-vid] - YouTube @Fireship
 - [cors][cors] - npm package
-- [axios][axios] - npm package
+- [axios][axios-npm] - npm package
+- [CORS in 100 seconds][cors-vid] - Fireship on YouTube
+- [How to use CORS in Node.js with Express][cors] - section.io
+- [Forwarding Refs in React][forward-refs] - Official documentation
 
-[axios]: https://www.npmjs.com/package/axios
 [cors]: https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/
 [cors-vid]: https://www.youtube.com/watch?v=4KHiSt0oLJ0
-[cors]: https://www.npmjs.com/package/cors
+[cors-npm]: https://www.npmjs.com/package/cors
+[axios-npm]: https://www.npmjs.com/package/axios
 [forward-refs]: https://reactjs.org/docs/forwarding-refs.html

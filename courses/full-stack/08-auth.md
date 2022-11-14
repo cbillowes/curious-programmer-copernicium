@@ -2,11 +2,8 @@
 title: Firebase authentication
 parent: /courses/full-stack
 date: 2022-11-04
-modified: 2022-11-05
+modified: 2022-11-14
 abstract:
-  Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to
-  authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated
-  identity providers like Google, Facebook and Twitter, and more.
   In this chapter, you will create an email/password authentication mechanism that integrates with
   Firebase auth so that you don't have to build an authentication solution from the ground up.
 ---
@@ -805,13 +802,17 @@ const ReviewPage = () => {
 export default ReviewPage;
 ```
 
-### References
+## Next steps
 
-- [Firebase][firebase]
-- [firebase-admin][firebase-admin-npm] npm package
-- [firebase][firebase-npm] npm package
-- [What is Firebase Authentication? | Better Safe than Sorry][auth-vid-what] - YouTube @Firebase
-- [Getting started with Firebase Authentication on the web - Firebase Fundamentals][auth-vid-get-started] - YouTube @Firebase
+You are going to deploy your application to AppEngine on Google Cloud Platform.
+
+## References
+
+- [Google Firebase Console][firebase] - Official website
+- [firebase-admin][firebase-admin-npm] - npm package
+- [firebase][firebase-npm] - npm package
+- [What is Firebase Authentication?][auth-vid-what] - Firebase on YouTube
+- [Getting started with Firebase Authentication on the web][auth-vid-get-started] - Firebase on YouTube
 
 [firebase]: https://console.firebase.google.com
 [firebase-admin-npm]: https://www.npmjs.com/package/firebase-admin
