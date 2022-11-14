@@ -8,6 +8,7 @@ import { MdOutlineSchool } from 'react-icons/md';
 import Anchor from '../components/Anchor';
 import Metadata from '../components/Metadata';
 import Type from '../components/Type';
+import Thumbnail from '../components/Thumbnail';
 
 export const query = graphql`
   query ChaptersTemplateQuery($parent: String!, $slug: String!) {
@@ -43,6 +44,17 @@ export const query = graphql`
           fields {
             slug
           }
+        }
+      }
+    }
+    courses: markdownRemark(fields: { slug: { eq: $parent } }) {
+      fields {
+        hero {
+          component
+          image
+          credit
+          source
+          link
         }
       }
     }
@@ -183,6 +195,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
             </div>
           </div>
         </div>
+        <Thumbnail {...data.courses.fields.hero} />
         <h1 className="text-center font-bold px-4 md:px-10 max-w-screen-xl mx-auto">
           {chapterTitle}
         </h1>
