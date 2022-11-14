@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { toMauritiusLocaleDateString } from '../common/date';
 import Tags from '../components/Tags';
 import Anchor from '../components/Anchor';
 import Thumbnail from '../components/Thumbnail';
@@ -36,9 +35,6 @@ const Courses = ({ edges }) => {
           </h2>
           <div className="leading-loose mb-4">
             <Metadata created={date} />
-            <p className="text-neutral">
-              Created on {toMauritiusLocaleDateString(date)}
-            </p>
             <p
               className={`mt-2 text-left ${
                 isEven ? 'xl:text-left' : 'xl:text-right'
